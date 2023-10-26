@@ -18,7 +18,7 @@ VAULT_PACKAGE=furya-nft-vault
 
 CONTRACTS_CLIENTS_DIR=packages/contracts-clients
 
-DOCKER_REGISTRY=rg.nl-ams.scw.cloud/furya
+DOCKER_REGISTRY=docker.io/sudophunk
 INDEXER_DOCKER_IMAGE=$(DOCKER_REGISTRY)/furya-indexer:$(shell git rev-parse --short HEAD)
 BACKEND_DOCKER_IMAGE=$(DOCKER_REGISTRY)/furya-dapp-backend:$(shell git rev-parse --short HEAD)
 PRICES_SERVICE_DOCKER_IMAGE=$(DOCKER_REGISTRY)/prices-service:$(shell git rev-parse --short HEAD)
@@ -46,7 +46,7 @@ generate.graphql:
 
 .PHONY: generate.graphql-thegraph
 generate.graphql-thegraph:
-	rover graph introspect https://api.studio.thegraph.com/query/40379/furya-mainnet/v1 > go/pkg/thegraph/thegraph-schema.graphql
+	rover graph introspect https://api.studio.thegraph.com/query/40379/teritori-mainnet/v1 > go/pkg/thegraph/thegraph-schema.graphql
 	go run github.com/Khan/genqlient@85e2e8dffd211c83a2be626474993ef68e44a242 go/pkg/thegraph/genqlient.yaml
 
 .PHONY: lint
@@ -67,7 +67,7 @@ go/pkg/holagql/holaplex-schema.graphql:
 
 .PHONY: docker.backend
 docker.backend:
-	docker build . -f go/cmd/furya-dapp-backend/Dockerfile -t furya/furya-dapp-backend:$(shell git rev-parse --short HEAD)
+	docker build . -f go/cmd/furya-dapp-backend/Dockerfile -t sudophunk/furya-dapp-backend:$(shell git rev-parse --short HEAD)
 
 .PHONY: generate.contracts-clients
 generate.contracts-clients: $(CONTRACTS_CLIENTS_DIR)/$(BUNKER_MINTER_PACKAGE) $(CONTRACTS_CLIENTS_DIR)/$(NAME_SERVICE_PACKAGE) $(CONTRACTS_CLIENTS_DIR)/$(RIOTER_FOOTER_PACKAGE) $(CONTRACTS_CLIENTS_DIR)/$(TOKEN_PACKAGE) $(CONTRACTS_CLIENTS_DIR)/$(VAULT_PACKAGE)
