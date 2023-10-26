@@ -6,8 +6,8 @@
 
 import { CosmWasmClient, SigningCosmWasmClient, ExecuteResult } from "@cosmjs/cosmwasm-stargate";
 import { Coin, StdFee } from "@cosmjs/amino";
-import { BreedFinishedCountResponse, Addr, BreedInfoResponse, BreedRequestsCountResponse, BreededCountResponse, Uint128, ConfigResponse, Config, ExecuteMsg, Metadata, Attribute, InstantiateMsg, QueryBreedingsLengthResponse, QueryBreedingsResponse, BreedInfo, QueryMsg, QueryUserBreedingsLengthResponse, QueryUserBreedingsResponse } from "./TeritoriBreeding.types";
-export interface TeritoriBreedingReadOnlyInterface {
+import { BreedFinishedCountResponse, Addr, BreedInfoResponse, BreedRequestsCountResponse, BreededCountResponse, Uint128, ConfigResponse, Config, ExecuteMsg, Metadata, Attribute, InstantiateMsg, QueryBreedingsLengthResponse, QueryBreedingsResponse, BreedInfo, QueryMsg, QueryUserBreedingsLengthResponse, QueryUserBreedingsResponse } from "./FuryaBreeding.types";
+export interface FuryaBreedingReadOnlyInterface {
   contractAddress: string;
   config: () => Promise<ConfigResponse>;
   breedInfo: ({
@@ -49,7 +49,7 @@ export interface TeritoriBreedingReadOnlyInterface {
     user: string;
   }) => Promise<QueryUserBreedingsLengthResponse>;
 }
-export class TeritoriBreedingQueryClient implements TeritoriBreedingReadOnlyInterface {
+export class FuryaBreedingQueryClient implements FuryaBreedingReadOnlyInterface {
   client: CosmWasmClient;
   contractAddress: string;
 
@@ -158,7 +158,7 @@ export class TeritoriBreedingQueryClient implements TeritoriBreedingReadOnlyInte
     });
   };
 }
-export interface TeritoriBreedingInterface extends TeritoriBreedingReadOnlyInterface {
+export interface FuryaBreedingInterface extends FuryaBreedingReadOnlyInterface {
   contractAddress: string;
   sender: string;
   updateConfig: ({
@@ -198,7 +198,7 @@ export interface TeritoriBreedingInterface extends TeritoriBreedingReadOnlyInter
   }, fee?: number | StdFee | "auto", memo?: string, funds?: Coin[]) => Promise<ExecuteResult>;
   withdrawFund: (fee?: number | StdFee | "auto", memo?: string, funds?: Coin[]) => Promise<ExecuteResult>;
 }
-export class TeritoriBreedingClient extends TeritoriBreedingQueryClient implements TeritoriBreedingInterface {
+export class FuryaBreedingClient extends FuryaBreedingQueryClient implements FuryaBreedingInterface {
   client: SigningCosmWasmClient;
   sender: string;
   contractAddress: string;

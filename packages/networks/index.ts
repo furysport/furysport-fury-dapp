@@ -33,12 +33,12 @@ import { networksFromCosmosRegistry } from "./cosmos-registry";
 import { ethereumNetwork } from "./ethereum";
 import { ethereumGoerliNetwork } from "./ethereum-goerli";
 import { gnoDevNetwork } from "./gno-dev";
-import { gnoTeritoriNetwork } from "./gno-teritori";
+import { gnoFuryaNetwork } from "./gno-furya";
 import { gnoTest3Network } from "./gno-test3";
 import { osmosisNetwork } from "./osmosis";
 import { osmosisTestnetNetwork } from "./osmosis-testnet";
-import { teritoriNetwork } from "./teritori";
-import { teritoriTestnetNetwork } from "./teritori-testnet";
+import { furyaNetwork } from "./furya";
+import { furyaTestnetNetwork } from "./furya-testnet";
 import {
   CosmosNetworkInfo,
   EthereumNetworkInfo,
@@ -48,9 +48,9 @@ import {
   NetworkKind,
 } from "./types";
 import {
-  teritoriAminoConverters,
-  teritoriProtoRegistry,
-} from "../api/teritori-chain";
+  furyaAminoConverters,
+  furyaProtoRegistry,
+} from "../api/furya-chain";
 import { getKeplr } from "../utils/keplr";
 
 export * from "./types";
@@ -58,9 +58,9 @@ export * from "./types";
 export const WEI_TOKEN_ADDRESS = "0x0000000000000000000000000000000000000000";
 
 const packageNetworks = [
-  teritoriNetwork,
+  furyaNetwork,
   cosmosNetwork,
-  teritoriTestnetNetwork,
+  furyaTestnetNetwork,
   cosmosThetaNetwork,
   ethereumGoerliNetwork,
   ethereumNetwork,
@@ -68,17 +68,17 @@ const packageNetworks = [
   osmosisTestnetNetwork,
   gnoTest3Network,
   gnoDevNetwork,
-  gnoTeritoriNetwork,
+  gnoFuryaNetwork,
 ];
 
 export const defaultEnabledNetworks = [
-  "teritori",
-  "teritori-testnet",
+  "furya",
+  "furya-testnet",
   "ethereum",
   "ethereum-goerli",
   "cosmos-hub",
   "osmosis",
-  "gno-teritori",
+  "gno-furya",
   "cosmos-registry:juno",
   "cosmos-registry:kujira",
   "cosmos-registry:axelar",
@@ -96,7 +96,7 @@ export const allNetworks = [
 export const cosmosTypesRegistry = new Registry([
   ...defaultRegistryTypes,
   ...wasmTypes,
-  ...teritoriProtoRegistry,
+  ...furyaProtoRegistry,
 ]);
 
 // FIXME: upgrade stargate since it exposes this function in new versions
@@ -116,7 +116,7 @@ function createDefaultAminoConverters(): AminoConverters {
 const cosmosAminoTypes = new AminoTypes({
   ...createDefaultAminoConverters(),
   ...createWasmAminoConverters(),
-  ...teritoriAminoConverters,
+  ...furyaAminoConverters,
 });
 
 export const getCurrency = (

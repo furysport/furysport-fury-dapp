@@ -5,12 +5,12 @@ import { View } from "react-native";
 
 import { TNSModalCommonProps } from "./TNSHomeScreen";
 import ModalBase from "../../components/modals/ModalBase";
-import { NameDataForm } from "../../components/teritoriNameService/NameDataForm";
-import { NameNFT } from "../../components/teritoriNameService/NameNFT";
+import { NameDataForm } from "../../components/furyaNameService/NameDataForm";
+import { NameNFT } from "../../components/furyaNameService/NameNFT";
 import { useFeedbacks } from "../../context/FeedbacksProvider";
 import { useTNS } from "../../context/TNSProvider";
-import { TeritoriNameServiceQueryClient } from "../../contracts-clients/teritori-name-service/TeritoriNameService.client";
-import { Metadata } from "../../contracts-clients/teritori-name-service/TeritoriNameService.types";
+import { FuryaNameServiceQueryClient } from "../../contracts-clients/furya-name-service/FuryaNameService.client";
+import { Metadata } from "../../contracts-clients/furya-name-service/FuryaNameService.types";
 import { useDAOMakeProposal } from "../../hooks/dao/useDAOMakeProposal";
 import { useDAOs } from "../../hooks/dao/useDAOs";
 import { nsNameInfoQueryKey } from "../../hooks/useNSNameInfo";
@@ -63,7 +63,7 @@ export const TNSUpdateNameScreen: React.FC<TNSUpdateNameScreenProps> = ({
 
       const cosmwasmClient = await mustGetNonSigningCosmWasmClient(network.id);
 
-      const client = new TeritoriNameServiceQueryClient(
+      const client = new FuryaNameServiceQueryClient(
         cosmwasmClient,
         network.nameServiceContractAddress
       );

@@ -4,15 +4,15 @@ import { useQueryClient } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { View, ViewStyle } from "react-native";
 
-import { Coin } from "../../../api/teritori-chain/cosmos/base/v1beta1/coin";
-import { MsgBurnTokens } from "../../../api/teritori-chain/teritori/mint/v1beta1/tx";
+import { Coin } from "../../../api/furya-chain/cosmos/base/v1beta1/coin";
+import { MsgBurnTokens } from "../../../api/furya-chain/furya/mint/v1beta1/tx";
 import { BrandText } from "../../../components/BrandText";
 import { MaxButton } from "../../../components/buttons/MaxButton";
 import { PrimaryButton } from "../../../components/buttons/PrimaryButton";
 import { TextInputCustom } from "../../../components/inputs/TextInputCustom";
 import ModalBase from "../../../components/modals/ModalBase";
 import { SendModal } from "../../../components/modals/SendModal";
-import { TNSNameFinderModal } from "../../../components/modals/teritoriNameService/TNSNameFinderModal";
+import { TNSNameFinderModal } from "../../../components/modals/furyaNameService/TNSNameFinderModal";
 import { LoginButton } from "../../../components/multisig/LoginButton";
 import { SpacerColumn } from "../../../components/spacer";
 import { useFeedbacks } from "../../../context/FeedbacksProvider";
@@ -45,8 +45,8 @@ import {
 } from "../../../utils/style/colors";
 import { fontSemibold12, fontSemibold13 } from "../../../utils/style/fonts";
 import { layout } from "../../../utils/style/layout";
-import { TNSMintNameModal } from "../../TeritoriNameService/TNSMintNameScreen";
-import { TNSRegisterScreen } from "../../TeritoriNameService/TNSRegisterScreen";
+import { TNSMintNameModal } from "../../FuryaNameService/TNSMintNameScreen";
+import { TNSRegisterScreen } from "../../FuryaNameService/TNSRegisterScreen";
 
 export const MultisigRightSection: React.FC = () => {
   const navigation = useAppNavigation();
@@ -261,7 +261,7 @@ const BurnModal: React.FC<{
     await runOrProposeTransaction({
       msgs: [
         {
-          typeUrl: "/teritori.mint.v1beta1.MsgBurnTokens",
+          typeUrl: "/furya.mint.v1beta1.MsgBurnTokens",
           value: burnMsg,
         },
       ],

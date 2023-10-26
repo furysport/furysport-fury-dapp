@@ -19,7 +19,7 @@ export const Raffle = () => {
         styleType="T2_Bebas_50"
         style={{ textAlign: "center", color: "#E8E1EF" }}
       >
-        Cosmos save the punks, long live the toripunks
+        Cosmos save the punks, long live the furypunks
       </Label>
       <Label
         styleType="H2_DHBS_80"

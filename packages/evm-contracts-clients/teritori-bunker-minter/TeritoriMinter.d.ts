@@ -20,7 +20,7 @@ import { Listener, Provider } from "@ethersproject/providers";
 import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 import type { TypedEventFilter, TypedEvent, TypedListener } from "../common";
 
-interface TeritoriMinterInterface extends ethers.utils.Interface {
+interface FuryaMinterInterface extends ethers.utils.Interface {
   functions: {
     "config()": FunctionFragment;
     "currentSupply()": FunctionFragment;
@@ -264,7 +264,7 @@ export type WithdrawFundEvent = TypedEvent<
   [string, BigNumber] & { token: string; amount: BigNumber }
 >;
 
-export class TeritoriMinter extends BaseContract {
+export class FuryaMinter extends BaseContract {
   connect(signerOrProvider: Signer | Provider | string): this;
   attach(addressOrName: string): this;
   deployed(): Promise<this>;
@@ -305,7 +305,7 @@ export class TeritoriMinter extends BaseContract {
     toBlock?: string | number | undefined
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
-  interface: TeritoriMinterInterface;
+  interface: FuryaMinterInterface;
 
   functions: {
     config(

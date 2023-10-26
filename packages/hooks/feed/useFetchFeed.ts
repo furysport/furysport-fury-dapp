@@ -3,7 +3,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 
 import { Post, PostsRequest } from "../../api/feed/v1/feed";
 import { nonSigningSocialFeedClient } from "../../client-creators/socialFeedClient";
-import { TERITORI_FEED_ID } from "../../components/socialFeed/const";
+import { FURYA_FEED_ID } from "../../components/socialFeed/const";
 import { decodeGnoPost } from "../../components/socialFeed/utils";
 import {
   GnoNetworkInfo,
@@ -24,7 +24,7 @@ export type PostsList = {
 export const combineFetchFeedPages = (pages: PostsList[]) =>
   pages.reduce((acc: Post[], page) => [...acc, ...(page?.list || [])], []);
 
-const fetchTeritoriFeed = async (
+const fetchFuryaFeed = async (
   selectedNetwork: NetworkInfo,
   req: PostsRequest,
   pageParam: number
@@ -42,7 +42,7 @@ const fetchTeritoriFeed = async (
     const list = await getPosts(selectedNetwork.id, postsRequest);
     return { list, totalCount: mainPostsCount } as PostsList;
   } catch (err) {
-    console.error("teritori initData err", err);
+    console.error("furya initData err", err);
     return { list: [], totalCount: 0 } as PostsList;
   }
 };
@@ -69,7 +69,7 @@ const fetchGnoFeed = async (
     const provider = new GnoJSONRPCProvider(selectedNetwork.endpoint);
     const output = await provider.evaluateExpression(
       selectedNetwork.socialFeedsPkgPath,
-      `GetPostsWithCaller(${TERITORI_FEED_ID}, ${parentId}, "${callerAddress}", "${userAddress}", ${categoriesStr}, ${offset}, ${limit})`
+      `GetPostsWithCaller(${FURYA_FEED_ID}, ${parentId}, "${callerAddress}", "${userAddress}", ${categoriesStr}, ${offset}, ${limit})`
     );
 
     const posts: Post[] = [];
@@ -99,7 +99,7 @@ export const useFetchFeed = (req: PostsRequest) => {
       ["posts", selectedNetwork?.id, wallet?.address, { ...req }],
       async ({ pageParam = req.offset }) => {
         if (selectedNetwork?.kind === NetworkKind.Cosmos) {
-          return fetchTeritoriFeed(selectedNetwork, req, pageParam);
+          return fetchFuryaFeed(selectedNetwork, req, pageParam);
         } else if (selectedNetwork?.kind === NetworkKind.Gno) {
           return fetchGnoFeed(selectedNetwork, wallet?.address, req, pageParam);
         }

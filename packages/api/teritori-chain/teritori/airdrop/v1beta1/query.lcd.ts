@@ -14,12 +14,12 @@ export class LCDQueryClient {
   }
   /* Allocation */
   async allocation(params: QueryAllocationRequest): Promise<QueryAllocationResponseSDKType> {
-    const endpoint = `teritori/airdrop/v1beta1/allocation/${params.address}`;
+    const endpoint = `furya/airdrop/v1beta1/allocation/${params.address}`;
     return await this.req.get<QueryAllocationResponseSDKType>(endpoint);
   }
   /* Params */
   async params(_params: QueryParamsRequest = {}): Promise<QueryParamsResponseSDKType> {
-    const endpoint = `teritori/airdrop/v1beta1/params`;
+    const endpoint = `furya/airdrop/v1beta1/params`;
     return await this.req.get<QueryParamsResponseSDKType>(endpoint);
   }
 }

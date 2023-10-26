@@ -28,7 +28,7 @@ export const useMyHistoryData = ({
             bought: 0,
             won: 0,
           },
-          toriWon: 0,
+          furyWon: 0,
         },
       ],
       refetchOnMount: false,

@@ -3,7 +3,7 @@ import React from "react";
 import { TNSCloseHandler } from "./TNSHomeScreen";
 import { PrimaryButton } from "../../components/buttons/PrimaryButton";
 import GradientModalBase from "../../components/modals/GradientModalBase";
-import { FindAName } from "../../components/teritoriNameService/FindAName";
+import { FindAName } from "../../components/furyaNameService/FindAName";
 import { useTNS } from "../../context/TNSProvider";
 import { useNSNameAvailability } from "../../hooks/useNSNameAvailability";
 import { useSelectedNetworkId } from "../../hooks/useSelectedNetwork";

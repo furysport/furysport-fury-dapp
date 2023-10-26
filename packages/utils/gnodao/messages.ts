@@ -12,7 +12,7 @@ export interface GnoDAOVoteRequest {
 }
 
 export interface GnoDAOUpdateSettings {
-  type: "gno.land/p/demo/teritori/dao_proposal_single.UpdateSettings";
+  type: "gno.land/p/demo/furya/dao_proposal_single.UpdateSettings";
   payload: {
     threshold: {
       thresholdQuorum: {
@@ -27,8 +27,8 @@ export interface GnoDAOUpdateSettings {
   };
 }
 
-export interface GnoMintToriMessage {
-  type: "gno.land/r/demo/teritori/tori.Mint";
+export interface GnoMintFuryMessage {
+  type: "gno.land/r/demo/furya/fury.Mint";
   payload: {
     amount: number;
     address: string;
@@ -36,7 +36,7 @@ export interface GnoMintToriMessage {
 }
 
 export interface GnoModboardsDeletePostMessage {
-  type: "gno.land/r/demo/teritori/modboards.DeletePost";
+  type: "gno.land/r/demo/furya/modboards.DeletePost";
   payload: {
     boardId: number;
     threadId: number;
@@ -46,14 +46,14 @@ export interface GnoModboardsDeletePostMessage {
 }
 
 export interface GnoModboardsCreateMessage {
-  type: "gno.land/r/demo/teritori/modboards.CreateBoard";
+  type: "gno.land/r/demo/furya/modboards.CreateBoard";
   payload: {
     name: string;
   };
 }
 
 export interface GnoBanPostMessage {
-  type: "gno.land/r/demo/teritori/social_feeds.BanPost";
+  type: "gno.land/r/demo/furya/social_feeds.BanPost";
   payload: {
     feedId: number;
     postId: number;
@@ -62,7 +62,7 @@ export interface GnoBanPostMessage {
 }
 
 export interface GnoAddMemberMessage {
-  type: "gno.land/r/demo/teritori/groups.AddMember";
+  type: "gno.land/r/demo/furya/groups.AddMember";
   payload: {
     groupId: number;
     address: string;

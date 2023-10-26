@@ -12,15 +12,15 @@ import coinSVG from "../../../assets/icons/coin.svg";
 import { BrandText } from "../../components/BrandText";
 import { SVG } from "../../components/SVG";
 import ModalBase from "../../components/modals/ModalBase";
-import { NameDataForm } from "../../components/teritoriNameService/NameDataForm";
-import { NameNFT } from "../../components/teritoriNameService/NameNFT";
+import { NameDataForm } from "../../components/furyaNameService/NameDataForm";
+import { NameNFT } from "../../components/furyaNameService/NameNFT";
 import { useFeedbacks } from "../../context/FeedbacksProvider";
 import { useTNS } from "../../context/TNSProvider";
-import { TeritoriNameServiceQueryClient } from "../../contracts-clients/teritori-name-service/TeritoriNameService.client";
+import { FuryaNameServiceQueryClient } from "../../contracts-clients/furya-name-service/FuryaNameService.client";
 import {
   ExecuteMsg as TNSExecuteMsg,
   Metadata,
-} from "../../contracts-clients/teritori-name-service/TeritoriNameService.types";
+} from "../../contracts-clients/furya-name-service/FuryaNameService.types";
 import { useAreThereWallets } from "../../hooks/useAreThereWallets";
 import { useBalances } from "../../hooks/useBalances";
 import { useIsKeplrConnected } from "../../hooks/useIsKeplrConnected";
@@ -125,7 +125,7 @@ export const TNSMintNameScreen: React.FC<TNSMintNameScreenProps> = ({
         selectedWallet?.networkId || ""
       );
 
-      const client = new TeritoriNameServiceQueryClient(
+      const client = new FuryaNameServiceQueryClient(
         cosmwasmClient,
         network.nameServiceContractAddress
       );

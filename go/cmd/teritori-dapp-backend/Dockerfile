@@ -31,7 +31,7 @@ RUN wget https://github.com/CosmWasm/wasmvm/releases/download/v1.0.0/checksums.t
 COPY go ./go
 COPY .git ./.git
 
-# Build teritorid binary
+# Build furyad binary
 RUN --mount=type=cache,target=/root/.cache/go-build \
   --mount=type=cache,target=/root/go/pkg/mod \
   VERSION=$(echo $(git describe --tags) | sed 's/^v//') && \
@@ -39,15 +39,15 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
   go build \
   -mod=readonly \
   -tags "netgo,ledger,muslc" \
-  -ldflags "-X github.com/cosmos/cosmos-sdk/version.Name="teritori" \
-  -X github.com/cosmos/cosmos-sdk/version.AppName="teritorid" \
+  -ldflags "-X github.com/cosmos/cosmos-sdk/version.Name="furya" \
+  -X github.com/cosmos/cosmos-sdk/version.AppName="furyad" \
   -X github.com/cosmos/cosmos-sdk/version.Version=$VERSION \
   -X github.com/cosmos/cosmos-sdk/version.Commit=$COMMIT \
   -X github.com/cosmos/cosmos-sdk/version.BuildTags='netgo,ledger,muslc' \
   -w -s -linkmode=external -extldflags '-Wl,-z,muldefs -static'" \
   -trimpath \
   -o /app/build/ \
-  ./go/cmd/teritori-dapp-backend
+  ./go/cmd/furya-dapp-backend
 
 # --------------------------------------------------------
 # Runner
@@ -55,11 +55,11 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
 
 FROM ${RUNNER_IMAGE}
 
-COPY --from=builder /app/build/teritori-dapp-backend /bin/teritori-dapp-backend
+COPY --from=builder /app/build/furya-dapp-backend /bin/furya-dapp-backend
 
 ENV HOME /app
 WORKDIR $HOME
 
 COPY networks.json $HOME/networks.json
 
-ENTRYPOINT ["teritori-dapp-backend"]
+ENTRYPOINT ["furya-dapp-backend"]

@@ -6,8 +6,8 @@
 
 import { CosmWasmClient, SigningCosmWasmClient, ExecuteResult } from "@cosmjs/cosmwasm-stargate";
 import { Coin, StdFee } from "@cosmjs/amino";
-import { Uint128, ConfigResponse, Addr, Config, CurrentSupplyResponse, ExecuteMsg, Metadata, Attribute, InstantiateMsg, IsWhitelistedResponse, MigrateMsg, QueryMsg, TokenRequestByIndexResponse, TokenRequestsCountResponse, WhitelistSizeResponse } from "./TeritoriBunkerMinter.types";
-export interface TeritoriBunkerMinterReadOnlyInterface {
+import { Uint128, ConfigResponse, Addr, Config, CurrentSupplyResponse, ExecuteMsg, Metadata, Attribute, InstantiateMsg, IsWhitelistedResponse, MigrateMsg, QueryMsg, TokenRequestByIndexResponse, TokenRequestsCountResponse, WhitelistSizeResponse } from "./FuryaBunkerMinter.types";
+export interface FuryaBunkerMinterReadOnlyInterface {
   contractAddress: string;
   config: () => Promise<ConfigResponse>;
   isWhitelisted: ({
@@ -24,7 +24,7 @@ export interface TeritoriBunkerMinterReadOnlyInterface {
     index: Uint128;
   }) => Promise<TokenRequestByIndexResponse>;
 }
-export class TeritoriBunkerMinterQueryClient implements TeritoriBunkerMinterReadOnlyInterface {
+export class FuryaBunkerMinterQueryClient implements FuryaBunkerMinterReadOnlyInterface {
   client: CosmWasmClient;
   contractAddress: string;
 
@@ -82,7 +82,7 @@ export class TeritoriBunkerMinterQueryClient implements TeritoriBunkerMinterRead
     });
   };
 }
-export interface TeritoriBunkerMinterInterface extends TeritoriBunkerMinterReadOnlyInterface {
+export interface FuryaBunkerMinterInterface extends FuryaBunkerMinterReadOnlyInterface {
   contractAddress: string;
   sender: string;
   updateConfig: ({
@@ -148,7 +148,7 @@ export interface TeritoriBunkerMinterInterface extends TeritoriBunkerMinterReadO
   unpause: (fee?: number | StdFee | "auto", memo?: string, funds?: Coin[]) => Promise<ExecuteResult>;
   withdrawFund: (fee?: number | StdFee | "auto", memo?: string, funds?: Coin[]) => Promise<ExecuteResult>;
 }
-export class TeritoriBunkerMinterClient extends TeritoriBunkerMinterQueryClient implements TeritoriBunkerMinterInterface {
+export class FuryaBunkerMinterClient extends FuryaBunkerMinterQueryClient implements FuryaBunkerMinterInterface {
   client: SigningCosmWasmClient;
   sender: string;
   contractAddress: string;

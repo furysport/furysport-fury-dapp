@@ -6,11 +6,11 @@ import { ScreenContainer } from "../../../../components/ScreenContainer";
 import { TopLogo } from "../../../../components/navigation/components/TopLogo";
 import { ScreenFC, useAppNavigation } from "../../../../utils/navigation";
 
-export const ToriPunks: ScreenFC<"ToriPunks"> = ({ route }) => {
+export const FuryPunks: ScreenFC<"FuryPunks"> = ({ route }) => {
   const navigation = useAppNavigation();
   const screen = route.params ? route.params.route : "welcome";
   if (!route.params) {
-    navigation.navigate("ToriPunks", { route: screen });
+    navigation.navigate("FuryPunks", { route: screen });
   }
   return (
     <ScreenContainer
@@ -18,7 +18,7 @@ export const ToriPunks: ScreenFC<"ToriPunks"> = ({ route }) => {
       hideSidebar
       headerChildren={<TopLogo />}
       footerChildren={<div />}
-      forceNetworkId="teritori"
+      forceNetworkId="furya"
     >
       <ContentContextProvider screen={screen}>
         <Content />

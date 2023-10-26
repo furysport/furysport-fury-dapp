@@ -25,20 +25,20 @@ import {
   Reaction,
   Post,
   QueryMsg,
-} from "./TeritoriSocialFeed.types";
+} from "./FuryaSocialFeed.types";
 import {
-  TeritoriSocialFeedQueryClient,
-  TeritoriSocialFeedClient,
-} from "./TeritoriSocialFeed.client";
-export const teritoriSocialFeedQueryKeys = {
+  FuryaSocialFeedQueryClient,
+  FuryaSocialFeedClient,
+} from "./FuryaSocialFeed.client";
+export const furyaSocialFeedQueryKeys = {
   contract: [
     {
-      contract: "teritoriSocialFeed",
+      contract: "furyaSocialFeed",
     },
   ] as const,
   address: (contractAddress: string | undefined) =>
     [
-      { ...teritoriSocialFeedQueryKeys.contract[0], address: contractAddress },
+      { ...furyaSocialFeedQueryKeys.contract[0], address: contractAddress },
     ] as const,
   config: (
     contractAddress: string | undefined,
@@ -46,7 +46,7 @@ export const teritoriSocialFeedQueryKeys = {
   ) =>
     [
       {
-        ...teritoriSocialFeedQueryKeys.address(contractAddress)[0],
+        ...furyaSocialFeedQueryKeys.address(contractAddress)[0],
         method: "config",
         args,
       },
@@ -57,7 +57,7 @@ export const teritoriSocialFeedQueryKeys = {
   ) =>
     [
       {
-        ...teritoriSocialFeedQueryKeys.address(contractAddress)[0],
+        ...furyaSocialFeedQueryKeys.address(contractAddress)[0],
         method: "query_fee_by_category",
         args,
       },
@@ -68,7 +68,7 @@ export const teritoriSocialFeedQueryKeys = {
   ) =>
     [
       {
-        ...teritoriSocialFeedQueryKeys.address(contractAddress)[0],
+        ...furyaSocialFeedQueryKeys.address(contractAddress)[0],
         method: "query_locked_tokens",
         args,
       },
@@ -79,7 +79,7 @@ export const teritoriSocialFeedQueryKeys = {
   ) =>
     [
       {
-        ...teritoriSocialFeedQueryKeys.address(contractAddress)[0],
+        ...furyaSocialFeedQueryKeys.address(contractAddress)[0],
         method: "query_available_free_posts",
         args,
       },
@@ -90,7 +90,7 @@ export const teritoriSocialFeedQueryKeys = {
   ) =>
     [
       {
-        ...teritoriSocialFeedQueryKeys.address(contractAddress)[0],
+        ...furyaSocialFeedQueryKeys.address(contractAddress)[0],
         method: "query_post",
         args,
       },
@@ -101,7 +101,7 @@ export const teritoriSocialFeedQueryKeys = {
   ) =>
     [
       {
-        ...teritoriSocialFeedQueryKeys.address(contractAddress)[0],
+        ...furyaSocialFeedQueryKeys.address(contractAddress)[0],
         method: "query_sub_post",
         args,
       },
@@ -112,7 +112,7 @@ export const teritoriSocialFeedQueryKeys = {
   ) =>
     [
       {
-        ...teritoriSocialFeedQueryKeys.address(contractAddress)[0],
+        ...furyaSocialFeedQueryKeys.address(contractAddress)[0],
         method: "query_sub_posts",
         args,
       },
@@ -123,7 +123,7 @@ export const teritoriSocialFeedQueryKeys = {
   ) =>
     [
       {
-        ...teritoriSocialFeedQueryKeys.address(contractAddress)[0],
+        ...furyaSocialFeedQueryKeys.address(contractAddress)[0],
         method: "query_main_posts",
         args,
       },
@@ -134,14 +134,14 @@ export const teritoriSocialFeedQueryKeys = {
   ) =>
     [
       {
-        ...teritoriSocialFeedQueryKeys.address(contractAddress)[0],
+        ...furyaSocialFeedQueryKeys.address(contractAddress)[0],
         method: "query_main_posts_count",
         args,
       },
     ] as const,
 };
-export interface TeritoriSocialFeedReactQuery<TResponse, TData = TResponse> {
-  client: TeritoriSocialFeedQueryClient | undefined;
+export interface FuryaSocialFeedReactQuery<TResponse, TData = TResponse> {
+  client: FuryaSocialFeedQueryClient | undefined;
   options?: Omit<
     UseQueryOptions<TResponse, Error, TData>,
     "'queryKey' | 'queryFn' | 'initialData'"
@@ -149,13 +149,13 @@ export interface TeritoriSocialFeedReactQuery<TResponse, TData = TResponse> {
     initialData?: undefined;
   };
 }
-export interface TeritoriSocialFeedQueryMainPostsCountQuery<TData>
-  extends TeritoriSocialFeedReactQuery<QueryMainPostsCountResponse, TData> {}
-export function useTeritoriSocialFeedQueryMainPostsCountQuery<
+export interface FuryaSocialFeedQueryMainPostsCountQuery<TData>
+  extends FuryaSocialFeedReactQuery<QueryMainPostsCountResponse, TData> {}
+export function useFuryaSocialFeedQueryMainPostsCountQuery<
   TData = QueryMainPostsCountResponse
->({ client, options }: TeritoriSocialFeedQueryMainPostsCountQuery<TData>) {
+>({ client, options }: FuryaSocialFeedQueryMainPostsCountQuery<TData>) {
   return useQuery<QueryMainPostsCountResponse, Error, TData>(
-    teritoriSocialFeedQueryKeys.queryMainPostsCount(client?.contractAddress),
+    furyaSocialFeedQueryKeys.queryMainPostsCount(client?.contractAddress),
     () =>
       client
         ? client.queryMainPostsCount()
@@ -167,8 +167,8 @@ export function useTeritoriSocialFeedQueryMainPostsCountQuery<
     }
   );
 }
-export interface TeritoriSocialFeedQueryMainPostsQuery<TData>
-  extends TeritoriSocialFeedReactQuery<QueryMainPostsResponse, TData> {
+export interface FuryaSocialFeedQueryMainPostsQuery<TData>
+  extends FuryaSocialFeedReactQuery<QueryMainPostsResponse, TData> {
   args: {
     count: number;
     from: number;
@@ -176,11 +176,11 @@ export interface TeritoriSocialFeedQueryMainPostsQuery<TData>
     user?: string;
   };
 }
-export function useTeritoriSocialFeedQueryMainPostsQuery<
+export function useFuryaSocialFeedQueryMainPostsQuery<
   TData = QueryMainPostsResponse
->({ client, args, options }: TeritoriSocialFeedQueryMainPostsQuery<TData>) {
+>({ client, args, options }: FuryaSocialFeedQueryMainPostsQuery<TData>) {
   return useQuery<QueryMainPostsResponse, Error, TData>(
-    teritoriSocialFeedQueryKeys.queryMainPosts(client?.contractAddress, args),
+    furyaSocialFeedQueryKeys.queryMainPosts(client?.contractAddress, args),
     () =>
       client
         ? client.queryMainPosts({
@@ -197,8 +197,8 @@ export function useTeritoriSocialFeedQueryMainPostsQuery<
     }
   );
 }
-export interface TeritoriSocialFeedQuerySubPostsQuery<TData>
-  extends TeritoriSocialFeedReactQuery<QuerySubPostsResponse, TData> {
+export interface FuryaSocialFeedQuerySubPostsQuery<TData>
+  extends FuryaSocialFeedReactQuery<QuerySubPostsResponse, TData> {
   args: {
     count: number;
     from: number;
@@ -207,11 +207,11 @@ export interface TeritoriSocialFeedQuerySubPostsQuery<TData>
     user?: string;
   };
 }
-export function useTeritoriSocialFeedQuerySubPostsQuery<
+export function useFuryaSocialFeedQuerySubPostsQuery<
   TData = QuerySubPostsResponse
->({ client, args, options }: TeritoriSocialFeedQuerySubPostsQuery<TData>) {
+>({ client, args, options }: FuryaSocialFeedQuerySubPostsQuery<TData>) {
   return useQuery<QuerySubPostsResponse, Error, TData>(
-    teritoriSocialFeedQueryKeys.querySubPosts(client?.contractAddress, args),
+    furyaSocialFeedQueryKeys.querySubPosts(client?.contractAddress, args),
     () =>
       client
         ? client.querySubPosts({
@@ -229,19 +229,19 @@ export function useTeritoriSocialFeedQuerySubPostsQuery<
     }
   );
 }
-export interface TeritoriSocialFeedQuerySubPostQuery<TData>
-  extends TeritoriSocialFeedReactQuery<QuerySubPostResponse, TData> {
+export interface FuryaSocialFeedQuerySubPostQuery<TData>
+  extends FuryaSocialFeedReactQuery<QuerySubPostResponse, TData> {
   args: {
     identifier: string;
     index: number;
     user?: string;
   };
 }
-export function useTeritoriSocialFeedQuerySubPostQuery<
+export function useFuryaSocialFeedQuerySubPostQuery<
   TData = QuerySubPostResponse
->({ client, args, options }: TeritoriSocialFeedQuerySubPostQuery<TData>) {
+>({ client, args, options }: FuryaSocialFeedQuerySubPostQuery<TData>) {
   return useQuery<QuerySubPostResponse, Error, TData>(
-    teritoriSocialFeedQueryKeys.querySubPost(client?.contractAddress, args),
+    furyaSocialFeedQueryKeys.querySubPost(client?.contractAddress, args),
     () =>
       client
         ? client.querySubPost({
@@ -257,20 +257,20 @@ export function useTeritoriSocialFeedQuerySubPostQuery<
     }
   );
 }
-export interface TeritoriSocialFeedQueryPostQuery<TData>
-  extends TeritoriSocialFeedReactQuery<QueryPostResponse, TData> {
+export interface FuryaSocialFeedQueryPostQuery<TData>
+  extends FuryaSocialFeedReactQuery<QueryPostResponse, TData> {
   args: {
     identifier: string;
     user?: string;
   };
 }
-export function useTeritoriSocialFeedQueryPostQuery<TData = QueryPostResponse>({
+export function useFuryaSocialFeedQueryPostQuery<TData = QueryPostResponse>({
   client,
   args,
   options,
-}: TeritoriSocialFeedQueryPostQuery<TData>) {
+}: FuryaSocialFeedQueryPostQuery<TData>) {
   return useQuery<QueryPostResponse, Error, TData>(
-    teritoriSocialFeedQueryKeys.queryPost(client?.contractAddress, args),
+    furyaSocialFeedQueryKeys.queryPost(client?.contractAddress, args),
     () =>
       client
         ? client.queryPost({
@@ -285,21 +285,21 @@ export function useTeritoriSocialFeedQueryPostQuery<TData = QueryPostResponse>({
     }
   );
 }
-export interface TeritoriSocialFeedQueryAvailableFreePostsQuery<TData>
-  extends TeritoriSocialFeedReactQuery<QueryAvailableFreePostsResponse, TData> {
+export interface FuryaSocialFeedQueryAvailableFreePostsQuery<TData>
+  extends FuryaSocialFeedReactQuery<QueryAvailableFreePostsResponse, TData> {
   args: {
     wallet: string;
   };
 }
-export function useTeritoriSocialFeedQueryAvailableFreePostsQuery<
+export function useFuryaSocialFeedQueryAvailableFreePostsQuery<
   TData = QueryAvailableFreePostsResponse
 >({
   client,
   args,
   options,
-}: TeritoriSocialFeedQueryAvailableFreePostsQuery<TData>) {
+}: FuryaSocialFeedQueryAvailableFreePostsQuery<TData>) {
   return useQuery<QueryAvailableFreePostsResponse, Error, TData>(
-    teritoriSocialFeedQueryKeys.queryAvailableFreePosts(
+    furyaSocialFeedQueryKeys.queryAvailableFreePosts(
       client?.contractAddress,
       args
     ),
@@ -316,17 +316,17 @@ export function useTeritoriSocialFeedQueryAvailableFreePostsQuery<
     }
   );
 }
-export interface TeritoriSocialFeedQueryLockedTokensQuery<TData>
-  extends TeritoriSocialFeedReactQuery<QueryLockedTokensResponse, TData> {
+export interface FuryaSocialFeedQueryLockedTokensQuery<TData>
+  extends FuryaSocialFeedReactQuery<QueryLockedTokensResponse, TData> {
   args: {
     wallet: string;
   };
 }
-export function useTeritoriSocialFeedQueryLockedTokensQuery<
+export function useFuryaSocialFeedQueryLockedTokensQuery<
   TData = QueryLockedTokensResponse
->({ client, args, options }: TeritoriSocialFeedQueryLockedTokensQuery<TData>) {
+>({ client, args, options }: FuryaSocialFeedQueryLockedTokensQuery<TData>) {
   return useQuery<QueryLockedTokensResponse, Error, TData>(
-    teritoriSocialFeedQueryKeys.queryLockedTokens(
+    furyaSocialFeedQueryKeys.queryLockedTokens(
       client?.contractAddress,
       args
     ),
@@ -343,17 +343,17 @@ export function useTeritoriSocialFeedQueryLockedTokensQuery<
     }
   );
 }
-export interface TeritoriSocialFeedQueryFeeByCategoryQuery<TData>
-  extends TeritoriSocialFeedReactQuery<QueryFeeByCategoryResponse, TData> {
+export interface FuryaSocialFeedQueryFeeByCategoryQuery<TData>
+  extends FuryaSocialFeedReactQuery<QueryFeeByCategoryResponse, TData> {
   args: {
     category: number;
   };
 }
-export function useTeritoriSocialFeedQueryFeeByCategoryQuery<
+export function useFuryaSocialFeedQueryFeeByCategoryQuery<
   TData = QueryFeeByCategoryResponse
->({ client, args, options }: TeritoriSocialFeedQueryFeeByCategoryQuery<TData>) {
+>({ client, args, options }: FuryaSocialFeedQueryFeeByCategoryQuery<TData>) {
   return useQuery<QueryFeeByCategoryResponse, Error, TData>(
-    teritoriSocialFeedQueryKeys.queryFeeByCategory(
+    furyaSocialFeedQueryKeys.queryFeeByCategory(
       client?.contractAddress,
       args
     ),
@@ -370,14 +370,14 @@ export function useTeritoriSocialFeedQueryFeeByCategoryQuery<
     }
   );
 }
-export interface TeritoriSocialFeedConfigQuery<TData>
-  extends TeritoriSocialFeedReactQuery<ConfigResponse, TData> {}
-export function useTeritoriSocialFeedConfigQuery<TData = ConfigResponse>({
+export interface FuryaSocialFeedConfigQuery<TData>
+  extends FuryaSocialFeedReactQuery<ConfigResponse, TData> {}
+export function useFuryaSocialFeedConfigQuery<TData = ConfigResponse>({
   client,
   options,
-}: TeritoriSocialFeedConfigQuery<TData>) {
+}: FuryaSocialFeedConfigQuery<TData>) {
   return useQuery<ConfigResponse, Error, TData>(
-    teritoriSocialFeedQueryKeys.config(client?.contractAddress),
+    furyaSocialFeedQueryKeys.config(client?.contractAddress),
     () =>
       client ? client.config() : Promise.reject(new Error("Invalid client")),
     {
@@ -387,8 +387,8 @@ export function useTeritoriSocialFeedConfigQuery<TData = ConfigResponse>({
     }
   );
 }
-export interface TeritoriSocialFeedCreatePostByBotMutation {
-  client: TeritoriSocialFeedClient;
+export interface FuryaSocialFeedCreatePostByBotMutation {
+  client: FuryaSocialFeedClient;
   msg: {
     category: number;
     identifier: string;
@@ -401,12 +401,12 @@ export interface TeritoriSocialFeedCreatePostByBotMutation {
     funds?: Coin[];
   };
 }
-export function useTeritoriSocialFeedCreatePostByBotMutation(
+export function useFuryaSocialFeedCreatePostByBotMutation(
   options?: Omit<
     UseMutationOptions<
       ExecuteResult,
       Error,
-      TeritoriSocialFeedCreatePostByBotMutation
+      FuryaSocialFeedCreatePostByBotMutation
     >,
     "mutationFn"
   >
@@ -414,15 +414,15 @@ export function useTeritoriSocialFeedCreatePostByBotMutation(
   return useMutation<
     ExecuteResult,
     Error,
-    TeritoriSocialFeedCreatePostByBotMutation
+    FuryaSocialFeedCreatePostByBotMutation
   >(
     ({ client, msg, args: { fee, memo, funds } = {} }) =>
       client.createPostByBot(msg, fee, memo, funds),
     options
   );
 }
-export interface TeritoriSocialFeedAddAIBotMutation {
-  client: TeritoriSocialFeedClient;
+export interface FuryaSocialFeedAddAIBotMutation {
+  client: FuryaSocialFeedClient;
   msg: {
     addr: Addr;
     name: string;
@@ -434,36 +434,36 @@ export interface TeritoriSocialFeedAddAIBotMutation {
     funds?: Coin[];
   };
 }
-export function useTeritoriSocialFeedAddAIBotMutation(
+export function useFuryaSocialFeedAddAIBotMutation(
   options?: Omit<
     UseMutationOptions<
       ExecuteResult,
       Error,
-      TeritoriSocialFeedAddAIBotMutation
+      FuryaSocialFeedAddAIBotMutation
     >,
     "mutationFn"
   >
 ) {
-  return useMutation<ExecuteResult, Error, TeritoriSocialFeedAddAIBotMutation>(
+  return useMutation<ExecuteResult, Error, FuryaSocialFeedAddAIBotMutation>(
     ({ client, msg, args: { fee, memo, funds } = {} }) =>
       client.addAIBot(msg, fee, memo, funds),
     options
   );
 }
-export interface TeritoriSocialFeedWithdrawFundMutation {
-  client: TeritoriSocialFeedClient;
+export interface FuryaSocialFeedWithdrawFundMutation {
+  client: FuryaSocialFeedClient;
   args?: {
     fee?: number | StdFee | "auto";
     memo?: string;
     funds?: Coin[];
   };
 }
-export function useTeritoriSocialFeedWithdrawFundMutation(
+export function useFuryaSocialFeedWithdrawFundMutation(
   options?: Omit<
     UseMutationOptions<
       ExecuteResult,
       Error,
-      TeritoriSocialFeedWithdrawFundMutation
+      FuryaSocialFeedWithdrawFundMutation
     >,
     "mutationFn"
   >
@@ -471,15 +471,15 @@ export function useTeritoriSocialFeedWithdrawFundMutation(
   return useMutation<
     ExecuteResult,
     Error,
-    TeritoriSocialFeedWithdrawFundMutation
+    FuryaSocialFeedWithdrawFundMutation
   >(
     ({ client, args: { fee, memo, funds } = {} }) =>
       client.withdrawFund(fee, memo, funds),
     options
   );
 }
-export interface TeritoriSocialFeedUnlockTokensMutation {
-  client: TeritoriSocialFeedClient;
+export interface FuryaSocialFeedUnlockTokensMutation {
+  client: FuryaSocialFeedClient;
   msg: {
     amount: Uint128;
   };
@@ -489,12 +489,12 @@ export interface TeritoriSocialFeedUnlockTokensMutation {
     funds?: Coin[];
   };
 }
-export function useTeritoriSocialFeedUnlockTokensMutation(
+export function useFuryaSocialFeedUnlockTokensMutation(
   options?: Omit<
     UseMutationOptions<
       ExecuteResult,
       Error,
-      TeritoriSocialFeedUnlockTokensMutation
+      FuryaSocialFeedUnlockTokensMutation
     >,
     "mutationFn"
   >
@@ -502,27 +502,27 @@ export function useTeritoriSocialFeedUnlockTokensMutation(
   return useMutation<
     ExecuteResult,
     Error,
-    TeritoriSocialFeedUnlockTokensMutation
+    FuryaSocialFeedUnlockTokensMutation
   >(
     ({ client, msg, args: { fee, memo, funds } = {} }) =>
       client.unlockTokens(msg, fee, memo, funds),
     options
   );
 }
-export interface TeritoriSocialFeedLockTokensMutation {
-  client: TeritoriSocialFeedClient;
+export interface FuryaSocialFeedLockTokensMutation {
+  client: FuryaSocialFeedClient;
   args?: {
     fee?: number | StdFee | "auto";
     memo?: string;
     funds?: Coin[];
   };
 }
-export function useTeritoriSocialFeedLockTokensMutation(
+export function useFuryaSocialFeedLockTokensMutation(
   options?: Omit<
     UseMutationOptions<
       ExecuteResult,
       Error,
-      TeritoriSocialFeedLockTokensMutation
+      FuryaSocialFeedLockTokensMutation
     >,
     "mutationFn"
   >
@@ -530,15 +530,15 @@ export function useTeritoriSocialFeedLockTokensMutation(
   return useMutation<
     ExecuteResult,
     Error,
-    TeritoriSocialFeedLockTokensMutation
+    FuryaSocialFeedLockTokensMutation
   >(
     ({ client, args: { fee, memo, funds } = {} }) =>
       client.lockTokens(fee, memo, funds),
     options
   );
 }
-export interface TeritoriSocialFeedDeletePostMutation {
-  client: TeritoriSocialFeedClient;
+export interface FuryaSocialFeedDeletePostMutation {
+  client: FuryaSocialFeedClient;
   msg: {
     identifier: string;
   };
@@ -548,12 +548,12 @@ export interface TeritoriSocialFeedDeletePostMutation {
     funds?: Coin[];
   };
 }
-export function useTeritoriSocialFeedDeletePostMutation(
+export function useFuryaSocialFeedDeletePostMutation(
   options?: Omit<
     UseMutationOptions<
       ExecuteResult,
       Error,
-      TeritoriSocialFeedDeletePostMutation
+      FuryaSocialFeedDeletePostMutation
     >,
     "mutationFn"
   >
@@ -561,15 +561,15 @@ export function useTeritoriSocialFeedDeletePostMutation(
   return useMutation<
     ExecuteResult,
     Error,
-    TeritoriSocialFeedDeletePostMutation
+    FuryaSocialFeedDeletePostMutation
   >(
     ({ client, msg, args: { fee, memo, funds } = {} }) =>
       client.deletePost(msg, fee, memo, funds),
     options
   );
 }
-export interface TeritoriSocialFeedTipPostMutation {
-  client: TeritoriSocialFeedClient;
+export interface FuryaSocialFeedTipPostMutation {
+  client: FuryaSocialFeedClient;
   msg: {
     identifier: string;
   };
@@ -579,20 +579,20 @@ export interface TeritoriSocialFeedTipPostMutation {
     funds?: Coin[];
   };
 }
-export function useTeritoriSocialFeedTipPostMutation(
+export function useFuryaSocialFeedTipPostMutation(
   options?: Omit<
-    UseMutationOptions<ExecuteResult, Error, TeritoriSocialFeedTipPostMutation>,
+    UseMutationOptions<ExecuteResult, Error, FuryaSocialFeedTipPostMutation>,
     "mutationFn"
   >
 ) {
-  return useMutation<ExecuteResult, Error, TeritoriSocialFeedTipPostMutation>(
+  return useMutation<ExecuteResult, Error, FuryaSocialFeedTipPostMutation>(
     ({ client, msg, args: { fee, memo, funds } = {} }) =>
       client.tipPost(msg, fee, memo, funds),
     options
   );
 }
-export interface TeritoriSocialFeedReactPostMutation {
-  client: TeritoriSocialFeedClient;
+export interface FuryaSocialFeedReactPostMutation {
+  client: FuryaSocialFeedClient;
   msg: {
     icon: string;
     identifier: string;
@@ -604,24 +604,24 @@ export interface TeritoriSocialFeedReactPostMutation {
     funds?: Coin[];
   };
 }
-export function useTeritoriSocialFeedReactPostMutation(
+export function useFuryaSocialFeedReactPostMutation(
   options?: Omit<
     UseMutationOptions<
       ExecuteResult,
       Error,
-      TeritoriSocialFeedReactPostMutation
+      FuryaSocialFeedReactPostMutation
     >,
     "mutationFn"
   >
 ) {
-  return useMutation<ExecuteResult, Error, TeritoriSocialFeedReactPostMutation>(
+  return useMutation<ExecuteResult, Error, FuryaSocialFeedReactPostMutation>(
     ({ client, msg, args: { fee, memo, funds } = {} }) =>
       client.reactPost(msg, fee, memo, funds),
     options
   );
 }
-export interface TeritoriSocialFeedUpdatePostMutation {
-  client: TeritoriSocialFeedClient;
+export interface FuryaSocialFeedUpdatePostMutation {
+  client: FuryaSocialFeedClient;
   msg: {
     category: number;
     identifier: string;
@@ -633,12 +633,12 @@ export interface TeritoriSocialFeedUpdatePostMutation {
     funds?: Coin[];
   };
 }
-export function useTeritoriSocialFeedUpdatePostMutation(
+export function useFuryaSocialFeedUpdatePostMutation(
   options?: Omit<
     UseMutationOptions<
       ExecuteResult,
       Error,
-      TeritoriSocialFeedUpdatePostMutation
+      FuryaSocialFeedUpdatePostMutation
     >,
     "mutationFn"
   >
@@ -646,15 +646,15 @@ export function useTeritoriSocialFeedUpdatePostMutation(
   return useMutation<
     ExecuteResult,
     Error,
-    TeritoriSocialFeedUpdatePostMutation
+    FuryaSocialFeedUpdatePostMutation
   >(
     ({ client, msg, args: { fee, memo, funds } = {} }) =>
       client.updatePost(msg, fee, memo, funds),
     options
   );
 }
-export interface TeritoriSocialFeedCreatePostMutation {
-  client: TeritoriSocialFeedClient;
+export interface FuryaSocialFeedCreatePostMutation {
+  client: FuryaSocialFeedClient;
   msg: {
     category: number;
     identifier: string;
@@ -667,12 +667,12 @@ export interface TeritoriSocialFeedCreatePostMutation {
     funds?: Coin[];
   };
 }
-export function useTeritoriSocialFeedCreatePostMutation(
+export function useFuryaSocialFeedCreatePostMutation(
   options?: Omit<
     UseMutationOptions<
       ExecuteResult,
       Error,
-      TeritoriSocialFeedCreatePostMutation
+      FuryaSocialFeedCreatePostMutation
     >,
     "mutationFn"
   >
@@ -680,15 +680,15 @@ export function useTeritoriSocialFeedCreatePostMutation(
   return useMutation<
     ExecuteResult,
     Error,
-    TeritoriSocialFeedCreatePostMutation
+    FuryaSocialFeedCreatePostMutation
   >(
     ({ client, msg, args: { fee, memo, funds } = {} }) =>
       client.createPost(msg, fee, memo, funds),
     options
   );
 }
-export interface TeritoriSocialFeedAddFreePostsMutation {
-  client: TeritoriSocialFeedClient;
+export interface FuryaSocialFeedAddFreePostsMutation {
+  client: FuryaSocialFeedClient;
   msg: {
     freeCount: Uint128;
     wallets: string[];
@@ -699,12 +699,12 @@ export interface TeritoriSocialFeedAddFreePostsMutation {
     funds?: Coin[];
   };
 }
-export function useTeritoriSocialFeedAddFreePostsMutation(
+export function useFuryaSocialFeedAddFreePostsMutation(
   options?: Omit<
     UseMutationOptions<
       ExecuteResult,
       Error,
-      TeritoriSocialFeedAddFreePostsMutation
+      FuryaSocialFeedAddFreePostsMutation
     >,
     "mutationFn"
   >
@@ -712,15 +712,15 @@ export function useTeritoriSocialFeedAddFreePostsMutation(
   return useMutation<
     ExecuteResult,
     Error,
-    TeritoriSocialFeedAddFreePostsMutation
+    FuryaSocialFeedAddFreePostsMutation
   >(
     ({ client, msg, args: { fee, memo, funds } = {} }) =>
       client.addFreePosts(msg, fee, memo, funds),
     options
   );
 }
-export interface TeritoriSocialFeedUpdateFeeByCategoryMutation {
-  client: TeritoriSocialFeedClient;
+export interface FuryaSocialFeedUpdateFeeByCategoryMutation {
+  client: FuryaSocialFeedClient;
   msg: {
     category: number;
     fee: Uint128;
@@ -731,12 +731,12 @@ export interface TeritoriSocialFeedUpdateFeeByCategoryMutation {
     funds?: Coin[];
   };
 }
-export function useTeritoriSocialFeedUpdateFeeByCategoryMutation(
+export function useFuryaSocialFeedUpdateFeeByCategoryMutation(
   options?: Omit<
     UseMutationOptions<
       ExecuteResult,
       Error,
-      TeritoriSocialFeedUpdateFeeByCategoryMutation
+      FuryaSocialFeedUpdateFeeByCategoryMutation
     >,
     "mutationFn"
   >
@@ -744,15 +744,15 @@ export function useTeritoriSocialFeedUpdateFeeByCategoryMutation(
   return useMutation<
     ExecuteResult,
     Error,
-    TeritoriSocialFeedUpdateFeeByCategoryMutation
+    FuryaSocialFeedUpdateFeeByCategoryMutation
   >(
     ({ client, msg, args: { fee, memo, funds } = {} }) =>
       client.updateFeeByCategory(msg, fee, memo, funds),
     options
   );
 }
-export interface TeritoriSocialFeedUpdateConfigMutation {
-  client: TeritoriSocialFeedClient;
+export interface FuryaSocialFeedUpdateConfigMutation {
+  client: FuryaSocialFeedClient;
   msg: {
     owner?: string;
   };
@@ -762,12 +762,12 @@ export interface TeritoriSocialFeedUpdateConfigMutation {
     funds?: Coin[];
   };
 }
-export function useTeritoriSocialFeedUpdateConfigMutation(
+export function useFuryaSocialFeedUpdateConfigMutation(
   options?: Omit<
     UseMutationOptions<
       ExecuteResult,
       Error,
-      TeritoriSocialFeedUpdateConfigMutation
+      FuryaSocialFeedUpdateConfigMutation
     >,
     "mutationFn"
   >
@@ -775,7 +775,7 @@ export function useTeritoriSocialFeedUpdateConfigMutation(
   return useMutation<
     ExecuteResult,
     Error,
-    TeritoriSocialFeedUpdateConfigMutation
+    FuryaSocialFeedUpdateConfigMutation
   >(
     ({ client, msg, args: { fee, memo, funds } = {} }) =>
       client.updateConfig(msg, fee, memo, funds),

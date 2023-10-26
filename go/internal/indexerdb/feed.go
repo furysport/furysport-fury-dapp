@@ -1,7 +1,7 @@
 package indexerdb
 
 import (
-	"github.com/TERITORI/teritori-dapp/go/pkg/networks"
+	"github.com/furysport/furya-dapp/go/pkg/networks"
 )
 
 /*

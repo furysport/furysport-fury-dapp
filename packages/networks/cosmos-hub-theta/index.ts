@@ -16,7 +16,7 @@ export const cosmosThetaNetwork: NetworkInfo = {
   contractExplorer: "",
   idPrefix: "cosmtest",
   testnet: true,
-  backendEndpoint: "https://dapp-backend.testnet.teritori.com",
+  backendEndpoint: "https://dapp-backend.testnet.furya.com",
   addressPrefix: "cosmos",
   restEndpoint: "https://cosmos-testnet-rpc.allthatnode.com:1317",
   rpcEndpoint: "https://cosmos-testnet-rpc.allthatnode.com:26657",

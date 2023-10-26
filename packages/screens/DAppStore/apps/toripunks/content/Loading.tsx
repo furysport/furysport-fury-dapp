@@ -38,7 +38,7 @@ export const LoadingGame = () => {
           styleType="H2_DHBS_80"
           style={{ color: "#2AF191", transform: [{ rotate: "-1.69deg" }] }}
         >
-          we ARE TORIPUNKS
+          we ARE FURYPUNKS
         </Label>
         <Label
           styleType="T1_Bebas_20"

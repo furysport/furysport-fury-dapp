@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { GeneratedType, Registry } from "@cosmjs/proto-signing";
 import { MsgBurnTokens } from "./tx";
-export const registry: ReadonlyArray<[string, GeneratedType]> = [["/teritori.mint.v1beta1.MsgBurnTokens", MsgBurnTokens]];
+export const registry: ReadonlyArray<[string, GeneratedType]> = [["/furya.mint.v1beta1.MsgBurnTokens", MsgBurnTokens]];
 export const load = (protoRegistry: Registry) => {
   registry.forEach(([typeUrl, mod]) => {
     protoRegistry.register(typeUrl, mod);
@@ -11,7 +11,7 @@ export const MessageComposer = {
   encoded: {
     burnTokens(value: MsgBurnTokens) {
       return {
-        typeUrl: "/teritori.mint.v1beta1.MsgBurnTokens",
+        typeUrl: "/furya.mint.v1beta1.MsgBurnTokens",
         value: MsgBurnTokens.encode(value).finish()
       };
     }
@@ -19,7 +19,7 @@ export const MessageComposer = {
   withTypeUrl: {
     burnTokens(value: MsgBurnTokens) {
       return {
-        typeUrl: "/teritori.mint.v1beta1.MsgBurnTokens",
+        typeUrl: "/furya.mint.v1beta1.MsgBurnTokens",
         value
       };
     }
@@ -27,7 +27,7 @@ export const MessageComposer = {
   fromPartial: {
     burnTokens(value: MsgBurnTokens) {
       return {
-        typeUrl: "/teritori.mint.v1beta1.MsgBurnTokens",
+        typeUrl: "/furya.mint.v1beta1.MsgBurnTokens",
         value: MsgBurnTokens.fromPartial(value)
       };
     }

@@ -5,7 +5,7 @@ import { useBalances } from "../../../../../hooks/useBalances";
 import { ActionButton } from "../components/action-button/ActionButton";
 import { Button } from "../components/button/Button";
 import { ButtonLabel } from "../components/buttonLabel/ButtonLabel";
-import { BuyToripunksButton } from "../components/buttonLabel/BuyToripunksButton";
+import { BuyFurypunksButton } from "../components/buttonLabel/BuyFurypunksButton";
 import { Label } from "../components/label/Label";
 import { useContentContext } from "../context/ContentProvider";
 import {
@@ -14,7 +14,7 @@ import {
   useLastReward,
   useList,
   useProof,
-} from "../query/useToriData";
+} from "../query/useFuryData";
 
 const errorTypeMsg = {
   TICKET: {
@@ -47,7 +47,7 @@ export const Russian = () => {
   const [errorType, setErroType] = useState<
     "TICKET" | "NFT" | "TRANSACTION" | ""
   >("");
-  const [totalToriUser, setTotalToriUser] = useState<number>(0);
+  const [totalFuryUser, setTotalFuryUser] = useState<number>(0);
   const userTx = useRef<string>("");
   const [winning, setWinning] = useState<number>(0);
   const [losing, setLosing] = useState<number>(0);
@@ -57,8 +57,8 @@ export const Russian = () => {
     selectedWallet?.address
   );
   const {
-    data: userToriPunksList,
-    refetch: handleGetToriList,
+    data: userFuryPunksList,
+    refetch: handleGetFuryList,
     error,
   } = useList({
     selectedWallet,
@@ -67,7 +67,7 @@ export const Russian = () => {
   const { data: lastRewards, refetch: handleGetLasRewards } = useLastReward();
 
   const { data: buyTSC, mutate: handleBuyTicket } = useBuyTicket({
-    userTokens: [...(userToriPunksList as number[])],
+    userTokens: [...(userFuryPunksList as number[])],
     buyCount: bet,
     selectedWallet,
   });
@@ -78,20 +78,20 @@ export const Russian = () => {
   });
 
   useEffect(() => {
-    handleGetToriList && handleGetToriList();
+    handleGetFuryList && handleGetFuryList();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedWallet]);
 
-  const getUserToripunks = () => {
-    if (Array.isArray(userToriPunksList))
-      setTotalToriUser(userToriPunksList.length);
+  const getUserFurypunks = () => {
+    if (Array.isArray(userFuryPunksList))
+      setTotalFuryUser(userFuryPunksList.length);
     return 0;
   };
 
   useEffect(() => {
-    getUserToripunks();
+    getUserFurypunks();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userToriPunksList]);
+  }, [userFuryPunksList]);
 
   useEffect(() => {
     handleGetLasRewards();
@@ -118,30 +118,30 @@ export const Russian = () => {
   const buttonSize = isMinimunWindowWidth ? "S" : "Mobile";
 
   // replace with user data.
-  const userToripunks = totalToriUser;
+  const userFurypunks = totalFuryUser;
   const maxTicket = "10";
   const priceTicket = "1";
   const monthPriceTicket = lastRewards;
   const remainingUserTicket = remaningTicket;
-  const remainingUserCurrency = totalToriUser;
+  const remainingUserCurrency = totalFuryUser;
 
   // Button text
   const longButtonLabelText = result
     ? `${remainingUserTicket} remaining tickets in the russian roulette`
-    : `Last month's winnings per ticket = ${monthPriceTicket}$ TORI`;
+    : `Last month's winnings per ticket = ${monthPriceTicket}$ FURY`;
   const userInteractionInfo = result
     ? `You can still buy ${remainingUserCurrency} tickets`
-    : `${userToripunks} Toripunks in your wallet`;
+    : `${userFurypunks} Furypunks in your wallet`;
 
   const reArrangeTicketList = (tickets: { ticket_id: string }[]) => {
     return tickets.map((ticket: { ticket_id: string }) => ticket.ticket_id);
   };
 
-  const updateToriList = () => {
-    if (totalToriUser - bet <= 0) {
-      setTotalToriUser(0);
-    } else handleGetToriList && handleGetToriList();
-    // getUserToripunks();
+  const updateFuryList = () => {
+    if (totalFuryUser - bet <= 0) {
+      setTotalFuryUser(0);
+    } else handleGetFuryList && handleGetFuryList();
+    // getUserFurypunks();
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -158,7 +158,7 @@ export const Russian = () => {
 
       handleProofTransc({ tickets });
 
-      updateToriList();
+      updateFuryList();
       // eslint-disable-next-line no-unused-expressions
       setLoadingGame(false);
     }
@@ -183,10 +183,10 @@ export const Russian = () => {
     if (!bet) return;
     if (balance.length > 0) {
       if (
-        balance[0].denom === "utori" &&
+        balance[0].denom === "ufury" &&
         parseInt(balance[0].amount, 10) < bet * 1000000
       ) {
-        alert(`You need at least ${bet} TORI in your wallet to play.`);
+        alert(`You need at least ${bet} FURY in your wallet to play.`);
         return;
       }
     }
@@ -204,8 +204,8 @@ export const Russian = () => {
 
   const addBet = () => {
     const validateBet = bet + 1 > +maxTicket ? 10 : bet + 1;
-    if (totalToriUser === 0) return setErroType("TICKET");
-    if (validateBet <= totalToriUser) setBet(validateBet);
+    if (totalFuryUser === 0) return setErroType("TICKET");
+    if (validateBet <= totalFuryUser) setBet(validateBet);
   };
   const reduceBet = () => {
     const validateBet = bet - 1 < 0 ? 0 : bet - 1;
@@ -240,7 +240,7 @@ export const Russian = () => {
               marginTop: 60,
             }}
           >
-            <BuyToripunksButton size={buttonSize} />
+            <BuyFurypunksButton size={buttonSize} />
             <TouchableOpacity onPress={backHandler}>
               <ButtonLabel
                 text="BACK"
@@ -298,7 +298,7 @@ export const Russian = () => {
                     size={buttonSize}
                   />
                   <ButtonLabel
-                    text={`Ticket price = ${priceTicket} $TORI`}
+                    text={`Ticket price = ${priceTicket} $FURY`}
                     size={buttonSize}
                   />
                 </View>
@@ -315,7 +315,7 @@ export const Russian = () => {
                 }}
               >
                 <ButtonLabel text={userInteractionInfo} size={buttonSize} />
-                <BuyToripunksButton size={buttonSize} />
+                <BuyFurypunksButton size={buttonSize} />
               </View>
             </View>
             {/* Play View */}

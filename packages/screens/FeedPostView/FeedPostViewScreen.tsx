@@ -46,8 +46,8 @@ import {
   parseNetworkObjectId,
   parseUserId,
 } from "../../networks";
-import { gnoTeritoriNetwork } from "../../networks/gno-teritori";
-import { teritoriNetwork } from "../../networks/teritori";
+import { gnoFuryaNetwork } from "../../networks/gno-furya";
+import { furyaNetwork } from "../../networks/furya";
 import { ScreenFC, useAppNavigation } from "../../utils/navigation";
 import { DEFAULT_USERNAME } from "../../utils/social-feed";
 import { primaryColor } from "../../utils/style/colors";
@@ -69,14 +69,14 @@ export const FeedPostViewScreen: ScreenFC<"FeedPostView"> = ({
 
   let [network, postId] = parseNetworkObjectId(id);
   if (!network) {
-    // fallback to teritori or gno network if there is no network prefix in the id
+    // fallback to furya or gno network if there is no network prefix in the id
     if (id.includes("-")) {
-      // teritori ids are uuids
-      network = teritoriNetwork;
+      // furya ids are uuids
+      network = furyaNetwork;
       postId = id;
     } else {
       // gno ids are integers
-      network = gnoTeritoriNetwork;
+      network = gnoFuryaNetwork;
       postId = id;
     }
   }

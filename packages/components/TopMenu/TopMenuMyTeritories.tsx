@@ -28,15 +28,15 @@ type FakeOrg = {
   tag: string;
 };
 const fakeOrgs: FakeOrg[] = [
-  { name: "GNOPUNKS", tag: "@GNOPUNKS.teritori", image: orgGnoPunksPNG },
+  { name: "GNOPUNKS", tag: "@GNOPUNKS.furya", image: orgGnoPunksPNG },
   {
     name: "Jungle Defenders",
-    tag: "@JungleDefenders.teritori",
+    tag: "@JungleDefenders.furya",
     image: orgJungleDefendersPNG,
   },
-  { name: "Fake 3", tag: "@JungleDefenders.teritori", image: orgGnoPunksPNG },
-  { name: "Fake 4", tag: "@sqfsf.teritori", image: orgJungleDefendersPNG },
-  { name: "Fake 5", tag: "@FGDGDG_sgdgdgdi.teritori", image: orgGnoPunksPNG },
+  { name: "Fake 3", tag: "@JungleDefenders.furya", image: orgGnoPunksPNG },
+  { name: "Fake 4", tag: "@sqfsf.furya", image: orgJungleDefendersPNG },
+  { name: "Fake 5", tag: "@FGDGDG_sgdgdgdi.furya", image: orgGnoPunksPNG },
 ];
 
 const OrgCard: React.FC<{ organization: FakeOrg }> = ({ organization }) => {
@@ -85,9 +85,9 @@ const OrgsComingSoon: React.FC = () => (
 
 //TODO: Remove CustomPressable and OrgsComingSoon when the Multisig feature is available
 
-export const TopMenuMyTeritories: React.FC = () => {
+export const TopMenuMyFuryaes: React.FC = () => {
   return (
-    <TopMenuSection title="My Teritories" isCarousel>
+    <TopMenuSection title="My Furyaes" isCarousel>
       <CustomPressable>
         {({ hovered }) => (
           <>

@@ -8,12 +8,12 @@ import { CopyToClipboard } from "../../components/CopyToClipboard";
 import { PrimaryButton } from "../../components/buttons/PrimaryButton";
 import { SecondaryButton } from "../../components/buttons/SecondaryButton";
 import ModalBase from "../../components/modals/ModalBase";
-import { TNSSendFundsModal } from "../../components/modals/teritoriNameService/TNSSendFundsModal";
-import { NameData } from "../../components/teritoriNameService/NameData";
-import { NameNFT } from "../../components/teritoriNameService/NameNFT";
+import { TNSSendFundsModal } from "../../components/modals/furyaNameService/TNSSendFundsModal";
+import { NameData } from "../../components/furyaNameService/NameData";
+import { NameNFT } from "../../components/furyaNameService/NameNFT";
 import { useFeedbacks } from "../../context/FeedbacksProvider";
 import { useTNS } from "../../context/TNSProvider";
-import { TeritoriNameServiceClient } from "../../contracts-clients/teritori-name-service/TeritoriNameService.client";
+import { FuryaNameServiceClient } from "../../contracts-clients/furya-name-service/FuryaNameService.client";
 import { useDAOs } from "../../hooks/dao/useDAOs";
 import { useIsKeplrConnected } from "../../hooks/useIsKeplrConnected";
 import { useIsLeapConnected } from "../../hooks/useIsLeapConnected";
@@ -146,7 +146,7 @@ const OwnerActions: React.FC<{
               ) {
                 throw new Error("network not supported");
               }
-              const client = new TeritoriNameServiceClient(
+              const client = new FuryaNameServiceClient(
                 await getKeplrSigningCosmWasmClient(network.id),
                 wallet?.address || "",
                 network.nameServiceContractAddress

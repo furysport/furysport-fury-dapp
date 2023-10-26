@@ -9,7 +9,7 @@ export const createRPCQueryClient = async ({
   const tmClient = await Tendermint34Client.connect(rpcEndpoint);
   const client = new QueryClient(tmClient);
   return {
-    teritori: {
+    furya: {
       airdrop: {
         v1beta1: (await import("./airdrop/v1beta1/query.rpc.Query")).createRpcQueryExtension(client)
       },

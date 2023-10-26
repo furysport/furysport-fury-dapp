@@ -21,7 +21,7 @@ import * as _29 from "./mint/v1beta1/tx.rpc.msg";
 import * as _30 from "./lcd";
 import * as _31 from "./rpc.query";
 import * as _32 from "./rpc.tx";
-export namespace teritori {
+export namespace furya {
   export namespace airdrop {
     export const v1beta1 = {
       ..._11,

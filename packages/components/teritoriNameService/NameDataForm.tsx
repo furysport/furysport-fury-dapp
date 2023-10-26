@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View } from "react-native";
 
-import { Metadata } from "../../contracts-clients/teritori-name-service/TeritoriNameService.types";
+import { Metadata } from "../../contracts-clients/furya-name-service/FuryaNameService.types";
 import { neutral17, neutral77 } from "../../utils/style/colors";
 import { BrandText } from "../BrandText";
 import { ExternalLink } from "../ExternalLink";

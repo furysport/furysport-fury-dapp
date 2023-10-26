@@ -9,7 +9,7 @@ export const createLCDClient = async ({
     restEndpoint
   });
   return {
-    teritori: {
+    furya: {
       airdrop: {
         v1beta1: new (await import("./airdrop/v1beta1/query.lcd")).LCDQueryClient({
           requestClient

@@ -47,7 +47,7 @@ export const useGiganticHistoryData = ({
       initialData: [
         {
           date: "00/0000",
-          toriWon: 0,
+          furyWon: 0,
         },
       ],
       refetchOnMount: false,

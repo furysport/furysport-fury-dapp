@@ -6,8 +6,8 @@
 
 import { CosmWasmClient, SigningCosmWasmClient, ExecuteResult } from "@cosmjs/cosmwasm-stargate";
 import { Coin, StdFee } from "@cosmjs/amino";
-import { Addr, ConfigResponse, Config, Cw721HookMsg, ExecuteMsg, Uint128, RewardInfo, InstantiateMsg, QueryMsg, ReportAmountResponse, TotalClaimableResponse, UserClaimableResponse } from "./TeritoriDistributor.types";
-export interface TeritoriDistributorReadOnlyInterface {
+import { Addr, ConfigResponse, Config, Cw721HookMsg, ExecuteMsg, Uint128, RewardInfo, InstantiateMsg, QueryMsg, ReportAmountResponse, TotalClaimableResponse, UserClaimableResponse } from "./FuryaDistributor.types";
+export interface FuryaDistributorReadOnlyInterface {
   contractAddress: string;
   config: () => Promise<ConfigResponse>;
   totalClaimable: () => Promise<TotalClaimableResponse>;
@@ -24,7 +24,7 @@ export interface TeritoriDistributorReadOnlyInterface {
     reportId: number;
   }) => Promise<ReportAmountResponse>;
 }
-export class TeritoriDistributorQueryClient implements TeritoriDistributorReadOnlyInterface {
+export class FuryaDistributorQueryClient implements FuryaDistributorReadOnlyInterface {
   client: CosmWasmClient;
   contractAddress: string;
 
@@ -73,7 +73,7 @@ export class TeritoriDistributorQueryClient implements TeritoriDistributorReadOn
     });
   };
 }
-export interface TeritoriDistributorInterface extends TeritoriDistributorReadOnlyInterface {
+export interface FuryaDistributorInterface extends FuryaDistributorReadOnlyInterface {
   contractAddress: string;
   sender: string;
   updateConfig: ({
@@ -90,7 +90,7 @@ export interface TeritoriDistributorInterface extends TeritoriDistributorReadOnl
   }, fee?: number | StdFee | "auto", memo?: string, funds?: Coin[]) => Promise<ExecuteResult>;
   claim: (fee?: number | StdFee | "auto", memo?: string, funds?: Coin[]) => Promise<ExecuteResult>;
 }
-export class TeritoriDistributorClient extends TeritoriDistributorQueryClient implements TeritoriDistributorInterface {
+export class FuryaDistributorClient extends FuryaDistributorQueryClient implements FuryaDistributorInterface {
   client: SigningCosmWasmClient;
   sender: string;
   contractAddress: string;

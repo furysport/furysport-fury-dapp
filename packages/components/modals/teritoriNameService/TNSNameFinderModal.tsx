@@ -14,7 +14,7 @@ import { PrimaryButton } from "../../buttons/PrimaryButton";
 import { TextInputCustom } from "../../inputs/TextInputCustom";
 import ModalBase from "../ModalBase";
 
-const AVAILABLE_DOMAINS = [".tori"];
+const AVAILABLE_DOMAINS = [".fury"];
 const COMING_SOON_DOMAINS = [".rioter"];
 
 const DomainsAvailability = () => {

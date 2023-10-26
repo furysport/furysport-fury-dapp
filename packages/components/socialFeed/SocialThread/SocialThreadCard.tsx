@@ -8,7 +8,7 @@ import addThreadSVG from "../../../../assets/icons/add-thread.svg";
 import { Post } from "../../../api/feed/v1/feed";
 import { signingSocialFeedClient } from "../../../client-creators/socialFeedClient";
 import { useFeedbacks } from "../../../context/FeedbacksProvider";
-import { useTeritoriSocialFeedReactPostMutation } from "../../../contracts-clients/teritori-social-feed/TeritoriSocialFeed.react-query";
+import { useFuryaSocialFeedReactPostMutation } from "../../../contracts-clients/furya-social-feed/FuryaSocialFeed.react-query";
 import { useGetBanPostProposals } from "../../../hooks/feed/useBanPostProposals";
 import { useNSUserInfo } from "../../../hooks/useNSUserInfo";
 import { useSelectedNetworkInfo } from "../../../hooks/useSelectedNetwork";
@@ -58,7 +58,7 @@ import { ReplyButton } from "../SocialActions/ReplyButton";
 import { ShareButton } from "../SocialActions/ShareButton";
 import { SocialThreadGovernance } from "../SocialActions/SocialThreadGovernance";
 import { TipButton } from "../SocialActions/TipButton";
-import { TERITORI_FEED_ID } from "../const";
+import { FURYA_FEED_ID } from "../const";
 import { FlagConfirmModal } from "../modals/FlagConfirmModal";
 import { FlagConfirmedModal } from "../modals/FlagConfirmedModal";
 import { FlagDetailsModal } from "../modals/FlagDetailsModal";
@@ -94,7 +94,7 @@ export const SocialThreadCard: React.FC<{
   const [localPost, setLocalPost] = useState<Post>(post);
   const [viewWidth, setViewWidth] = useState(0);
   const { mutate: postMutate, isLoading: isPostMutationLoading } =
-    useTeritoriSocialFeedReactPostMutation({
+    useFuryaSocialFeedReactPostMutation({
       onSuccess(_data, variables) {
         const reactions = getUpdatedReactions(
           post.reactions,
@@ -163,7 +163,7 @@ export const SocialThreadCard: React.FC<{
       send: "",
       pkg_path: gnoNetwork.socialFeedsPkgPath,
       func: "ReactPost",
-      args: [TERITORI_FEED_ID, localPost.identifier, emoji, "true"],
+      args: [FURYA_FEED_ID, localPost.identifier, emoji, "true"],
     };
 
     const txHash = await adenaDoContract(
@@ -272,9 +272,9 @@ export const SocialThreadCard: React.FC<{
 
     try {
       const msg: GnoBanPostMessage = {
-        type: "gno.land/r/demo/teritori/social_feeds.BanPost",
+        type: "gno.land/r/demo/furya/social_feeds.BanPost",
         payload: {
-          feedId: +TERITORI_FEED_ID,
+          feedId: +FURYA_FEED_ID,
           postId: +localPost.identifier,
           reason: `Flag the post: ${localPost.identifier}`,
         },

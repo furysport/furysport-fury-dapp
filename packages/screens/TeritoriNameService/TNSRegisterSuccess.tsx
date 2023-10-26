@@ -5,7 +5,7 @@ import twitterSVG from "../../../assets/icons/twitter.svg";
 import { BrandText } from "../../components/BrandText";
 import { SocialButton } from "../../components/buttons/SocialButton";
 import ModalBase from "../../components/modals/ModalBase";
-import { NameNFT } from "../../components/teritoriNameService/NameNFT";
+import { NameNFT } from "../../components/furyaNameService/NameNFT";
 import { useTNS } from "../../context/TNSProvider";
 import { useSelectedNetworkId } from "../../hooks/useSelectedNetwork";
 import useSelectedWallet from "../../hooks/useSelectedWallet";
@@ -20,10 +20,10 @@ const Footer: React.FC<{ tokenId: string }> = ({ tokenId }) => {
       text: "Twitter",
       iconSvg: twitterSVG,
       onPress: () => {
-        const message = `I just acquired my '${tokenId}' handle on @TeritoriNetwork, which will allow me to use the decentralized Social Hub! ⛩️
+        const message = `I just acquired my '${tokenId}' handle on @FuryaNetwork, which will allow me to use the decentralized Social Hub! ⛩️
 Alpha v0.1 is live 🔥
-${window.location.origin}/user/tori-${selectedWallet?.address}
-#Teritori #Alpha #SocialHub #Cosmos #IBCGang`;
+${window.location.origin}/user/fury-${selectedWallet?.address}
+#Furya #Alpha #SocialHub #Cosmos #IBCGang`;
         Linking.openURL(
           `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}`
         );

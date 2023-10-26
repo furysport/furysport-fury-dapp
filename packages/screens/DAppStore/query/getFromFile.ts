@@ -9,7 +9,7 @@ import messages from "../../../../assets/icons/messages.svg";
 import multisig from "../../../../assets/icons/multisig.svg";
 import musicplayer from "../../../../assets/icons/musicplayer.svg";
 import osmosisSVG from "../../../../assets/icons/networks/osmosis.svg";
-import teritoriSVG from "../../../../assets/icons/networks/teritori.svg";
+import furyaSVG from "../../../../assets/icons/networks/furya.svg";
 import pathwar from "../../../../assets/icons/pathwar.svg";
 import otherAppsIcon from "../../../../assets/icons/random-goods-icon.svg";
 import riot from "../../../../assets/icons/rioters-game.svg";
@@ -28,16 +28,16 @@ import foxyRaffle from "../../../../assets/logos/sfoxy.png";
 import skip from "../../../../assets/logos/skip.png";
 import subdao from "../../../../assets/logos/subdao.png";
 import theGraph from "../../../../assets/logos/theGraph.png";
-import toripunks from "../../../../assets/logos/toniPunks.png";
+import furypunks from "../../../../assets/logos/toniPunks.png";
 import uniswap from "../../../../assets/logos/uniswap.png";
 import { dAppGroup } from "../types";
 
 export function getAvailableApps(): dAppGroup {
   return {
-    "teritori-core-apps": {
-      id: "teritori-core-apps",
-      groupName: "Teritori Core dApps",
-      icon: teritoriSVG,
+    "furya-core-apps": {
+      id: "furya-core-apps",
+      groupName: "Furya Core dApps",
+      icon: furyaSVG,
       active: true,
       options: {
         marketplace: {
@@ -46,7 +46,7 @@ export function getAvailableApps(): dAppGroup {
           description: "NFT Marketplace",
           icon: marketplace,
           route: "Marketplace",
-          groupKey: "teritori-core-apps",
+          groupKey: "furya-core-apps",
           selectedByDefault: true,
           alwaysOn: true,
         },
@@ -56,17 +56,17 @@ export function getAvailableApps(): dAppGroup {
           description: "Multi Network NFT Launcher",
           icon: launchpad,
           route: "Launchpad",
-          groupKey: "teritori-core-apps",
+          groupKey: "furya-core-apps",
           selectedByDefault: true,
           alwaysOn: true,
         },
         namespace: {
           id: "namespace",
           title: "Name Service",
-          description: "Teritori Name Service",
+          description: "Furya Name Service",
           icon: tnsService,
           route: "TNSHome",
-          groupKey: "teritori-core-apps",
+          groupKey: "furya-core-apps",
           selectedByDefault: true,
           alwaysOn: true,
         },
@@ -76,7 +76,7 @@ export function getAvailableApps(): dAppGroup {
           description: "Wallet",
           icon: wallet,
           route: "WalletManager",
-          groupKey: "teritori-core-apps",
+          groupKey: "furya-core-apps",
           selectedByDefault: true,
           alwaysOn: true,
         },
@@ -86,7 +86,7 @@ export function getAvailableApps(): dAppGroup {
           description: "Staking",
           icon: staking,
           route: "Staking",
-          groupKey: "teritori-core-apps",
+          groupKey: "furya-core-apps",
           selectedByDefault: true,
           alwaysOn: false,
         },
@@ -96,7 +96,7 @@ export function getAvailableApps(): dAppGroup {
           description: "Governance",
           icon: governance,
           route: "Governance",
-          groupKey: "teritori-core-apps",
+          groupKey: "furya-core-apps",
           selectedByDefault: true,
           alwaysOn: false,
         },
@@ -106,7 +106,7 @@ export function getAvailableApps(): dAppGroup {
           description: "Decentralized Autonomous Organizations",
           icon: dao,
           route: "Organizations",
-          groupKey: "teritori-core-apps",
+          groupKey: "furya-core-apps",
           selectedByDefault: false,
           alwaysOn: false,
         },
@@ -116,7 +116,7 @@ export function getAvailableApps(): dAppGroup {
           description: "Secure your assets",
           icon: multisig,
           route: "Multisig",
-          groupKey: "teritori-core-apps",
+          groupKey: "furya-core-apps",
           selectedByDefault: true,
           alwaysOn: false,
         },
@@ -158,12 +158,12 @@ export function getAvailableApps(): dAppGroup {
           selectedByDefault: true,
           alwaysOn: true,
         },
-        toripunks: {
-          id: "toripunks",
-          title: "Toripunks dApp",
-          icon: toripunks,
+        furypunks: {
+          id: "furypunks",
+          title: "Furypunks dApp",
+          icon: furypunks,
           description: "Enter the Bar, play games. punks!",
-          route: "ToriPunks",
+          route: "FuryPunks",
           groupKey: "top-apps",
           selectedByDefault: false,
           alwaysOn: false,

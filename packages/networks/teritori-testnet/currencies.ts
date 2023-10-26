@@ -1,15 +1,15 @@
-import { currencyTORIcolor } from "../../utils/style/colors";
+import { currencyFURYcolor } from "../../utils/style/colors";
 import { CurrencyInfo } from "../types";
 
-export const teritoriTestnetCurrencies: CurrencyInfo[] = [
+export const furyaTestnetCurrencies: CurrencyInfo[] = [
   {
-    denom: "utori",
-    displayName: "TORI",
+    denom: "ufury",
+    displayName: "FURY",
     decimals: 6,
-    coingeckoId: "teritori",
-    icon: "icons/networks/teritori-circle.svg",
+    coingeckoId: "fanfury",
+    icon: "icons/networks/furya-circle.svg",
     kind: "native",
-    color: currencyTORIcolor,
+    color: currencyFURYcolor,
   },
   {
     kind: "ibc",

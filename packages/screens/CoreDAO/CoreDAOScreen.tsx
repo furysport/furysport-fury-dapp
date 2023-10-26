@@ -2,14 +2,14 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { View } from "react-native";
 
-import { Coin } from "../../api/teritori-chain/cosmos/base/v1beta1/coin";
-import { MsgBurnTokens } from "../../api/teritori-chain/teritori/mint/v1beta1/tx";
+import { Coin } from "../../api/furya-chain/cosmos/base/v1beta1/coin";
+import { MsgBurnTokens } from "../../api/furya-chain/furya/mint/v1beta1/tx";
 import { BrandText } from "../../components/BrandText";
 import { ScreenContainer } from "../../components/ScreenContainer";
 import { PrimaryButton } from "../../components/buttons/PrimaryButton";
 import { SpacerColumn } from "../../components/spacer";
 import { useFeedbacks } from "../../context/FeedbacksProvider";
-import { TeritoriNameServiceQueryClient } from "../../contracts-clients/teritori-name-service/TeritoriNameService.client";
+import { FuryaNameServiceQueryClient } from "../../contracts-clients/furya-name-service/FuryaNameService.client";
 import { useDAOMakeProposal } from "../../hooks/dao/useDAOMakeProposal";
 import { useFeedConfig } from "../../hooks/feed/useFeedConfig";
 import { useBalances } from "../../hooks/useBalances";
@@ -65,7 +65,7 @@ const DAOManager: React.FC = () => {
         );
       })}
       <PrimaryButton
-        text="Burn your TORI"
+        text="Burn your FURY"
         loader
         onPress={async () => {
           if (!selectedWallet?.address) {
@@ -78,7 +78,7 @@ const DAOManager: React.FC = () => {
             sender: selectedWallet?.address,
             amount: [
               Buffer.from(
-                Coin.encode({ amount: "1000000", denom: "utori" }).finish()
+                Coin.encode({ amount: "1000000", denom: "ufury" }).finish()
               ).toString(),
             ],
           };
@@ -86,7 +86,7 @@ const DAOManager: React.FC = () => {
             selectedWallet?.address,
             [
               {
-                typeUrl: "/teritori.mint.v1beta1.MsgBurnTokens",
+                typeUrl: "/furya.mint.v1beta1.MsgBurnTokens",
                 value: burnMsg,
               },
             ],
@@ -95,7 +95,7 @@ const DAOManager: React.FC = () => {
         }}
       />
       <PrimaryButton
-        text="Burn a TORI"
+        text="Burn a FURY"
         loader
         onPress={async () => {
           if (!network?.coreDAOAddress) {
@@ -110,18 +110,18 @@ const DAOManager: React.FC = () => {
             sender: network.coreDAOAddress,
             amount: [
               Buffer.from(
-                Coin.encode({ amount: "1000000", denom: "utori" }).finish()
+                Coin.encode({ amount: "1000000", denom: "ufury" }).finish()
               ).toString(),
             ],
           };
 
           await makeProposal(selectedWallet?.address, {
-            title: "Burn a TORI",
+            title: "Burn a FURY",
             description: "",
             msgs: [
               {
                 stargate: {
-                  type_url: "/teritori.mint.v1beta1.MsgBurnTokens",
+                  type_url: "/furya.mint.v1beta1.MsgBurnTokens",
                   value: Buffer.from(
                     MsgBurnTokens.encode(burnMsg).finish()
                   ).toString("base64"),
@@ -200,7 +200,7 @@ const NameServiceManager: React.FC<{ networkId: string }> = ({ networkId }) => {
       if (!network?.nameServiceContractAddress) {
         return undefined;
       }
-      const client = new TeritoriNameServiceQueryClient(
+      const client = new FuryaNameServiceQueryClient(
         await mustGetNonSigningCosmWasmClient(networkId),
         network.nameServiceContractAddress
       );

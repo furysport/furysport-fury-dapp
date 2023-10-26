@@ -8,8 +8,8 @@ import { FightSquadSection } from "./FightSquadSection";
 import { UnstakeModal } from "./UnstakeModal";
 import FlexRow from "../../../components/FlexRow";
 import { useFeedbacks } from "../../../context/FeedbacksProvider";
-import { TeritoriNftQueryClient } from "../../../contracts-clients/teritori-nft/TeritoriNft.client";
-import { Squad } from "../../../contracts-clients/teritori-squad-staking/TeritoriSquadStaking.types";
+import { FuryaNftQueryClient } from "../../../contracts-clients/furya-nft/FuryaNft.client";
+import { Squad } from "../../../contracts-clients/furya-squad-staking/FuryaSquadStaking.types";
 import useSelectedWallet from "../../../hooks/useSelectedWallet";
 import { mustGetNonSigningCosmWasmClient } from "../../../networks";
 import { squadWithdraw } from "../../../utils/game";
@@ -52,7 +52,7 @@ export const FightSection: React.FC<FightSectionProps> = ({
 
       const nftInfos = await Promise.all(
         squad.nfts.map(async (nft) => {
-          const nftClient = new TeritoriNftQueryClient(
+          const nftClient = new FuryaNftQueryClient(
             cosmwasmClient,
             nft.contract_addr
           );

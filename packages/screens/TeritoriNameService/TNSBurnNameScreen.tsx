@@ -8,10 +8,10 @@ import { BrandText } from "../../components/BrandText";
 import { SVG } from "../../components/SVG";
 import { SecondaryButton } from "../../components/buttons/SecondaryButton";
 import ModalBase from "../../components/modals/ModalBase";
-import { NameNFT } from "../../components/teritoriNameService/NameNFT";
+import { NameNFT } from "../../components/furyaNameService/NameNFT";
 import { useFeedbacks } from "../../context/FeedbacksProvider";
 import { useTNS } from "../../context/TNSProvider";
-import { TeritoriNameServiceClient } from "../../contracts-clients/teritori-name-service/TeritoriNameService.client";
+import { FuryaNameServiceClient } from "../../contracts-clients/furya-name-service/FuryaNameService.client";
 import { nsNameInfoQueryKey } from "../../hooks/useNSNameInfo";
 import { useNSTokensByOwner } from "../../hooks/useNSTokensByOwner";
 import useSelectedWallet from "../../hooks/useSelectedWallet";
@@ -59,7 +59,7 @@ export const TNSBurnNameScreen: React.FC<TNSBurnNameScreenProps> = ({
 
       const signingClient = await getKeplrSigningCosmWasmClient(network.id);
 
-      const nsClient = new TeritoriNameServiceClient(
+      const nsClient = new FuryaNameServiceClient(
         signingClient,
         walletAddress,
         network.nameServiceContractAddress

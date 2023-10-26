@@ -1,8 +1,8 @@
 import detectEthereumProvider from "@metamask/detect-provider";
 import { ethers } from "ethers";
 
-import { TeritoriMinter__factory } from "./../evm-contracts-clients/teritori-bunker-minter/TeritoriMinter__factory";
-import { TeritoriNft__factory } from "./../evm-contracts-clients/teritori-nft/TeritoriNft__factory";
+import { FuryaMinter__factory } from "./../evm-contracts-clients/furya-bunker-minter/FuryaMinter__factory";
+import { FuryaNft__factory } from "./../evm-contracts-clients/furya-nft/FuryaNft__factory";
 import { ipfsURLToHTTPURL } from "./ipfs";
 import { Attribute, Collection, NFT } from "../api/marketplace/v1/marketplace";
 import {
@@ -126,7 +126,7 @@ const addNftMetadata = async (nft: NFT) => {
 
   const provider = await getEthereumProvider(network);
 
-  const nftClient = TeritoriNft__factory.connect(
+  const nftClient = FuryaNft__factory.connect(
     nft.nftContractAddress,
     provider
   );
@@ -168,9 +168,9 @@ const getCollectionMetadata = async (collectionId: string) => {
   const provider = await getEthereumProvider(network);
   if (!provider) return;
 
-  const minterClient = TeritoriMinter__factory.connect(minter, provider);
+  const minterClient = FuryaMinter__factory.connect(minter, provider);
   const nftAddress = await minterClient.callStatic.nft();
-  const nftClient = TeritoriNft__factory.connect(nftAddress, provider);
+  const nftClient = FuryaNft__factory.connect(nftAddress, provider);
   const contractURI = await nftClient.callStatic.contractURI();
   const reply = await fetch(contractURI);
   return reply.json();

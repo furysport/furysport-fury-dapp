@@ -9,12 +9,12 @@ import (
 	"time"
 	"unicode"
 
-	"github.com/TERITORI/teritori-dapp/go/internal/indexerdb"
-	"github.com/TERITORI/teritori-dapp/go/internal/indexerhandler"
-	"github.com/TERITORI/teritori-dapp/go/pkg/networks"
-	"github.com/TERITORI/teritori-dapp/go/pkg/pricespb"
-	"github.com/TERITORI/teritori-dapp/go/pkg/quests"
-	"github.com/TERITORI/teritori-dapp/go/pkg/tmws"
+	"github.com/furysport/furya-dapp/go/internal/indexerdb"
+	"github.com/furysport/furya-dapp/go/internal/indexerhandler"
+	"github.com/furysport/furya-dapp/go/pkg/networks"
+	"github.com/furysport/furya-dapp/go/pkg/pricespb"
+	"github.com/furysport/furya-dapp/go/pkg/quests"
+	"github.com/furysport/furya-dapp/go/pkg/tmws"
 	"github.com/allegro/bigcache/v3"
 	"github.com/peterbourgon/ff/v3"
 	"github.com/pkg/errors"
@@ -34,12 +34,12 @@ type ReplayInfo struct {
 
 func main() {
 	// handle args
-	fs := flag.NewFlagSet("teritori-indexer", flag.ContinueOnError)
+	fs := flag.NewFlagSet("furya-indexer", flag.ContinueOnError)
 	var (
 		chunkSize                   = fs.Int64("chunk-size", 10000, "maximum number of blocks to query from tendermint at once")
 		txsBatchSize                = fs.Int("txs-batch-size", 10000, "maximum number of txs per query page")
 		pollDelay                   = fs.Duration("poll-delay", 2*time.Second, "delay between tail queries")
-		minterCodeIDs               = fs.String("teritori-minter-code-ids", "", "code ids of teritori minter contracts")
+		minterCodeIDs               = fs.String("furya-minter-code-ids", "", "code ids of furya minter contracts")
 		dbHost                      = fs.String("db-indexer-host", "", "host postgreSQL database")
 		dbPort                      = fs.String("db-indexer-port", "", "port for postgreSQL database")
 		dbPass                      = fs.String("postgres-password", "", "password for postgreSQL database")
@@ -50,7 +50,7 @@ func main() {
 		pricesServiceURI            = fs.String("prices-service-uri", "localhost:9091", "price service URI")
 		insecurePrices              = fs.Bool("prices-insecure-grpc", false, "do not use TLS to connect to prices service")
 		networksFile                = fs.String("networks-file", "networks.json", "path to networks config file")
-		networkID                   = fs.String("indexer-network-id", "teritori", "network id to index")
+		networkID                   = fs.String("indexer-network-id", "furya", "network id to index")
 	)
 	if err := ff.Parse(fs, os.Args[1:],
 		ff.WithEnvVars(),
@@ -101,7 +101,7 @@ func main() {
 		/*{
 			StartHeight:       0,
 			FinalHeight:       1154235,
-			WebsocketEndpoint: "wss://teritorid.65.108.73.219.nip.io/rpc/websocket",
+			WebsocketEndpoint: "wss://furyad.65.108.73.219.nip.io/rpc/websocket",
 		},*/
 		{
 			//StartHeight:       1154236,

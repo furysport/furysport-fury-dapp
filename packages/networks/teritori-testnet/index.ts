@@ -1,18 +1,18 @@
-import { teritoriTestnetCurrencies } from "./currencies";
+import { furyaTestnetCurrencies } from "./currencies";
 import { NetworkFeature, NetworkInfo, NetworkKind } from "../types";
 
 const nameServiceContractAddress =
-  "tori18etjzrma5604af50jjklk3wlkqcsxdrvmy6jzw5naw2t7kyv4rys3kpwky";
+  "furya18etjzrma5604af50jjklk3wlkqcsxdrvmy6jzw5naw2t7kyv4rysh2n3ra";
 
 const riotContractAddressGen1 =
-  "tori1afwrcs58afaka6ltynevwcvq8zhejr3ssn703c0hky5emh890vzsry5wp5";
+  "furya1afwrcs58afaka6ltynevwcvq8zhejr3ssn703c0hky5emh890vzs9cx35d";
 
-export const teritoriTestnetNetwork: NetworkInfo = {
-  id: "teritori-testnet",
+export const furyaTestnetNetwork: NetworkInfo = {
+  id: "furya-testnet",
   kind: NetworkKind.Cosmos,
-  chainId: "teritori-testnet-v3",
-  displayName: "Teritori Testnet",
-  icon: "icons/networks/teritori.svg",
+  chainId: "furya-testnet-v3",
+  displayName: "Furya Testnet",
+  icon: "icons/networks/furya.svg",
   features: [
     NetworkFeature.NFTMarketplace,
     NetworkFeature.Organizations,
@@ -23,19 +23,19 @@ export const teritoriTestnetNetwork: NetworkInfo = {
     NetworkFeature.NFTLaunchpad,
     NetworkFeature.RiotP2E,
   ],
-  currencies: teritoriTestnetCurrencies,
-  txExplorer: "https://explorer.teritori.com/teritori-testnet/tx/$hash",
+  currencies: furyaTestnetCurrencies,
+  txExplorer: "https://explorer.furya.com/furya-testnet/tx/$hash",
   accountExplorer:
-    "https://explorer.teritori.com/teritori-testnet/account/$address",
+    "https://explorer.furya.com/furya-testnet/account/$address",
   contractExplorer:
-    "https://explorer.teritori.com/teritori-testnet/account/$address",
-  idPrefix: "testori",
+    "https://explorer.furya.com/furya-testnet/account/$address",
+  idPrefix: "testfury",
   testnet: true,
-  backendEndpoint: "https://dapp-backend.testnet.teritori.com",
-  addressPrefix: "tori",
-  restEndpoint: "https://rest.testnet.teritori.com",
-  rpcEndpoint: "https://rpc.testnet.teritori.com",
-  stakeCurrency: "utori",
+  backendEndpoint: "https://dapp-backend.testnet.furya.com",
+  addressPrefix: "furya",
+  restEndpoint: "https://rest.testnet.furya.com",
+  rpcEndpoint: "https://rpc.testnet.furya.com",
+  stakeCurrency: "ufury",
   gasPriceStep: {
     low: 0.0,
     average: 0.025,
@@ -51,27 +51,27 @@ export const teritoriTestnetNetwork: NetworkInfo = {
   nameServiceContractAddress,
   nameServiceDefaultImage:
     "ipfs://bafkreieqcwmjcb64r42ygs6a4dswz63djzgayjn3rhzjber3e42cknawlm",
-  nameServiceTLD: ".tori",
+  nameServiceTLD: ".fury",
   vaultContractAddress:
-    "tori13d26fzmvuvlvvxwt3ur0vkv8j6f28mf4nqfmxu3xk5r57wzxxglqut8ezk",
+    "furya13d26fzmvuvlvvxwt3ur0vkv8j6f28mf4nqfmxu3xk5r57wzxxglq6h4xh0",
   riotContractAddressGen0:
-    "tori162skshe30f43kv2q2rw6we2mu3pvz43lm2zrg4hq50jdd2fjjdjsvm8mc7",
+    "furya162skshe30f43kv2q2rw6we2mu3pvz43lm2zrg4hq50jdd2fjjdjs284yd8",
   riotContractAddressGen1,
   riotSquadStakingContractAddressV1:
-    "tori15wl5lw9pxpedcekgqr8vk5xfpkrsax3reyfkkey458t6a7vv0d5ssark6m",
+    "furya15wl5lw9pxpedcekgqr8vk5xfpkrsax3reyfkkey458t6a7vv0d5skp3f0z",
   riotSquadStakingContractAddressV2:
-    "tori1gzk7kets2dfr7rcmzunkem0a23pn9ktkpjf0elxp38x42zpddt6qhvsp9l",
+    "furya1gzk7kets2dfr7rcmzunkem0a23pn9ktkpjf0elxp38x42zpddt6q3sz7sx",
   distributorContractAddress:
-    "tori1ff0ze096zcy5va5xhl7zenwt5vca6z9n0l8du7q7qsd7ftrcz0cqvd0vgc",
+    "furya1ff0ze096zcy5va5xhl7zenwt5vca6z9n0l8du7q7qsd7ftrcz0cq23anap",
   riotersFooterContractAddress:
-    "tori1m6g3l3j5t988zwmp965hrhsxvm8jrkf2ulw4gmwj8hx8pd84tvcqeearsd",
+    "furya1m6g3l3j5t988zwmp965hrhsxvm8jrkf2ulw4gmwj8hx8pd84tvcql90u95",
   secondaryDuringMintList: [
     nameServiceContractAddress,
     riotContractAddressGen1,
   ],
   excludeFromLaunchpadList: [riotContractAddressGen1],
   socialFeedContractAddress:
-    "tori19y3xr6lghw04tj2ets8y70mrynlnflejanl2ys3n3c5vaasj358shjsk20",
+    "furya19y3xr6lghw04tj2ets8y70mrynlnflejanl2ys3n3c5vaasj358s3wzflk",
   daoCw20CodeId: 99,
   daoFactoryCodeId: 100,
   daoCoreCodeId: 101,
@@ -82,7 +82,7 @@ export const teritoriTestnetNetwork: NetworkInfo = {
   daoCw4GroupCodeId: 106,
   daoVotingCw4CodeId: 109,
   daoFactoryContractAddress:
-    "tori1r29chp8ufwgx9u3wr4sfk050aardhkzwve7nht6y06gvlaqutr3qt83z6r",
+    "furya1r29chp8ufwgx9u3wr4sfk050aardhkzwve7nht6y06gvlaqutr3qdmra06",
   coreDAOAddress:
-    "tori1dy5h9q9zue4swxe9mzracm8gudp0fcf2ncllch6pfq9d0fq0ftgq546063",
+    "furya1dy5h9q9zue4swxe9mzracm8gudp0fcf2ncllch6pfq9d0fq0ftgqjfgs0g",
 };

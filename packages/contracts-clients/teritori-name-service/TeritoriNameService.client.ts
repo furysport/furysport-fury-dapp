@@ -6,8 +6,8 @@
 
 import { CosmWasmClient, SigningCosmWasmClient, ExecuteResult } from "@cosmjs/cosmwasm-stargate";
 import { Coin, StdFee } from "@cosmjs/amino";
-import { AddressOfResponse, AdminAddressResponse, Expiration, Timestamp, Uint64, Logo, EmbeddedLogo, Binary, AllNftInfoResponse, OwnerOfResponse, Approval, NftInfoResponseForMetadata, Metadata, AllOperatorsResponse, AllTokensResponse, AuthorizedCharactersResponse, BaseTokensResponse, Uint128, ContractInfoResponse, ExecuteMsg, SetAuthorizedCharactersMsg, UpdateSupportedDomainMsg, UpdateMintingFeesMsg, UpdateMetadataMsg, MintMsgForMetadata, GetFullPathResponse, GetParentIdResponse, GetParentInfoResponse, GetPathResponse, InstantiateMsg, IsContractResponse, IsSupportedDomainResponse, ListInfoByAliasResponse, UserInfo, ListUserInfoResponse, MigrateMsg, MintPriceResponse, MinterResponse, MintingFeesResponse, NftInfoResponse, NumTokensResponse, OperatorsResponse, PathsForTokenResponse, PathsResponse, PrimaryAliasResponse, QueryMsg, TokensResponse } from "./TeritoriNameService.types";
-export interface TeritoriNameServiceReadOnlyInterface {
+import { AddressOfResponse, AdminAddressResponse, Expiration, Timestamp, Uint64, Logo, EmbeddedLogo, Binary, AllNftInfoResponse, OwnerOfResponse, Approval, NftInfoResponseForMetadata, Metadata, AllOperatorsResponse, AllTokensResponse, AuthorizedCharactersResponse, BaseTokensResponse, Uint128, ContractInfoResponse, ExecuteMsg, SetAuthorizedCharactersMsg, UpdateSupportedDomainMsg, UpdateMintingFeesMsg, UpdateMetadataMsg, MintMsgForMetadata, GetFullPathResponse, GetParentIdResponse, GetParentInfoResponse, GetPathResponse, InstantiateMsg, IsContractResponse, IsSupportedDomainResponse, ListInfoByAliasResponse, UserInfo, ListUserInfoResponse, MigrateMsg, MintPriceResponse, MinterResponse, MintingFeesResponse, NftInfoResponse, NumTokensResponse, OperatorsResponse, PathsForTokenResponse, PathsResponse, PrimaryAliasResponse, QueryMsg, TokensResponse } from "./FuryaNameService.types";
+export interface FuryaNameServiceReadOnlyInterface {
   contractAddress: string;
   isSupportedDomain: ({
     domain
@@ -138,7 +138,7 @@ export interface TeritoriNameServiceReadOnlyInterface {
     charType: string;
   }) => Promise<AuthorizedCharactersResponse>;
 }
-export class TeritoriNameServiceQueryClient implements TeritoriNameServiceReadOnlyInterface {
+export class FuryaNameServiceQueryClient implements FuryaNameServiceReadOnlyInterface {
   client: CosmWasmClient;
   contractAddress: string;
 
@@ -439,7 +439,7 @@ export class TeritoriNameServiceQueryClient implements TeritoriNameServiceReadOn
     });
   };
 }
-export interface TeritoriNameServiceInterface extends TeritoriNameServiceReadOnlyInterface {
+export interface FuryaNameServiceInterface extends FuryaNameServiceReadOnlyInterface {
   contractAddress: string;
   sender: string;
   setAuthorizedCharacters: ({
@@ -561,7 +561,7 @@ export interface TeritoriNameServiceInterface extends TeritoriNameServiceReadOnl
     operator: string;
   }, fee?: number | StdFee | "auto", memo?: string, funds?: Coin[]) => Promise<ExecuteResult>;
 }
-export class TeritoriNameServiceClient extends TeritoriNameServiceQueryClient implements TeritoriNameServiceInterface {
+export class FuryaNameServiceClient extends FuryaNameServiceQueryClient implements FuryaNameServiceInterface {
   client: SigningCosmWasmClient;
   sender: string;
   contractAddress: string;

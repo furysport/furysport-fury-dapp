@@ -3,7 +3,7 @@ import Long from "long";
 
 import { prettyPrice } from "./coins";
 import { ipfsURLToHTTPURL } from "./ipfs";
-import { ConfigResponse } from "../contracts-clients/teritori-bunker-minter/TeritoriBunkerMinter.types";
+import { ConfigResponse } from "../contracts-clients/furya-bunker-minter/FuryaBunkerMinter.types";
 import {
   CosmosNetworkInfo,
   NetworkKind,

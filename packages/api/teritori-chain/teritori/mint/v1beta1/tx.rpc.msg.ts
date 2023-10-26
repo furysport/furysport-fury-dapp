@@ -15,7 +15,7 @@ export class MsgClientImpl implements Msg {
   }
   burnTokens(request: MsgBurnTokens): Promise<MsgBurnTokensResponse> {
     const data = MsgBurnTokens.encode(request).finish();
-    const promise = this.rpc.request("teritori.mint.v1beta1.Msg", "BurnTokens", data);
+    const promise = this.rpc.request("furya.mint.v1beta1.Msg", "BurnTokens", data);
     return promise.then(data => MsgBurnTokensResponse.decode(new _m0.Reader(data)));
   }
 }

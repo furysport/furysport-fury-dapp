@@ -9,16 +9,16 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/TERITORI/teritori-dapp/go/internal/indexerdb"
-	"github.com/TERITORI/teritori-dapp/go/pkg/dao"
-	"github.com/TERITORI/teritori-dapp/go/pkg/daopb"
-	"github.com/TERITORI/teritori-dapp/go/pkg/feed"
-	"github.com/TERITORI/teritori-dapp/go/pkg/feedpb"
-	"github.com/TERITORI/teritori-dapp/go/pkg/marketplace"
-	"github.com/TERITORI/teritori-dapp/go/pkg/marketplacepb"
-	"github.com/TERITORI/teritori-dapp/go/pkg/networks"
-	"github.com/TERITORI/teritori-dapp/go/pkg/p2e"
-	"github.com/TERITORI/teritori-dapp/go/pkg/p2epb"
+	"github.com/furysport/furya-dapp/go/internal/indexerdb"
+	"github.com/furysport/furya-dapp/go/pkg/dao"
+	"github.com/furysport/furya-dapp/go/pkg/daopb"
+	"github.com/furysport/furya-dapp/go/pkg/feed"
+	"github.com/furysport/furya-dapp/go/pkg/feedpb"
+	"github.com/furysport/furya-dapp/go/pkg/marketplace"
+	"github.com/furysport/furya-dapp/go/pkg/marketplacepb"
+	"github.com/furysport/furya-dapp/go/pkg/networks"
+	"github.com/furysport/furya-dapp/go/pkg/p2e"
+	"github.com/furysport/furya-dapp/go/pkg/p2epb"
 	"github.com/improbable-eng/grpc-web/go/grpcweb"
 	"github.com/peterbourgon/ff/v3"
 	"github.com/pkg/errors"
@@ -27,7 +27,7 @@ import (
 )
 
 func main() {
-	fs := flag.NewFlagSet("teritori-dapp-backend", flag.ContinueOnError)
+	fs := flag.NewFlagSet("furya-dapp-backend", flag.ContinueOnError)
 	var (
 		enableTls                = flag.Bool("enable_tls", false, "Use TLS - required for HTTP2.")
 		tlsCertFilePath          = flag.String("tls_cert_file", "../../misc/localhost.crt", "Path to the CRT/PEM file.")
@@ -37,7 +37,7 @@ func main() {
 		dbPass                   = fs.String("postgres-password", "", "password for postgreSQL database")
 		dbName                   = fs.String("database-name", "", "database name for postgreSQL")
 		dbUser                   = fs.String("postgres-user", "", "username for postgreSQL")
-		whitelistString          = fs.String("teritori-collection-whitelist", "", "whitelist of collections to return")
+		whitelistString          = fs.String("furya-collection-whitelist", "", "whitelist of collections to return")
 		airtableAPIKey           = fs.String("airtable-api-key", "", "api key of airtable for home and launchpad")
 		airtableAPIKeydappsStore = fs.String("airtable-api-key-dapps-store", "", "api key of airtable for the dapps store")
 		networksFile             = fs.String("networks-file", "networks.json", "path to networks config file")

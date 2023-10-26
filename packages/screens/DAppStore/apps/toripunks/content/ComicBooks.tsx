@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Linking, TouchableOpacity, View } from "react-native";
 
 import { ButtonLabel } from "../components/buttonLabel/ButtonLabel";
-import { BuyToripunksButton } from "../components/buttonLabel/BuyToripunksButton";
+import { BuyFurypunksButton } from "../components/buttonLabel/BuyFurypunksButton";
 import { Label } from "../components/label/Label";
 import { useContentContext } from "../context/ContentProvider";
 import { useComicHistoryData } from "../query/useComicBookHistory";
@@ -67,7 +67,7 @@ export const ComicBooks = () => {
               : parseInt(styleTypeSize, 10),
           }}
         >
-          {data[0]?.poolPrice} $TORI
+          {data[0]?.poolPrice} $FURY
         </Label>
         <Label
           styleType={`H1_Bebas_${styleTypeSize}`}
@@ -79,7 +79,7 @@ export const ComicBooks = () => {
           styleType="T1_Bebas_20"
           style={{ textAlign: "center", color: "#E8E1EF" }}
         >
-          Holders of 1 toripunk + 5 different comic books
+          Holders of 1 furypunk + 5 different comic books
         </Label>
         <View
           style={{
@@ -96,11 +96,11 @@ export const ComicBooks = () => {
             actionable
             onPress={() => {
               Linking.openURL(
-                "/collection/tori-tori1syx6q5rxhntng93pmk9xep25638dqy3dcnppvvytnccxrp7urt7s2570jc"
+                "/collection/fury-furya1syx6q5rxhntng93pmk9xep25638dqy3dcnppvvytnccxrp7urt7svgvs8p"
               );
             }}
           />
-          <BuyToripunksButton size="S" />
+          <BuyFurypunksButton size="S" />
 
           <TouchableOpacity
             onPress={() => setSelectedSectionHandler("comic-book-history")}

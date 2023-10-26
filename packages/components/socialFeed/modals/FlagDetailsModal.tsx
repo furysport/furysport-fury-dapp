@@ -98,7 +98,7 @@ export const FlagDetailsModal: React.FC<FlagDetailsModalProps> = ({
 
             <SpacerColumn size={2} />
 
-            <BrandText style={fontSemibold13}>Thank you Teritorians,</BrandText>
+            <BrandText style={fontSemibold13}>Thank you Furyaans,</BrandText>
             <BrandText style={fontSemibold13}>
               for contributing to make the Cosmos Safe.
             </BrandText>

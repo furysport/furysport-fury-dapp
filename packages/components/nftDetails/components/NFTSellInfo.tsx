@@ -1,7 +1,7 @@
 import { Decimal } from "@cosmjs/math";
 import { useQuery } from "@tanstack/react-query";
 
-import { TeritoriNftVaultQueryClient } from "../../../contracts-clients/teritori-nft-vault/TeritoriNftVault.client";
+import { FuryaNftVaultQueryClient } from "../../../contracts-clients/furya-nft-vault/FuryaNftVault.client";
 import {
   getNativeCurrency,
   getNetwork,
@@ -78,7 +78,7 @@ const useVaultConfig = (networkId: string | undefined) => {
       }
 
       const cosmwasmClient = await mustGetNonSigningCosmWasmClient(network.id);
-      const vaultClient = new TeritoriNftVaultQueryClient(
+      const vaultClient = new FuryaNftVaultQueryClient(
         cosmwasmClient,
         network.vaultContractAddress
       );

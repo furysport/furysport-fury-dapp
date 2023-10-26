@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { TeritoriBunkerMinterQueryClient } from "../contracts-clients/teritori-bunker-minter/TeritoriBunkerMinter.client";
-import { TeritoriMinter__factory } from "../evm-contracts-clients/teritori-bunker-minter/TeritoriMinter__factory";
+import { FuryaBunkerMinterQueryClient } from "../contracts-clients/furya-bunker-minter/FuryaBunkerMinter.client";
+import { FuryaMinter__factory } from "../evm-contracts-clients/furya-bunker-minter/FuryaMinter__factory";
 import {
   mustGetNonSigningCosmWasmClient,
   parseNetworkObjectId,
@@ -26,7 +26,7 @@ export const useMintEnded = (collectionId: string, enabled: boolean = true) => {
 
         const cosmwasm = await mustGetNonSigningCosmWasmClient(network.id);
 
-        const minterClient = new TeritoriBunkerMinterQueryClient(
+        const minterClient = new FuryaBunkerMinterQueryClient(
           cosmwasm,
           mintAddress
         );
@@ -42,7 +42,7 @@ export const useMintEnded = (collectionId: string, enabled: boolean = true) => {
           return false;
         }
 
-        const minterClient = TeritoriMinter__factory.connect(
+        const minterClient = FuryaMinter__factory.connect(
           mintAddress,
           provider
         );

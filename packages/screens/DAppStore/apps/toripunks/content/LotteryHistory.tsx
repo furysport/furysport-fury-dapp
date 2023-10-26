@@ -10,7 +10,7 @@ import { useContentContext } from "../context/ContentProvider";
 import { useGiganticHistoryData } from "../query/useGiganticHistory";
 
 const ListItem: React.FC<{
-  item: { date: string; toriWon: number };
+  item: { date: string; furyWon: number };
   styleTypeSize: string;
 }> = ({ item, styleTypeSize }) => {
   const { isMinimunWindowWidth } = useContentContext();
@@ -57,7 +57,7 @@ const ListItem: React.FC<{
         <Date date={item.date} />
 
         <Datum
-          value={`${item.toriWon} $TORI WON`}
+          value={`${item.furyWon} $FURY WON`}
           datumWidth={datumWidth}
           styleTypeSize={styleTypeSize}
           style={datumStyle}

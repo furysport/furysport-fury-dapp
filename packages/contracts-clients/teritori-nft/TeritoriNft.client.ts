@@ -6,8 +6,8 @@
 
 import { CosmWasmClient, SigningCosmWasmClient, ExecuteResult } from "@cosmjs/cosmwasm-stargate";
 import { Coin, StdFee } from "@cosmjs/amino";
-import { Expiration, Timestamp, Uint64, AllNftInfoResponse, OwnerOfResponse, Approval, NftInfoResponseForNullable_Empty, Empty, AllOperatorsResponse, AllTokensResponse, ApprovalResponse, ApprovalsResponse, ContractInfoResponse, ExecuteMsg, Binary, MintMsgForNullable_Empty, InstantiateMsg, MinterResponse, NftInfoResponse, NumTokensResponse, QueryMsg, TokensResponse } from "./TeritoriNft.types";
-export interface TeritoriNftReadOnlyInterface {
+import { Expiration, Timestamp, Uint64, AllNftInfoResponse, OwnerOfResponse, Approval, NftInfoResponseForNullable_Empty, Empty, AllOperatorsResponse, AllTokensResponse, ApprovalResponse, ApprovalsResponse, ContractInfoResponse, ExecuteMsg, Binary, MintMsgForNullable_Empty, InstantiateMsg, MinterResponse, NftInfoResponse, NumTokensResponse, QueryMsg, TokensResponse } from "./FuryaNft.types";
+export interface FuryaNftReadOnlyInterface {
   contractAddress: string;
   ownerOf: ({
     includeExpired,
@@ -75,7 +75,7 @@ export interface TeritoriNftReadOnlyInterface {
   }) => Promise<AllTokensResponse>;
   minter: () => Promise<MinterResponse>;
 }
-export class TeritoriNftQueryClient implements TeritoriNftReadOnlyInterface {
+export class FuryaNftQueryClient implements FuryaNftReadOnlyInterface {
   client: CosmWasmClient;
   contractAddress: string;
 
@@ -232,7 +232,7 @@ export class TeritoriNftQueryClient implements TeritoriNftReadOnlyInterface {
     });
   };
 }
-export interface TeritoriNftInterface extends TeritoriNftReadOnlyInterface {
+export interface FuryaNftInterface extends FuryaNftReadOnlyInterface {
   contractAddress: string;
   sender: string;
   transferNft: ({
@@ -296,7 +296,7 @@ export interface TeritoriNftInterface extends TeritoriNftReadOnlyInterface {
     tokenId: string;
   }, fee?: number | StdFee | "auto", memo?: string, funds?: Coin[]) => Promise<ExecuteResult>;
 }
-export class TeritoriNftClient extends TeritoriNftQueryClient implements TeritoriNftInterface {
+export class FuryaNftClient extends FuryaNftQueryClient implements FuryaNftInterface {
   client: SigningCosmWasmClient;
   sender: string;
   contractAddress: string;

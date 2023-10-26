@@ -13,7 +13,7 @@ interface HistoryItem {
     bought: number;
     won: number;
   };
-  toriWon: number;
+  furyWon: number;
 }
 
 const ListItem: React.FC<{
@@ -22,7 +22,7 @@ const ListItem: React.FC<{
 }> = ({ item, styleTypeSize }) => {
   const { isMinimunWindowWidth } = useContentContext();
 
-  const header = ["", "Tickets Bought", "Tickets WON", "$TORI WON"];
+  const header = ["", "Tickets Bought", "Tickets WON", "$FURY WON"];
   const datumWidth = isMinimunWindowWidth ? 200 : 100;
   const roundWidth = isMinimunWindowWidth ? 52 : 22;
   const datumStyle = {
@@ -74,7 +74,7 @@ const ListItem: React.FC<{
           style={datumStyle}
         />
         <Datum
-          value={item.toriWon}
+          value={item.furyWon}
           datumWidth={datumWidth}
           styleTypeSize={styleTypeSize}
           style={datumStyle}

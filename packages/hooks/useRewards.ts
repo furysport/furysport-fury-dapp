@@ -8,7 +8,7 @@ import { useRunOrProposeTransaction } from "./useRunOrProposeTransaction";
 import { useFeedbacks } from "../context/FeedbacksProvider";
 import { getNetwork, NetworkKind, UserKind, parseUserId } from "../networks";
 import { CoingeckoCoin, getCoingeckoPrice } from "../utils/coingecko";
-import { CosmosRewardsResponse } from "../utils/teritori";
+import { CosmosRewardsResponse } from "../utils/furya";
 
 export type Reward = {
   validator: string;

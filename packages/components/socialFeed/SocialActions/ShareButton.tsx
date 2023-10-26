@@ -21,7 +21,7 @@ export const ShareButton = ({ postId }: ShareButtonProps) => {
       iconSvg: twitterSVG,
       onPress: () => {
         const message = `${window.location.origin}/feed/post/${postId}
-#Teritori`;
+#Furya`;
 
         Linking.openURL(
           `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}`

@@ -2,16 +2,16 @@ import { Linking } from "react-native";
 
 import { ButtonLabel } from "./ButtonLabel";
 
-export const BuyToripunksButton: React.FC<{ size: "S" | "Mobile" }> = ({
+export const BuyFurypunksButton: React.FC<{ size: "S" | "Mobile" }> = ({
   size,
 }) => (
   <ButtonLabel
-    text="BUY TORIPUNKS"
+    text="BUY FURYPUNKS"
     size={size}
     actionable
     onPress={() => {
       Linking.openURL(
-        "/collection/tori-tori1plr28ztj64a47a32lw7tdae8vluzm2lm7nqk364r4ws50rgwyzgsapzezt"
+        "/collection/fury-furya1plr28ztj64a47a32lw7tdae8vluzm2lm7nqk364r4ws50rgwyzgsmasxhj"
       );
     }}
   />

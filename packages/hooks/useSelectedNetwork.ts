@@ -5,7 +5,7 @@ import { selectSelectedNetworkId } from "../store/slices/settings";
 
 export const useSelectedNetworkId = () => {
   const currentNetworkId = useSelector(selectSelectedNetworkId);
-  const networkId = currentNetworkId || "teritori";
+  const networkId = currentNetworkId || "furya";
   return networkId;
 };
 

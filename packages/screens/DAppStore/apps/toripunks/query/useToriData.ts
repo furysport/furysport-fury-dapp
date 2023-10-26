@@ -11,12 +11,12 @@ import { getCodeError } from "../query/codeError";
 export const useList = ({ selectedWallet }: { selectedWallet?: Wallet }) => {
   const addr = selectedWallet?.address || "";
   const { data, refetch } = useQuery(
-    ["toripunks", addr],
+    ["furypunks", addr],
     async () => {
       try {
         if (addr) {
           const response = await fetch(
-            `https://api.roulette.aaa-metahuahua.com/toripunks?addr=${addr}`
+            `https://api.roulette.aaa-metahuahua.com/furypunks?addr=${addr}`
           );
           return (await response.json()) as unknown;
         }
@@ -62,14 +62,14 @@ export const useBuyTicket = ({
       : userTokens.splice(0, buyCount)
     : 0;
 
-  const dataBody = { addr, toripunk: buyArray };
+  const dataBody = { addr, furypunk: buyArray };
   const URL =
     buyCount === 1
       ? `https://api.roulette.aaa-metahuahua.com/ticket/buy`
       : `https://api.roulette.aaa-metahuahua.com/tickets/buy`;
 
   const { data, mutate, isError, isLoading } = useMutation(
-    ["toripunk", userTokens, "buyCount", buyCount, "wallet", selectedWallet],
+    ["furypunk", userTokens, "buyCount", buyCount, "wallet", selectedWallet],
     async () => {
       if (addr) {
         const res = await fetch(URL, {
@@ -122,7 +122,7 @@ export const sendKeplarTx = async ({
   selectedWallet?: Wallet;
   amount: string;
 }) => {
-  const network = getNetworkByIdPrefix("tori");
+  const network = getNetworkByIdPrefix("furya");
   if (network) {
     const signingComswasmClient = await getKeplrSigningCosmWasmClient(
       network?.id
@@ -131,10 +131,10 @@ export const sendKeplarTx = async ({
       const tx = signingComswasmClient
         .sendTokens(
           selectedWallet?.address,
-          "tori148mh99jr2zl4wtdlqrr9gsv3v7ltg4hx8ekzl7",
+          "furya148mh99jr2zl4wtdlqrr9gsv3v7ltg4hx2c6a3u",
           [
             {
-              denom: "utori",
+              denom: "ufury",
               amount,
             },
           ],

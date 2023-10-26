@@ -3,12 +3,12 @@ package indexerdb
 import (
 	"time"
 
-	"github.com/TERITORI/teritori-dapp/go/pkg/networks"
+	"github.com/furysport/furya-dapp/go/pkg/networks"
 )
 
 type Collection struct {
 	// ID is network-dependent
-	// Teritori: <id_prefix>-<bech32_mint_contract_address>
+	// Furya: <id_prefix>-<bech32_mint_contract_address>
 	ID networks.CollectionID `gorm:"primaryKey"`
 
 	NetworkId           string
@@ -20,13 +20,13 @@ type Collection struct {
 	Time                time.Time
 
 	// "has one" relations
-	TeritoriCollection *TeritoriCollection
+	FuryaCollection *FuryaCollection
 
 	// "has many" relations
 	NFTs []*NFT
 }
 
-type TeritoriCollection struct {
+type FuryaCollection struct {
 	CollectionID        networks.CollectionID `gorm:"index"`
 	MintContractAddress string                `gorm:"primaryKey"`
 	NFTContractAddress  string

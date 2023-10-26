@@ -27,7 +27,7 @@ const FooterSocialNetworks: React.FC = () => {
     >
       <TouchableOpacity
         style={{ marginRight: layout.spacing_x1 }}
-        onPress={() => Linking.openURL("https://medium.com/teritori/")}
+        onPress={() => Linking.openURL("https://medium.com/furya/")}
       >
         <TertiaryBox
           mainContainerStyle={{
@@ -42,7 +42,7 @@ const FooterSocialNetworks: React.FC = () => {
 
       <TouchableOpacity
         style={{ marginRight: layout.spacing_x1 }}
-        onPress={() => Linking.openURL("https://twitter.com/TeritoriNetwork")}
+        onPress={() => Linking.openURL("https://twitter.com/FuryaNetwork")}
       >
         <TertiaryBox
           mainContainerStyle={{
@@ -56,7 +56,7 @@ const FooterSocialNetworks: React.FC = () => {
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={() => Linking.openURL("https://discord.gg/teritori")}
+        onPress={() => Linking.openURL("https://discord.gg/furya")}
       >
         <TertiaryBox
           mainContainerStyle={{

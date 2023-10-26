@@ -7,13 +7,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/TERITORI/teritori-dapp/go/pkg/multisigpb"
+	"github.com/furysport/furya-dapp/go/pkg/multisigpb"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/protobuf/proto"
 )
 
 func TestADR36(t *testing.T) {
-	const expectedAddress = "tori14grryrkwtf0ugtlthrnr59ktztc9mnfch5x2dg"
+	const expectedAddress = "furya14grryrkwtf0ugtlthrnr59ktztc9mnfc6424r2"
 	const pubkeyJSON = `
     {
       "type": "tendermint/PubKeySecp256k1",
@@ -102,7 +102,7 @@ func TestToken(t *testing.T) {
 		return tm
 	}
 
-	const infoJSON = `{"kind":"Login to Teritori Multisig Service","challenge":{"nonce":"ZPx/cqjiz4ApUsRTdae3QYvq1dIyi7Iqw3x/plWAvdg=","expiration":"2023-09-29T18:02:13+02:00","serverSignature":"aRjRJXRcL8ncf6GAejgfEuG9SxH6pWsc5NNd1iwId1Bh5AaYAtPDTyXOV973R96fapsyJfBHxMv62Jjbs/ywDw=="},"userBech32Prefix":"tori","userPubkeyJson":"{\"type\":\"tendermint/PubKeySecp256k1\",\"value\":\"AyOLVICt52x+KsiWar9VT1cDagPG9hNhQEO42dsrASBI\"}"}`
+	const infoJSON = `{"kind":"Login to Furya Multisig Service","challenge":{"nonce":"ZPx/cqjiz4ApUsRTdae3QYvq1dIyi7Iqw3x/plWAvdg=","expiration":"2023-09-29T18:02:13+02:00","serverSignature":"aRjRJXRcL8ncf6GAejgfEuG9SxH6pWsc5NNd1iwId1Bh5AaYAtPDTyXOV973R96fapsyJfBHxMv62Jjbs/ywDw=="},"userBech32Prefix":"furya","userPubkeyJson":"{\"type\":\"tendermint/PubKeySecp256k1\",\"value\":\"AyOLVICt52x+KsiWar9VT1cDagPG9hNhQEO42dsrASBI\"}"}`
 
 	token, err := makeToken(privateKey, publicKey, time.Hour, infoJSON, "2n+PG/4cBnjnm8+BDxhse83Qe4PVy43iY3DiLm3EjGYCpv3Y5nlfVIy3FqedXMUFgYL8xs1F1XDzmGSrG6bInA==")
 	require.NoError(t, err)
@@ -119,7 +119,7 @@ func TestToken(t *testing.T) {
 	}
 
 	{
-		const infoJSON = `{"kind":"Login to a Very Nice Place","challenge":{"nonce":"JQMKouZI3ohyzyzSr6tXB9MBLf92csI7bqdTxq8MQYA=","expiration":"2023-09-29T18:16:28+02:00","serverSignature":"OmvQJ14ocuZ/8itVKgXtoxphdjOZbSkAVE2ZGY9xqMvRJrAy5LolG9ngfq1mG356QMpBs2ereNi3D7zK2+hNCw=="},"userBech32Prefix":"tori","userPubkeyJson":"{\"type\":\"tendermint/PubKeySecp256k1\",\"value\":\"AyOLVICt52x+KsiWar9VT1cDagPG9hNhQEO42dsrASBI\"}"}`
+		const infoJSON = `{"kind":"Login to a Very Nice Place","challenge":{"nonce":"JQMKouZI3ohyzyzSr6tXB9MBLf92csI7bqdTxq8MQYA=","expiration":"2023-09-29T18:16:28+02:00","serverSignature":"OmvQJ14ocuZ/8itVKgXtoxphdjOZbSkAVE2ZGY9xqMvRJrAy5LolG9ngfq1mG356QMpBs2ereNi3D7zK2+hNCw=="},"userBech32Prefix":"furya","userPubkeyJson":"{\"type\":\"tendermint/PubKeySecp256k1\",\"value\":\"AyOLVICt52x+KsiWar9VT1cDagPG9hNhQEO42dsrASBI\"}"}`
 		_, err := makeToken(privateKey, publicKey, time.Hour, infoJSON, "bCZAy+j17Tfxu3vFp8pa7juX612Nnxuhf8ja8bYyiGNApixiOowL82V2mcBFUPMPBOcmwbf82yyWvkNApIj+xA==")
 		require.ErrorContains(t, err, "warning! you might be victim of a phishing attack, the client magic is invalid")
 	}

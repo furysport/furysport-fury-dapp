@@ -21,7 +21,7 @@ import { PrimaryButtonOutline } from "../../components/buttons/PrimaryButtonOutl
 import { LoaderFullScreen } from "../../components/loaders/LoaderFullScreen";
 import { SpacerRow } from "../../components/spacer";
 import { useFeedbacks } from "../../context/FeedbacksProvider";
-import { ConfigResponse } from "../../contracts-clients/teritori-breeding/TeritoriBreeding.types";
+import { ConfigResponse } from "../../contracts-clients/furya-breeding/FuryaBreeding.types";
 import { useBreeding } from "../../hooks/riotGame/useBreeding";
 import { useRippers } from "../../hooks/riotGame/useRippers";
 import { useIsMobile } from "../../hooks/useIsMobile";
@@ -307,7 +307,7 @@ export const RiotGameBreedingScreen = () => {
           <SpacerRow size={1} />
           <ExternalLink
             style={fontMedium14}
-            externalUrl="https://teritori.notion.site/The-R-ot-Terms-Conditions-Breeding-1ea3729d50484a0dbe3c55f6ec5ae3e2"
+            externalUrl="https://furya.notion.site/The-R-ot-Terms-Conditions-Breeding-1ea3729d50484a0dbe3c55f6ec5ae3e2"
           >
             Terms & Conditions
           </ExternalLink>

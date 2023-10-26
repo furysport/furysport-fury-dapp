@@ -23,8 +23,8 @@ import {
   Reaction,
   Post,
   QueryMsg,
-} from "./TeritoriSocialFeed.types";
-export interface TeritoriSocialFeedReadOnlyInterface {
+} from "./FuryaSocialFeed.types";
+export interface FuryaSocialFeedReadOnlyInterface {
   contractAddress: string;
   config: () => Promise<ConfigResponse>;
   queryFeeByCategory: ({
@@ -84,8 +84,8 @@ export interface TeritoriSocialFeedReadOnlyInterface {
   }) => Promise<QueryMainPostsResponse>;
   queryMainPostsCount: () => Promise<QueryMainPostsCountResponse>;
 }
-export class TeritoriSocialFeedQueryClient
-  implements TeritoriSocialFeedReadOnlyInterface
+export class FuryaSocialFeedQueryClient
+  implements FuryaSocialFeedReadOnlyInterface
 {
   client: CosmWasmClient;
   contractAddress: string;
@@ -222,8 +222,8 @@ export class TeritoriSocialFeedQueryClient
     });
   };
 }
-export interface TeritoriSocialFeedInterface
-  extends TeritoriSocialFeedReadOnlyInterface {
+export interface FuryaSocialFeedInterface
+  extends FuryaSocialFeedReadOnlyInterface {
   contractAddress: string;
   sender: string;
   updateConfig: (
@@ -375,9 +375,9 @@ export interface TeritoriSocialFeedInterface
     funds?: Coin[]
   ) => Promise<ExecuteResult>;
 }
-export class TeritoriSocialFeedClient
-  extends TeritoriSocialFeedQueryClient
-  implements TeritoriSocialFeedInterface
+export class FuryaSocialFeedClient
+  extends FuryaSocialFeedQueryClient
+  implements FuryaSocialFeedInterface
 {
   client: SigningCosmWasmClient;
   sender: string;

@@ -1,8 +1,8 @@
 import { program } from "commander";
 
 import { mustGetNodeMarketplaceClient } from "./lib";
-import { TeritoriBunkerMinterQueryClient } from "../contracts-clients/teritori-bunker-minter/TeritoriBunkerMinter.client";
-import { TeritoriNftQueryClient } from "../contracts-clients/teritori-nft/TeritoriNft.client";
+import { FuryaBunkerMinterQueryClient } from "../contracts-clients/furya-bunker-minter/FuryaBunkerMinter.client";
+import { FuryaNftQueryClient } from "../contracts-clients/furya-nft/FuryaNft.client";
 import {
   getCollectionId,
   mustGetNonSigningCosmWasmClient,
@@ -32,7 +32,7 @@ const main = async () => {
     nftContractAddress = network.nameServiceContractAddress;
   } else {
     console.log("Fetching minter config...");
-    const minterClient = new TeritoriBunkerMinterQueryClient(
+    const minterClient = new FuryaBunkerMinterQueryClient(
       cosmwasmClient,
       minterContractAddress
     );
@@ -40,7 +40,7 @@ const main = async () => {
     nftContractAddress = config.nft_addr;
   }
   console.log("NFT contract address:", nftContractAddress);
-  const nftClient = new TeritoriNftQueryClient(
+  const nftClient = new FuryaNftQueryClient(
     cosmwasmClient,
     nftContractAddress
   );

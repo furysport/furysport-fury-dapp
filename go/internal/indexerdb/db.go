@@ -1,7 +1,7 @@
 package indexerdb
 
 import (
-	"github.com/TERITORI/teritori-dapp/go/pkg/networks"
+	"github.com/furysport/furya-dapp/go/pkg/networks"
 	"github.com/pkg/errors"
 	"gorm.io/driver/postgres"
 	"gorm.io/driver/sqlite"
@@ -28,11 +28,11 @@ var allModels = []interface{}{
 
 	// collections
 	&Collection{},
-	&TeritoriCollection{},
+	&FuryaCollection{},
 
 	// nfts
 	&NFT{},
-	&TeritoriNFT{},
+	&FuryaNFT{},
 
 	// activity
 	&Activity{},

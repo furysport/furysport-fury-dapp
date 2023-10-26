@@ -2,7 +2,7 @@ import React from "react";
 import { View, ViewStyle } from "react-native";
 
 import { neutral17, neutral77 } from "../../utils/style/colors";
-import { imageDisplayLabel, prettyTokenData } from "../../utils/teritori";
+import { imageDisplayLabel, prettyTokenData } from "../../utils/furya";
 import { BrandText } from "../BrandText";
 import { ExternalLink } from "../ExternalLink";
 import { TertiaryBox } from "../boxes/TertiaryBox";

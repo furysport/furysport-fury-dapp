@@ -24,22 +24,22 @@ export class MsgClientImpl implements Msg {
   }
   claimAllocation(request: MsgClaimAllocation): Promise<MsgClaimAllocationResponse> {
     const data = MsgClaimAllocation.encode(request).finish();
-    const promise = this.rpc.request("teritori.airdrop.v1beta1.Msg", "ClaimAllocation", data);
+    const promise = this.rpc.request("furya.airdrop.v1beta1.Msg", "ClaimAllocation", data);
     return promise.then(data => MsgClaimAllocationResponse.decode(new _m0.Reader(data)));
   }
   setAllocation(request: MsgSetAllocation): Promise<MsgSetAllocationResponse> {
     const data = MsgSetAllocation.encode(request).finish();
-    const promise = this.rpc.request("teritori.airdrop.v1beta1.Msg", "SetAllocation", data);
+    const promise = this.rpc.request("furya.airdrop.v1beta1.Msg", "SetAllocation", data);
     return promise.then(data => MsgSetAllocationResponse.decode(new _m0.Reader(data)));
   }
   transferModuleOwnership(request: MsgTransferModuleOwnership): Promise<MsgTransferModuleOwnershipResponse> {
     const data = MsgTransferModuleOwnership.encode(request).finish();
-    const promise = this.rpc.request("teritori.airdrop.v1beta1.Msg", "TransferModuleOwnership", data);
+    const promise = this.rpc.request("furya.airdrop.v1beta1.Msg", "TransferModuleOwnership", data);
     return promise.then(data => MsgTransferModuleOwnershipResponse.decode(new _m0.Reader(data)));
   }
   depositTokens(request: MsgDepositTokens): Promise<MsgDepositTokensResponse> {
     const data = MsgDepositTokens.encode(request).finish();
-    const promise = this.rpc.request("teritori.airdrop.v1beta1.Msg", "DepositTokens", data);
+    const promise = this.rpc.request("furya.airdrop.v1beta1.Msg", "DepositTokens", data);
     return promise.then(data => MsgDepositTokensResponse.decode(new _m0.Reader(data)));
   }
 }

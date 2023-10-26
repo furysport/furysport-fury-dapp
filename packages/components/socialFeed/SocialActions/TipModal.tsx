@@ -6,7 +6,7 @@ import { View } from "react-native";
 
 import { signingSocialFeedClient } from "../../../client-creators/socialFeedClient";
 import { useFeedbacks } from "../../../context/FeedbacksProvider";
-import { useTeritoriSocialFeedTipPostMutation } from "../../../contracts-clients/teritori-social-feed/TeritoriSocialFeed.react-query";
+import { useFuryaSocialFeedTipPostMutation } from "../../../contracts-clients/furya-social-feed/FuryaSocialFeed.react-query";
 import { useBalances } from "../../../hooks/useBalances";
 import { useSelectedNetworkInfo } from "../../../hooks/useSelectedNetwork";
 import useSelectedWallet from "../../../hooks/useSelectedWallet";
@@ -26,7 +26,7 @@ import { PrimaryButton } from "../../buttons/PrimaryButton";
 import { TextInputCustom } from "../../inputs/TextInputCustom";
 import ModalBase from "../../modals/ModalBase";
 import { SpacerColumn } from "../../spacer";
-import { TERITORI_FEED_ID } from "../const";
+import { FURYA_FEED_ID } from "../const";
 
 type TipFormType = {
   amount: string;
@@ -45,7 +45,7 @@ export const TipModal: React.FC<{
     watch,
   } = useForm<TipFormType>();
   const { mutate: postMutate, isLoading } =
-    useTeritoriSocialFeedTipPostMutation({
+    useFuryaSocialFeedTipPostMutation({
       onSuccess() {
         onClose();
         setToastSuccess({ title: "Tip success", message: "" });
@@ -87,7 +87,7 @@ export const TipModal: React.FC<{
         send: `${amount}ugnot`,
         pkg_path: selectedNetworkInfo.socialFeedsPkgPath,
         func: "TipPost",
-        args: [TERITORI_FEED_ID, postId],
+        args: [FURYA_FEED_ID, postId],
       };
 
       try {

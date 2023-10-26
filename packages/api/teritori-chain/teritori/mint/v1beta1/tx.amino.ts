@@ -3,15 +3,15 @@ import { AminoMsg } from "@cosmjs/amino";
 import { MsgBurnTokens } from "./tx";
 import {Coin} from "../../../cosmos/base/v1beta1/coin";
 export interface MsgBurnTokensAminoType extends AminoMsg {
-  type: "teritori/mint/MsgBurnTokens";
+  type: "furya/mint/MsgBurnTokens";
   value: {
     sender: string;
     amount: Coin[];
   };
 }
 export const AminoConverter = {
-  "/teritori.mint.v1beta1.MsgBurnTokens": {
-    aminoType: "teritori/mint/MsgBurnTokens",
+  "/furya.mint.v1beta1.MsgBurnTokens": {
+    aminoType: "furya/mint/MsgBurnTokens",
     toAmino: ({
       sender,
       amount

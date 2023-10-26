@@ -6,7 +6,7 @@ import { View } from "react-native";
 
 import { useFeedbacks } from "../../../context/FeedbacksProvider";
 import { useTNS } from "../../../context/TNSProvider";
-import { TeritoriNameServiceQueryClient } from "../../../contracts-clients/teritori-name-service/TeritoriNameService.client";
+import { FuryaNameServiceQueryClient } from "../../../contracts-clients/furya-name-service/FuryaNameService.client";
 import { useBalances } from "../../../hooks/useBalances";
 import useSelectedWallet from "../../../hooks/useSelectedWallet";
 import {
@@ -55,7 +55,7 @@ export const TNSSendFundsModal: React.FC<{
       if (!networkId) {
         setToastError({
           title: "Internal error",
-          message: "Invalid teritori network id",
+          message: "Invalid furya network id",
         });
         onClose();
         return;
@@ -90,7 +90,7 @@ export const TNSSendFundsModal: React.FC<{
 
       // get tns client
       const cosmwasmClient = await mustGetNonSigningCosmWasmClient(networkId);
-      const tnsClient = new TeritoriNameServiceQueryClient(
+      const tnsClient = new FuryaNameServiceQueryClient(
         cosmwasmClient,
         contractAddress
       );
@@ -154,7 +154,7 @@ export const TNSSendFundsModal: React.FC<{
           name="comment"
           label="COMMENT ?"
           control={control}
-          defaultValue="Sent from Teritori"
+          defaultValue="Sent from Furya"
           placeHolder="Type your comment here"
           containerStyle={{ marginBottom: layout.spacing_x1_5, width: "100%" }}
         />

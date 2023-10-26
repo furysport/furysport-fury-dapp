@@ -17,12 +17,12 @@ export class QueryClientImpl implements Query {
   }
   allocation(request: QueryAllocationRequest): Promise<QueryAllocationResponse> {
     const data = QueryAllocationRequest.encode(request).finish();
-    const promise = this.rpc.request("teritori.airdrop.v1beta1.Query", "Allocation", data);
+    const promise = this.rpc.request("furya.airdrop.v1beta1.Query", "Allocation", data);
     return promise.then(data => QueryAllocationResponse.decode(new _m0.Reader(data)));
   }
   params(request: QueryParamsRequest = {}): Promise<QueryParamsResponse> {
     const data = QueryParamsRequest.encode(request).finish();
-    const promise = this.rpc.request("teritori.airdrop.v1beta1.Query", "Params", data);
+    const promise = this.rpc.request("furya.airdrop.v1beta1.Query", "Params", data);
     return promise.then(data => QueryParamsResponse.decode(new _m0.Reader(data)));
   }
 }

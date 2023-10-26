@@ -1,16 +1,16 @@
-import { TeritoriNftVaultQueryClient } from "../contracts-clients/teritori-nft-vault/TeritoriNftVault.client";
+import { FuryaNftVaultQueryClient } from "../contracts-clients/furya-nft-vault/FuryaNftVault.client";
 import { mustGetNonSigningCosmWasmClient } from "../networks";
-import { teritoriNetwork } from "../networks/teritori";
+import { furyaNetwork } from "../networks/furya";
 
 const main = async () => {
-  const network = teritoriNetwork;
+  const network = furyaNetwork;
   if (!network.vaultContractAddress) {
     throw new Error("no vault contract address in network config");
   }
 
   console.log("contract address:", network.vaultContractAddress);
 
-  const client = new TeritoriNftVaultQueryClient(
+  const client = new FuryaNftVaultQueryClient(
     await mustGetNonSigningCosmWasmClient(network.id),
     network.vaultContractAddress
   );

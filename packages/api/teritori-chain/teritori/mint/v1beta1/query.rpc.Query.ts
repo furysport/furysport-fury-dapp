@@ -19,12 +19,12 @@ export class QueryClientImpl implements Query {
   }
   params(request: QueryParamsRequest = {}): Promise<QueryParamsResponse> {
     const data = QueryParamsRequest.encode(request).finish();
-    const promise = this.rpc.request("teritori.mint.v1beta1.Query", "Params", data);
+    const promise = this.rpc.request("furya.mint.v1beta1.Query", "Params", data);
     return promise.then(data => QueryParamsResponse.decode(new _m0.Reader(data)));
   }
   blockProvisions(request: QueryBlockProvisionsRequest = {}): Promise<QueryBlockProvisionsResponse> {
     const data = QueryBlockProvisionsRequest.encode(request).finish();
-    const promise = this.rpc.request("teritori.mint.v1beta1.Query", "BlockProvisions", data);
+    const promise = this.rpc.request("furya.mint.v1beta1.Query", "BlockProvisions", data);
     return promise.then(data => QueryBlockProvisionsResponse.decode(new _m0.Reader(data)));
   }
 }

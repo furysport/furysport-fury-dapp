@@ -6,8 +6,8 @@
 
 import { CosmWasmClient, SigningCosmWasmClient, ExecuteResult } from "@cosmjs/cosmwasm-stargate";
 import { Coin, StdFee } from "@cosmjs/amino";
-import { ExecuteMsg, Addr, Nft, GetConfigResponse, GetSquadResponse, Squad, GetUserSquadCountResponse, InstantiateMsg, IsCollectionWhitelistedResponse, QueryMsg } from "./TeritoriSquadStaking.types";
-export interface TeritoriSquadStakingReadOnlyInterface {
+import { ExecuteMsg, Addr, Nft, GetConfigResponse, GetSquadResponse, Squad, GetUserSquadCountResponse, InstantiateMsg, IsCollectionWhitelistedResponse, QueryMsg } from "./FuryaSquadStaking.types";
+export interface FuryaSquadStakingReadOnlyInterface {
   contractAddress: string;
   getConfig: () => Promise<GetConfigResponse>;
   getUserSquadCount: ({
@@ -26,7 +26,7 @@ export interface TeritoriSquadStakingReadOnlyInterface {
     contractAddr: string;
   }) => Promise<IsCollectionWhitelistedResponse>;
 }
-export class TeritoriSquadStakingQueryClient implements TeritoriSquadStakingReadOnlyInterface {
+export class FuryaSquadStakingQueryClient implements FuryaSquadStakingReadOnlyInterface {
   client: CosmWasmClient;
   contractAddress: string;
 
@@ -78,7 +78,7 @@ export class TeritoriSquadStakingQueryClient implements TeritoriSquadStakingRead
     });
   };
 }
-export interface TeritoriSquadStakingInterface extends TeritoriSquadStakingReadOnlyInterface {
+export interface FuryaSquadStakingInterface extends FuryaSquadStakingReadOnlyInterface {
   contractAddress: string;
   sender: string;
   updateConfig: ({
@@ -119,7 +119,7 @@ export interface TeritoriSquadStakingInterface extends TeritoriSquadStakingReadO
   }, fee?: number | StdFee | "auto", memo?: string, funds?: Coin[]) => Promise<ExecuteResult>;
   withdraw: (fee?: number | StdFee | "auto", memo?: string, funds?: Coin[]) => Promise<ExecuteResult>;
 }
-export class TeritoriSquadStakingClient extends TeritoriSquadStakingQueryClient implements TeritoriSquadStakingInterface {
+export class FuryaSquadStakingClient extends FuryaSquadStakingQueryClient implements FuryaSquadStakingInterface {
   client: SigningCosmWasmClient;
   sender: string;
   contractAddress: string;

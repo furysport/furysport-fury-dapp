@@ -23,7 +23,7 @@ interface MultisigSectionProps {
   containerStyle?: ViewStyle;
   tresholdMax?: number;
   tresholdCurrentCount?: number;
-  toriText?: boolean;
+  furyText?: boolean;
   isLoading?: boolean;
   isCollapsable?: boolean;
 }
@@ -34,7 +34,7 @@ export const MultisigSection: React.FC<MultisigSectionProps> = ({
   children,
   tresholdCurrentCount,
   tresholdMax,
-  toriText,
+  furyText,
   isLoading,
   isCollapsable,
 }) => {
@@ -67,11 +67,11 @@ export const MultisigSection: React.FC<MultisigSectionProps> = ({
             </>
           )}
 
-          {!isLoading && toriText && (
+          {!isLoading && furyText && (
             <>
               <View style={badgeCStyle}>
                 <BrandText style={[fontSemibold14, { color: neutral77 }]}>
-                  TORI
+                  FURY
                 </BrandText>
               </View>
               <SpacerRow size={1.5} />

@@ -14,12 +14,12 @@ export class LCDQueryClient {
   }
   /* Params returns the total set of minting parameters. */
   async params(_params: QueryParamsRequest = {}): Promise<QueryParamsResponseSDKType> {
-    const endpoint = `teritori/mint/v1beta1/params`;
+    const endpoint = `furya/mint/v1beta1/params`;
     return await this.req.get<QueryParamsResponseSDKType>(endpoint);
   }
   /* BlockProvisions current minting epoch provisions value. */
   async blockProvisions(_params: QueryBlockProvisionsRequest = {}): Promise<QueryBlockProvisionsResponseSDKType> {
-    const endpoint = `teritori/mint/v1beta1/block_provisions`;
+    const endpoint = `furya/mint/v1beta1/block_provisions`;
     return await this.req.get<QueryBlockProvisionsResponseSDKType>(endpoint);
   }
 }

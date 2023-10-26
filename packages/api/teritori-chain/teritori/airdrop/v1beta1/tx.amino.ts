@@ -2,7 +2,7 @@
 import { AminoMsg } from "@cosmjs/amino";
 import { MsgClaimAllocation, MsgSetAllocation, MsgTransferModuleOwnership, MsgDepositTokens } from "./tx";
 export interface MsgClaimAllocationAminoType extends AminoMsg {
-  type: "/teritori.airdrop.v1beta1.MsgClaimAllocation";
+  type: "/furya.airdrop.v1beta1.MsgClaimAllocation";
   value: {
     address: string;
     pub_key: string;
@@ -11,7 +11,7 @@ export interface MsgClaimAllocationAminoType extends AminoMsg {
   };
 }
 export interface MsgSetAllocationAminoType extends AminoMsg {
-  type: "/teritori.airdrop.v1beta1.MsgSetAllocation";
+  type: "/furya.airdrop.v1beta1.MsgSetAllocation";
   value: {
     sender: string;
     allocation: {
@@ -23,22 +23,22 @@ export interface MsgSetAllocationAminoType extends AminoMsg {
   };
 }
 export interface MsgTransferModuleOwnershipAminoType extends AminoMsg {
-  type: "/teritori.airdrop.v1beta1.MsgTransferModuleOwnership";
+  type: "/furya.airdrop.v1beta1.MsgTransferModuleOwnership";
   value: {
     sender: string;
     new_owner: string;
   };
 }
 export interface MsgDepositTokensAminoType extends AminoMsg {
-  type: "/teritori.airdrop.v1beta1.MsgDepositTokens";
+  type: "/furya.airdrop.v1beta1.MsgDepositTokens";
   value: {
     sender: string;
     amount: string[];
   };
 }
 export const AminoConverter = {
-  "/teritori.airdrop.v1beta1.MsgClaimAllocation": {
-    aminoType: "/teritori.airdrop.v1beta1.MsgClaimAllocation",
+  "/furya.airdrop.v1beta1.MsgClaimAllocation": {
+    aminoType: "/furya.airdrop.v1beta1.MsgClaimAllocation",
     toAmino: ({
       address,
       pubKey,
@@ -66,8 +66,8 @@ export const AminoConverter = {
       };
     }
   },
-  "/teritori.airdrop.v1beta1.MsgSetAllocation": {
-    aminoType: "/teritori.airdrop.v1beta1.MsgSetAllocation",
+  "/furya.airdrop.v1beta1.MsgSetAllocation": {
+    aminoType: "/furya.airdrop.v1beta1.MsgSetAllocation",
     toAmino: ({
       sender,
       allocation
@@ -97,8 +97,8 @@ export const AminoConverter = {
       };
     }
   },
-  "/teritori.airdrop.v1beta1.MsgTransferModuleOwnership": {
-    aminoType: "/teritori.airdrop.v1beta1.MsgTransferModuleOwnership",
+  "/furya.airdrop.v1beta1.MsgTransferModuleOwnership": {
+    aminoType: "/furya.airdrop.v1beta1.MsgTransferModuleOwnership",
     toAmino: ({
       sender,
       newOwner
@@ -118,8 +118,8 @@ export const AminoConverter = {
       };
     }
   },
-  "/teritori.airdrop.v1beta1.MsgDepositTokens": {
-    aminoType: "/teritori.airdrop.v1beta1.MsgDepositTokens",
+  "/furya.airdrop.v1beta1.MsgDepositTokens": {
+    aminoType: "/furya.airdrop.v1beta1.MsgDepositTokens",
     toAmino: ({
       sender,
       amount

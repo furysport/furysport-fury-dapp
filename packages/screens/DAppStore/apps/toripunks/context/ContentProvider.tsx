@@ -53,7 +53,7 @@ export const ContentContextProvider: React.FC<{
   const [loadingGame, setLoadingGame] = useState<boolean>(false);
 
   const setSelectedSectionHandler = (section: string) => {
-    navigation.navigate("ToriPunks", { route: section });
+    navigation.navigate("FuryPunks", { route: section });
     setSelectedSection(section);
   };
 

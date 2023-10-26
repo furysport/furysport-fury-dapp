@@ -9,5 +9,5 @@ export * from "./cosmos_proto/bundle";
 export * from "./cosmos/bundle";
 export * from "./gogoproto/bundle";
 export * from "./google/bundle";
-export * from "./teritori/bundle";
-export * from "./teritori/client";
+export * from "./furya/bundle";
+export * from "./furya/client";

@@ -172,7 +172,7 @@ export const UserPublicProfileScreen: ScreenFC<"UserPublicProfile"> = ({
   const { metadata, notFound } = useNSUserInfo(id);
   useEffect(() => {
     navigation.setOptions({
-      title: `Teritori - User: ${metadata.tokenId || userAddress}`,
+      title: `Furya - User: ${metadata.tokenId || userAddress}`,
     });
   }, [navigation, userAddress, metadata.tokenId]);
 

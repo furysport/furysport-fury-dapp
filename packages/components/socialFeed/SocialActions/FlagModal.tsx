@@ -14,7 +14,7 @@ import { RadioButton } from "../../RadioButton";
 import { PrimaryButton } from "../../buttons/PrimaryButton";
 import ModalBase from "../../modals/ModalBase";
 import { SpacerColumn, SpacerRow } from "../../spacer";
-import { TERITORI_FEED_ID } from "../const";
+import { FURYA_FEED_ID } from "../const";
 
 type FlagModalProps = {
   postId: string;
@@ -47,7 +47,7 @@ export const FlagModal: React.FC<FlagModalProps> = ({
       send: "",
       pkg_path: gnoNetwork.socialFeedsPkgPath,
       func: flagType === "hideForMe" ? "HidePostForMe" : "FlagPost",
-      args: [TERITORI_FEED_ID, postId],
+      args: [FURYA_FEED_ID, postId],
     };
 
     try {

@@ -1,6 +1,6 @@
 package indexerdb
 
-import "github.com/TERITORI/teritori-dapp/go/pkg/networks"
+import "github.com/furysport/furya-dapp/go/pkg/networks"
 
 type Quest struct {
 	ID    string

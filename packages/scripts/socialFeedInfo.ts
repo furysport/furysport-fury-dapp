@@ -1,16 +1,16 @@
-import { TeritoriSocialFeedQueryClient } from "../contracts-clients/teritori-social-feed/TeritoriSocialFeed.client";
+import { FuryaSocialFeedQueryClient } from "../contracts-clients/furya-social-feed/FuryaSocialFeed.client";
 import { mustGetNonSigningCosmWasmClient } from "../networks";
-import { teritoriNetwork } from "../networks/teritori";
+import { furyaNetwork } from "../networks/furya";
 
 const main = async () => {
-  const network = teritoriNetwork;
+  const network = furyaNetwork;
   if (!network.socialFeedContractAddress) {
     throw new Error("no social feed contract address in network config");
   }
 
   console.log("contract address:", network.socialFeedContractAddress);
 
-  const client = new TeritoriSocialFeedQueryClient(
+  const client = new FuryaSocialFeedQueryClient(
     await mustGetNonSigningCosmWasmClient(network.id),
     network.socialFeedContractAddress
   );

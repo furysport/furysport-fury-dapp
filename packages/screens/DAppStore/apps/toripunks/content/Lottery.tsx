@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Linking, TouchableOpacity, View } from "react-native";
 
 import { ButtonLabel } from "../components/buttonLabel/ButtonLabel";
-import { BuyToripunksButton } from "../components/buttonLabel/BuyToripunksButton";
+import { BuyFurypunksButton } from "../components/buttonLabel/BuyFurypunksButton";
 import { Label } from "../components/label/Label";
 import { useContentContext } from "../context/ContentProvider";
 import { useGiganticLastReward } from "../query/useGiganticHistory";
@@ -56,7 +56,7 @@ export const Lottery = () => {
             fontSize: parseInt(styleTypeSize, 10) + 20,
           }}
         >
-          {lastRewards} $TORI
+          {lastRewards} $FURY
         </Label>
         <Label
           styleType="T1_Bebas_20"
@@ -74,7 +74,7 @@ export const Lottery = () => {
             marginTop: 40,
           }}
         >
-          <BuyToripunksButton size="S" />
+          <BuyFurypunksButton size="S" />
 
           <TouchableOpacity
             onPress={() => setSelectedSectionHandler("lottery-history")}

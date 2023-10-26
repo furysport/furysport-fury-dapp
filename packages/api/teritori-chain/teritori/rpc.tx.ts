@@ -5,7 +5,7 @@ export const createRPCMsgClient = async ({
 }: {
   rpc: Rpc;
 }) => ({
-  teritori: {
+  furya: {
     airdrop: {
       v1beta1: new (await import("./airdrop/v1beta1/tx.rpc.msg")).MsgClientImpl(rpc)
     },

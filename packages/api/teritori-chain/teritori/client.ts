@@ -2,16 +2,16 @@
 import { GeneratedType, Registry, OfflineSigner } from "@cosmjs/proto-signing";
 import { defaultRegistryTypes, AminoTypes, SigningStargateClient } from "@cosmjs/stargate";
 import { HttpEndpoint } from "@cosmjs/tendermint-rpc";
-import * as teritoriAirdropV1beta1TxRegistry from "./airdrop/v1beta1/tx.registry";
-import * as teritoriMintV1beta1TxRegistry from "./mint/v1beta1/tx.registry";
-import * as teritoriAirdropV1beta1TxAmino from "./airdrop/v1beta1/tx.amino";
-import * as teritoriMintV1beta1TxAmino from "./mint/v1beta1/tx.amino";
-export const teritoriAminoConverters = {
-  ...teritoriAirdropV1beta1TxAmino.AminoConverter,
-  ...teritoriMintV1beta1TxAmino.AminoConverter
+import * as furyaAirdropV1beta1TxRegistry from "./airdrop/v1beta1/tx.registry";
+import * as furyaMintV1beta1TxRegistry from "./mint/v1beta1/tx.registry";
+import * as furyaAirdropV1beta1TxAmino from "./airdrop/v1beta1/tx.amino";
+import * as furyaMintV1beta1TxAmino from "./mint/v1beta1/tx.amino";
+export const furyaAminoConverters = {
+  ...furyaAirdropV1beta1TxAmino.AminoConverter,
+  ...furyaMintV1beta1TxAmino.AminoConverter
 };
-export const teritoriProtoRegistry: ReadonlyArray<[string, GeneratedType]> = [...teritoriAirdropV1beta1TxRegistry.registry, ...teritoriMintV1beta1TxRegistry.registry];
-export const getSigningTeritoriClientOptions = ({
+export const furyaProtoRegistry: ReadonlyArray<[string, GeneratedType]> = [...furyaAirdropV1beta1TxRegistry.registry, ...furyaMintV1beta1TxRegistry.registry];
+export const getSigningFuryaClientOptions = ({
   defaultTypes = defaultRegistryTypes
 }: {
   defaultTypes?: ReadonlyArray<[string, GeneratedType]>;
@@ -19,16 +19,16 @@ export const getSigningTeritoriClientOptions = ({
   registry: Registry;
   aminoTypes: AminoTypes;
 } => {
-  const registry = new Registry([...defaultTypes, ...teritoriProtoRegistry]);
+  const registry = new Registry([...defaultTypes, ...furyaProtoRegistry]);
   const aminoTypes = new AminoTypes({
-    ...teritoriAminoConverters
+    ...furyaAminoConverters
   });
   return {
     registry,
     aminoTypes
   };
 };
-export const getSigningTeritoriClient = async ({
+export const getSigningFuryaClient = async ({
   rpcEndpoint,
   signer,
   defaultTypes = defaultRegistryTypes
@@ -40,7 +40,7 @@ export const getSigningTeritoriClient = async ({
   const {
     registry,
     aminoTypes
-  } = getSigningTeritoriClientOptions({
+  } = getSigningFuryaClientOptions({
     defaultTypes
   });
   const client = await SigningStargateClient.connectWithSigner(rpcEndpoint, signer, {
