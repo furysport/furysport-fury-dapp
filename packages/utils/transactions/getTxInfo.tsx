@@ -15,7 +15,7 @@ import multisigWhiteSVG from "../../../assets/icons/multisig_white.svg";
 import stakingWhiteSVG from "../../../assets/icons/staking_white.svg";
 import tnsWhiteSVG from "../../../assets/icons/tns-service_white.svg";
 import walletWhiteSVG from "../../../assets/icons/wallet_white.svg";
-import { Coin } from "../../api/teritori-chain/cosmos/base/v1beta1/coin";
+import { Coin } from "../../api/furya-chain/cosmos/base/v1beta1/coin";
 import { BrandText } from "../../components/BrandText";
 import { SocialMessageContent } from "../../components/socialFeed/SocialThread/SocialMessageContent";
 import { SpacerColumn } from "../../components/spacer";
@@ -501,7 +501,7 @@ export const getTxInfo = (
           },
         };
       }
-      case "/teritori.mint.v1beta1.MsgBurnTokens": {
+      case "/furya.mint.v1beta1.MsgBurnTokens": {
         const burnerAddress = msg.value.sender;
         const amount = Coin.decode(Buffer.from(msg.value.amount[0], "utf-8"));
         return {

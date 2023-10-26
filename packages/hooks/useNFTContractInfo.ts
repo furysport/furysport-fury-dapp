@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { TeritoriNftQueryClient } from "../contracts-clients/teritori-nft/TeritoriNft.client";
+import { FuryaNftQueryClient } from "../contracts-clients/furya-nft/FuryaNft.client";
 import { mustGetNonSigningCosmWasmClient } from "../networks";
 
 export const useCW721ContractInfo = (
@@ -14,7 +14,7 @@ export const useCW721ContractInfo = (
         return undefined;
       }
       const cosmwasm = await mustGetNonSigningCosmWasmClient(networkId);
-      const nftClient = new TeritoriNftQueryClient(cosmwasm, contractAddress);
+      const nftClient = new FuryaNftQueryClient(cosmwasm, contractAddress);
       return await nftClient.contractInfo();
     },
     { enabled: !!contractAddress && !!networkId }

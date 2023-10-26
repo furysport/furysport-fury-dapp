@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/TERITORI/teritori-dapp/go/pkg/multisigpb"
+	"github.com/furysport/furya-dapp/go/pkg/multisigpb"
 	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
 	"github.com/cosmos/cosmos-sdk/types/bech32"
 	"github.com/pkg/errors"
@@ -18,7 +18,7 @@ import (
 
 var timeNow = time.Now // we use this to override time.Now in tests while preventing bad usage of the functions in this file
 
-const clientMagic = "Login to Teritori Multisig Service"
+const clientMagic = "Login to Furya Multisig Service"
 
 func parsePubKeyJSON(pubkeyJSON string) (*secp256k1.PubKey, error) {
 	pk := struct {

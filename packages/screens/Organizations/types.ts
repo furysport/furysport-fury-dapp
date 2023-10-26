@@ -5,7 +5,7 @@ export enum DaoType {
 
 export type CreateDaoFormType = {
   organizationName: string;
-  associatedTeritoriNameService: string;
+  associatedFuryaNameService: string;
   organizationDescription: string;
   structure: DaoType;
   imageUrl: string;

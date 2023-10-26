@@ -73,7 +73,7 @@ const MENU_ITEMS: MenuItem[] = [
     id: "rarity",
     name: "Rarity",
     externalRoute:
-      "https://tori-live.io/allnfts.php?collid=tori1j08452mqwadp8xu25kn9rleyl2gufgfjnv0sn8dvynynakkjukcq3vtuv2",
+      "https://furya-live.io/allnfts.php?collid=furya1j08452mqwadp8xu25kn9rleyl2gufgfjnv0sn8dvynynakkjukcqhseren",
     iconSVG: diamondSVG,
   },
   {

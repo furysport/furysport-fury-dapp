@@ -1,7 +1,7 @@
 import {
-  TeritoriSocialFeedClient,
-  TeritoriSocialFeedQueryClient,
-} from "../contracts-clients/teritori-social-feed/TeritoriSocialFeed.client";
+  FuryaSocialFeedClient,
+  FuryaSocialFeedQueryClient,
+} from "../contracts-clients/furya-social-feed/FuryaSocialFeed.client";
 import {
   getKeplrSigningCosmWasmClient,
   mustGetNonSigningCosmWasmClient,
@@ -24,7 +24,7 @@ export const signingSocialFeedClient = async ({
   const network = mustGetCosmosNetwork(networkId);
   const socialFeedContractAddress = network.socialFeedContractAddress || "";
 
-  const cachedSigningClients: { [key: string]: TeritoriSocialFeedClient } = {};
+  const cachedSigningClients: { [key: string]: FuryaSocialFeedClient } = {};
   const cacheKey = `${walletAddress}${socialFeedContractAddress}`;
 
   if (cachedSigningClients[cacheKey]) {
@@ -33,7 +33,7 @@ export const signingSocialFeedClient = async ({
     const signingComswasmClient = await getKeplrSigningCosmWasmClient(
       networkId
     );
-    const client = new TeritoriSocialFeedClient(
+    const client = new FuryaSocialFeedClient(
       signingComswasmClient,
       walletAddress,
       socialFeedContractAddress
@@ -54,7 +54,7 @@ export const nonSigningSocialFeedClient = async ({
     networkId
   );
 
-  return new TeritoriSocialFeedQueryClient(
+  return new FuryaSocialFeedQueryClient(
     nonSigningCosmWasmClient,
     socialFeedContractAddress
   );

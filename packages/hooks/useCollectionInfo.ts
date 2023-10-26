@@ -42,7 +42,7 @@ export const useCollectionInfo = (
     info: breedingCollectionInfo,
     notFound: breedingNotFound,
     refetch: breedingRefetch,
-  } = useTeritoriBreedingCollectionInfo(
+  } = useFuryaBreedingCollectionInfo(
     network?.id,
     contractKind === CollectionContractKind.CosmwasmBreedingV0
   );
@@ -59,7 +59,7 @@ export const useCollectionInfo = (
     info: ethereumCollectionInfo,
     notFound: ethNotFound,
     refetch: ethRefetch,
-  } = useEthereumTeritoriBunkerCollectionInfo(
+  } = useEthereumFuryaBunkerCollectionInfo(
     network?.id,
     mintAddress,
     contractKind === CollectionContractKind.EthereumBunkerV0
@@ -121,7 +121,7 @@ export const useCollectionInfo = (
   ]);
 };
 
-const useTeritoriBreedingCollectionInfo = (
+const useFuryaBreedingCollectionInfo = (
   networkId: string | undefined,
   enabled?: boolean
 ) => {
@@ -234,7 +234,7 @@ const useCosmosBunkerCollectionInfo = (
   return { info, notFound: isError, refetch };
 };
 
-const useEthereumTeritoriBunkerCollectionInfo = (
+const useEthereumFuryaBunkerCollectionInfo = (
   networkId: string | undefined,
   mintAddress: string,
   enabled?: boolean

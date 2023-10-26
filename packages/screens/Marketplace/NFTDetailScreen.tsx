@@ -12,8 +12,8 @@ import {
   useFeedbacks,
 } from "../../context/FeedbacksProvider";
 import { Wallet } from "../../context/WalletsProvider";
-import { TeritoriNftVaultClient } from "../../contracts-clients/teritori-nft-vault/TeritoriNftVault.client";
-import { NFTVault__factory } from "../../evm-contracts-clients/teritori-nft-vault/NFTVault__factory";
+import { FuryaNftVaultClient } from "../../contracts-clients/furya-nft-vault/FuryaNftVault.client";
+import { NFTVault__factory } from "../../evm-contracts-clients/furya-nft-vault/NFTVault__factory";
 import { useCancelNFTListing } from "../../hooks/useCancelNFTListing";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import { useMaxResolution } from "../../hooks/useMaxResolution";
@@ -79,7 +79,7 @@ const Content: React.FC<{
     let buyFunc: CallableFunction | null = null;
     switch (network?.kind) {
       case NetworkKind.Cosmos:
-        buyFunc = teritoriBuy;
+        buyFunc = furyaBuy;
         break;
       case NetworkKind.Ethereum:
         buyFunc = ethereumBuy;
@@ -218,7 +218,7 @@ export const NFTDetailScreen: ScreenFC<"NFTDetail"> = ({
 
   useEffect(() => {
     navigation.setOptions({
-      title: `Teritori - NFT: ${info?.name}`,
+      title: `Furya - NFT: ${info?.name}`,
     });
   }, [info?.name, navigation]);
 
@@ -243,13 +243,13 @@ export const NFTDetailScreen: ScreenFC<"NFTDetail"> = ({
   );
 };
 
-const teritoriBuy = async (wallet: Wallet, info: NFTInfo) => {
+const furyaBuy = async (wallet: Wallet, info: NFTInfo) => {
   const network = mustGetCosmosNetwork(info.networkId);
   if (!network.vaultContractAddress) {
     throw new Error("network not supported");
   }
   const signingCosmwasmClient = await getKeplrSigningCosmWasmClient(network.id);
-  const signingVaultClient = new TeritoriNftVaultClient(
+  const signingVaultClient = new FuryaNftVaultClient(
     signingCosmwasmClient,
     wallet.address,
     network.vaultContractAddress

@@ -3,9 +3,9 @@ package dao
 import (
 	"context"
 
-	"github.com/TERITORI/teritori-dapp/go/internal/indexerdb"
-	"github.com/TERITORI/teritori-dapp/go/pkg/daopb"
-	"github.com/TERITORI/teritori-dapp/go/pkg/networks"
+	"github.com/furysport/furya-dapp/go/internal/indexerdb"
+	"github.com/furysport/furya-dapp/go/pkg/daopb"
+	"github.com/furysport/furya-dapp/go/pkg/networks"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 	"gorm.io/gorm"

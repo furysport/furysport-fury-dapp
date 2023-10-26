@@ -1,8 +1,8 @@
-import { TeritoriNameServiceQueryClient } from "../contracts-clients/teritori-name-service/TeritoriNameService.client";
+import { FuryaNameServiceQueryClient } from "../contracts-clients/furya-name-service/FuryaNameService.client";
 import {
-  TeritoriSquadStakingClient,
-  TeritoriSquadStakingQueryClient,
-} from "../contracts-clients/teritori-squad-staking/TeritoriSquadStaking.client";
+  FuryaSquadStakingClient,
+  FuryaSquadStakingQueryClient,
+} from "../contracts-clients/furya-squad-staking/FuryaSquadStaking.client";
 import {
   getCosmosNetwork,
   getKeplrSigningCosmWasmClient,
@@ -30,7 +30,7 @@ export const getCosmosNameServiceQueryClient = async (
     return undefined;
   }
 
-  const nsClient = new TeritoriNameServiceQueryClient(
+  const nsClient = new FuryaNameServiceQueryClient(
     cosmWasmClient,
     network.nameServiceContractAddress
   );
@@ -47,7 +47,7 @@ export const getSquadStakingQueryClient = async (
     throw new Error("missing squad staking contract address in network config");
   }
   const nonSigningClient = await mustGetNonSigningCosmWasmClient(network.id);
-  return new TeritoriSquadStakingQueryClient(nonSigningClient, contractAddress);
+  return new FuryaSquadStakingQueryClient(nonSigningClient, contractAddress);
 };
 
 export const getKeplrSquadStakingClient = async (
@@ -60,7 +60,7 @@ export const getKeplrSquadStakingClient = async (
     throw new Error("missing squad staking contract address in network config");
   }
   const cosmWasmClient = await getKeplrSigningCosmWasmClient(cosmosNetwork.id);
-  return new TeritoriSquadStakingClient(
+  return new FuryaSquadStakingClient(
     cosmWasmClient,
     userAddress,
     contractAddress

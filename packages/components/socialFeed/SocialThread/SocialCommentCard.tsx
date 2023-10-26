@@ -12,8 +12,8 @@ import {
 import { SocialCardHeader } from "./SocialCardHeader";
 import { SocialMessageContent } from "./SocialMessageContent";
 import { signingSocialFeedClient } from "../../../client-creators/socialFeedClient";
-import { useTeritoriSocialFeedReactPostMutation } from "../../../contracts-clients/teritori-social-feed/TeritoriSocialFeed.react-query";
-import { Reaction as ReactionFromContract } from "../../../contracts-clients/teritori-social-feed/TeritoriSocialFeed.types";
+import { useFuryaSocialFeedReactPostMutation } from "../../../contracts-clients/furya-social-feed/FuryaSocialFeed.react-query";
+import { Reaction as ReactionFromContract } from "../../../contracts-clients/furya-social-feed/FuryaSocialFeed.types";
 import {
   combineFetchCommentPages,
   useFetchComments,
@@ -64,7 +64,7 @@ import { nbReactionsShown, Reactions } from "../SocialActions/Reactions";
 import { ReplyButton } from "../SocialActions/ReplyButton";
 import { ShareButton } from "../SocialActions/ShareButton";
 import { TipButton } from "../SocialActions/TipButton";
-import { TERITORI_FEED_ID } from "../const";
+import { FURYA_FEED_ID } from "../const";
 
 const BREAKPOINT_S = 480;
 
@@ -114,7 +114,7 @@ export const SocialCommentCard: React.FC<SocialCommentCardProps> = ({
   const oldIsFetching = usePrevious(isFetching);
 
   const { mutate: postMutate, isLoading: isPostMutationLoading } =
-    useTeritoriSocialFeedReactPostMutation({
+    useFuryaSocialFeedReactPostMutation({
       onSuccess(_data, variables) {
         const reactions = getUpdatedReactions(
           localComment.reactions,
@@ -200,7 +200,7 @@ export const SocialCommentCard: React.FC<SocialCommentCardProps> = ({
       send: "",
       pkg_path: gnoNetwork.socialFeedsPkgPath,
       func: "ReactPost",
-      args: [TERITORI_FEED_ID, localComment.identifier, icon, "true"],
+      args: [FURYA_FEED_ID, localComment.identifier, icon, "true"],
     };
 
     const txHash = await adenaDoContract(

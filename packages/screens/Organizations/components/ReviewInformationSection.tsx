@@ -62,12 +62,12 @@ export const ReviewInformationSection: React.FC<
     []
   );
 
-  let associateName = organizationData?.associatedTeritoriNameService
-    ? organizationData?.associatedTeritoriNameService
+  let associateName = organizationData?.associatedFuryaNameService
+    ? organizationData?.associatedFuryaNameService
     : "";
-  associateName = associateName.includes(".tori")
+  associateName = associateName.includes(".furya")
     ? associateName
-    : associateName + ".tori";
+    : associateName + ".furya";
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -96,7 +96,7 @@ export const ReviewInformationSection: React.FC<
         />
         <SpacerColumn size={1} />
         <ReviewCollapsableItem
-          title="Associated Teritori Name Service"
+          title="Associated Furya Name Service"
           value={associateName}
         />
         <SpacerColumn size={1} />
@@ -202,7 +202,7 @@ export const ReviewInformationSection: React.FC<
           </BrandText>
           <SpacerRow size={1} />
           <BrandText style={[fontSemibold14, { color: primaryColor }]}>
-            5 TORI
+            5 FURY
           </BrandText>
         </View>
 

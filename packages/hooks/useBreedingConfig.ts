@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { TeritoriBreedingQueryClient } from "../contracts-clients/teritori-breeding/TeritoriBreeding.client";
+import { FuryaBreedingQueryClient } from "../contracts-clients/furya-breeding/FuryaBreeding.client";
 import { getCosmosNetwork, mustGetNonSigningCosmWasmClient } from "../networks";
 
 export const useBreedingConfig = (
@@ -26,7 +26,7 @@ export const useBreedingConfig = (
 
       const cosmwasmClient = await mustGetNonSigningCosmWasmClient(networkId);
 
-      const breedingClient = new TeritoriBreedingQueryClient(
+      const breedingClient = new FuryaBreedingQueryClient(
         cosmwasmClient,
         breedingContractAddress
       );

@@ -3,9 +3,9 @@ import { useCallback, useState } from "react";
 
 import { useFeedbacks } from "../../context/FeedbacksProvider";
 import {
-  TeritoriDistributorClient,
-  TeritoriDistributorQueryClient,
-} from "../../contracts-clients/teritori-distributor/TeritoriDistributor.client";
+  FuryaDistributorClient,
+  FuryaDistributorQueryClient,
+} from "../../contracts-clients/furya-distributor/FuryaDistributor.client";
 import {
   getKeplrSigningCosmWasmClient,
   mustGetNonSigningCosmWasmClient,
@@ -35,7 +35,7 @@ export const useGameRewards = () => {
       const nonSigningClient = await mustGetNonSigningCosmWasmClient(
         network.id
       );
-      const distributorQueryClient = new TeritoriDistributorQueryClient(
+      const distributorQueryClient = new FuryaDistributorQueryClient(
         nonSigningClient,
         network.distributorContractAddress
       );
@@ -61,7 +61,7 @@ export const useGameRewards = () => {
       }
 
       const signingClient = await getKeplrSigningCosmWasmClient(network.id);
-      const distributorClient = new TeritoriDistributorClient(
+      const distributorClient = new FuryaDistributorClient(
         signingClient,
         userAddress,
         network.distributorContractAddress

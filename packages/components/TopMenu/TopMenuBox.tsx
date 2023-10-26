@@ -11,7 +11,7 @@ import { TOP_MENU_BUTTON_HEIGHT } from "./TopMenu";
 import { TopMenuAccount } from "./TopMenuAccount";
 import { TopMenuHighlightedNews } from "./TopMenuHighlightedNews";
 import { TopMenuLiveMint } from "./TopMenuLiveMint";
-import { TopMenuMyTeritories } from "./TopMenuMyTeritories";
+import { TopMenuMyFuryaes } from "./TopMenuMyFuryaes";
 import { TopMenuMyWallets } from "./TopMenuMyWallets";
 import { purpleLight } from "../../utils/style/colors";
 import { fontSemibold14 } from "../../utils/style/fonts";
@@ -46,7 +46,7 @@ export const TopMenuBox: FC<{
       >
         <TopMenuAccount />
         <TopMenuMyWallets />
-        <TopMenuMyTeritories />
+        <TopMenuMyFuryaes />
         <TopMenuHighlightedNews />
         <TopMenuLiveMint />
 

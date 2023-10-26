@@ -1,4 +1,4 @@
-module github.com/TERITORI/teritori-dapp
+module github.com/furysport/furya-dapp
 
 go 1.18
 
@@ -7,7 +7,7 @@ require (
 	github.com/Khan/genqlient v0.5.0
 	github.com/allegro/bigcache/v3 v3.0.2
 	github.com/bxcodec/faker/v3 v3.8.0
-	github.com/cosmos/cosmos-sdk v0.45.4
+	github.com/cosmos/cosmos-sdk v0.45.10
 	github.com/cosmos/gogoproto v1.4.2
 	github.com/davecgh/go-spew v1.1.1
 	github.com/friendsofgo/errors v0.9.2

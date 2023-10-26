@@ -14,7 +14,7 @@ import {
   GnoSingleChoiceProposal,
   GnoModboardsDeletePostMessage,
   GnoModboardsCreateMessage,
-  GnoMintToriMessage,
+  GnoMintFuryaMessage,
 } from "../../utils/gnodao/messages";
 import { fontSemibold20 } from "../../utils/style/fonts";
 import { modalMarginPadding } from "../../utils/style/modals";
@@ -43,12 +43,12 @@ export const GnoDemo: React.FC<{
       <SpacerColumn size={4} />
       <DeletePost daoId={daoId} />
       <SpacerColumn size={4} />
-      <MintTori daoId={daoId} />
+      <MintFurya daoId={daoId} />
       <ConfigureVotingSection
         onSubmit={async (form) =>
           wrapWithFeedback(async () => {
             const msg: GnoDAOUpdateSettings = {
-              type: "gno.land/p/demo/teritori/dao_proposal_single.UpdateSettings",
+              type: "gno.land/p/demo/furya/dao_proposal_single.UpdateSettings",
               payload: {
                 threshold: {
                   thresholdQuorum: {
@@ -179,7 +179,7 @@ const DeletePost: React.FC<{ daoId: string }> = ({ daoId }) => {
           const threadIdNum = parseInt(threadId, 10);
           const postIdNum = parseInt(postId, 10);
           const payload: GnoModboardsDeletePostMessage = {
-            type: "gno.land/r/demo/teritori/modboards.DeletePost",
+            type: "gno.land/r/demo/furya/modboards.DeletePost",
             payload: {
               boardId: boardIdNum,
               threadId: threadIdNum,
@@ -233,7 +233,7 @@ const CreateBoard: React.FC<{ daoId: string }> = ({ daoId }) => {
         loader
         onPress={wrapWithFeedback(async () => {
           const payload: GnoModboardsCreateMessage = {
-            type: "gno.land/r/demo/teritori/modboards.CreateBoard",
+            type: "gno.land/r/demo/furya/modboards.CreateBoard",
             payload: {
               name,
             },
@@ -260,7 +260,7 @@ const CreateBoard: React.FC<{ daoId: string }> = ({ daoId }) => {
   );
 };
 
-const MintTori: React.FC<{ daoId: string }> = ({ daoId }) => {
+const MintFurya: React.FC<{ daoId: string }> = ({ daoId }) => {
   const [network, daoAddress] = parseUserId(daoId);
   const wallet = useSelectedWallet();
   const { wrapWithFeedback } = useFeedbacks();
@@ -270,7 +270,7 @@ const MintTori: React.FC<{ daoId: string }> = ({ daoId }) => {
   if (network?.kind !== NetworkKind.Gno || !wallet) return null;
   return (
     <View>
-      <BrandText style={fontSemibold20}>Mint Tori</BrandText>
+      <BrandText style={fontSemibold20}>Mint Furya</BrandText>
       <SpacerColumn size={2} />
       <TextInputCustom
         label="Amount"
@@ -292,15 +292,15 @@ const MintTori: React.FC<{ daoId: string }> = ({ daoId }) => {
         text="Propose mint"
         loader
         onPress={wrapWithFeedback(async () => {
-          const payload: GnoMintToriMessage = {
-            type: "gno.land/r/demo/teritori/tori.Mint",
+          const payload: GnoMintFuryaMessage = {
+            type: "gno.land/r/demo/furya/furya.Mint",
             payload: {
               amount: parseInt(amount, 10),
               address: recipient,
             },
           };
           const msg: GnoSingleChoiceProposal = {
-            title: `Mint ${amount} utori to ${recipient}`,
+            title: `Mint ${amount} ufury to ${recipient}`,
             description: "",
             messages: [payload],
           };

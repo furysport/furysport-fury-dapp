@@ -2,12 +2,12 @@ import { GnoJSONRPCProvider } from "@gnolang/gno-js-client";
 import { useInfiniteQuery } from "@tanstack/react-query";
 
 import { nonSigningSocialFeedClient } from "../../client-creators/socialFeedClient";
-import { TERITORI_FEED_ID } from "../../components/socialFeed/const";
+import { FURYA_FEED_ID } from "../../components/socialFeed/const";
 import { decodeGnoPost } from "../../components/socialFeed/utils";
 import {
   PostResult,
   Reaction,
-} from "../../contracts-clients/teritori-social-feed/TeritoriSocialFeed.types";
+} from "../../contracts-clients/furya-social-feed/FuryaSocialFeed.types";
 import {
   GnoNetworkInfo,
   NetworkKind,
@@ -36,7 +36,7 @@ type ConfigType = {
   enabled?: boolean;
 };
 
-const fetchTeritoriComments = async (
+const fetchFuryaComments = async (
   networkId: string,
   pageParam: number,
   parentId?: string
@@ -66,7 +66,7 @@ const fetchGnoComments = async (
 
   const output = await provider.evaluateExpression(
     selectedNetwork.socialFeedsPkgPath || "",
-    `GetComments(${TERITORI_FEED_ID}, ${parentId}, ${offset}, ${limit})`
+    `GetComments(${FURYA_FEED_ID}, ${parentId}, ${offset}, ${limit})`
   );
 
   const posts: PostResultWithCreatedAt[] = [];
@@ -111,7 +111,7 @@ export const useFetchComments = ({
       if (selectedNetwork?.kind === NetworkKind.Gno) {
         comments = await fetchGnoComments(selectedNetwork, parentId || "");
       } else {
-        comments = await fetchTeritoriComments(
+        comments = await fetchFuryaComments(
           selectedNetwork?.id || "",
           pageParam,
           parentId

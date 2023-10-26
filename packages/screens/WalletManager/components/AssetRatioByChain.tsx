@@ -5,7 +5,7 @@ import { SvgProps } from "react-native-svg";
 
 import cosmosHubSVG from "../../../../assets/icons/networks/cosmos-hub-circle.svg";
 import ethereumSVG from "../../../../assets/icons/networks/ethereum-circle.svg";
-import teritoriSVG from "../../../../assets/icons/networks/teritori-circle.svg";
+import furyaSVG from "../../../../assets/icons/networks/furya-circle.svg";
 import { BrandText } from "../../../components/BrandText";
 import { ProgressLine } from "../../../components/ProgressLine";
 import { SVG } from "../../../components/SVG";
@@ -68,22 +68,22 @@ export const AssetRatioByChain: React.FC<AssetRatioByChainProps> = ({
 
   // TODO: handle multi asset from multi wallets/multi networks
   const assetRatioData = useMemo(() => {
-    let toriPercent = 0;
+    let furyaPercent = 0;
     let ethPercent = 0;
     switch (selectedNetWorkKind) {
       case NetworkKind.Ethereum:
         ethPercent = 100;
         break;
       case NetworkKind.Cosmos:
-        toriPercent = 100;
+        furyaPercent = 100;
         break;
     }
 
     return [
       {
-        icon: teritoriSVG,
-        title: "Teritori",
-        percent: toriPercent,
+        icon: furyaSVG,
+        title: "Furya",
+        percent: furyaPercent,
       },
       {
         icon: cosmosHubSVG,

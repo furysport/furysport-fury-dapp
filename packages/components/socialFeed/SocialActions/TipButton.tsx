@@ -22,11 +22,11 @@ const GnoTipAmount: React.FC<TipAmountProps> = ({ amount, networkId }) => {
   return <>{prettyPrice(networkId, "" + amount, "ugnot")}</>;
 };
 
-const TeritoriTipAmount: React.FC<TipAmountProps> = ({ amount }) => {
+const FuryaTipAmount: React.FC<TipAmountProps> = ({ amount }) => {
   const selectedNetworkInfo = useSelectedNetworkInfo();
   const selectedNetworkId = selectedNetworkInfo?.id || "";
 
-  const denom = "utori";
+  const denom = "ufury";
   const coins: CoingeckoCoin[] = useMemo(
     () => [
       {
@@ -73,7 +73,7 @@ export const TipButton: React.FC<{
               amount={tipAmountLocal}
             />
           ) : (
-            <TeritoriTipAmount amount={amount} />
+            <FuryaTipAmount amount={amount} />
           )}
         </BrandText>
       </TouchableOpacity>

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { TeritoriNameServiceQueryClient } from "../contracts-clients/teritori-name-service/TeritoriNameService.client";
+import { FuryaNameServiceQueryClient } from "../contracts-clients/furya-name-service/FuryaNameService.client";
 import { getCosmosNetwork, mustGetNonSigningCosmWasmClient } from "../networks";
 
 // TODO: move all ns hooks to a hooks/ns directory
@@ -22,7 +22,7 @@ export const useNSMintPrice = (
 
       const client = await mustGetNonSigningCosmWasmClient(networkId);
 
-      const tnsClient = new TeritoriNameServiceQueryClient(
+      const tnsClient = new FuryaNameServiceQueryClient(
         client,
         network.nameServiceContractAddress
       );

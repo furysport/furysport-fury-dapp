@@ -62,7 +62,7 @@ export const LoginButton: FC<{ userId: string | undefined }> = ({ userId }) => {
         }
 
         const info = TokenRequestInfo.toJSON({
-          kind: "Login to Teritori Multisig Service",
+          kind: "Login to Furya Multisig Service",
           challenge: challengeResponse.challenge,
           userBech32Prefix: network.addressPrefix,
           userPubkeyJson: JSON.stringify({

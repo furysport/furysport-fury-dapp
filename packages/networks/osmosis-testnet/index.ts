@@ -17,7 +17,7 @@ export const osmosisTestnetNetwork: NetworkInfo = {
     "https://testnet.mintscan.io/osmosis-testnet/account/$address",
   idPrefix: "testosmo",
   testnet: true,
-  backendEndpoint: "https://dapp-backend.testnet.teritori.com",
+  backendEndpoint: "https://dapp-backend.testnet.furya.xyz",
   addressPrefix: "osmo",
   restEndpoint: "https://lcd.testnet.osmosis.zone",
   rpcEndpoint: "https://rpc.testnet.osmosis.zone:443",

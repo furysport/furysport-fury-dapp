@@ -119,7 +119,7 @@ export const FlagConfirmModal: React.FC<FlagConfirmModalProps> = ({
         <SpacerColumn size={2.5} />
 
         <BrandText style={fontSemibold13}>
-          This selected content will be banned from Teritori OS Interface.
+          This selected content will be banned from Furya OS Interface.
         </BrandText>
 
         <SpacerColumn size={2.5} />

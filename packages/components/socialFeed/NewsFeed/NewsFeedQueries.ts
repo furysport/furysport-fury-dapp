@@ -17,7 +17,7 @@ import { defaultSocialFeedFee } from "../../../utils/fee";
 import { adenaDoContract } from "../../../utils/gno";
 import { ipfsURLToHTTPURL, uploadFilesToPinata } from "../../../utils/ipfs";
 import { RemoteFileData } from "../../../utils/types/files";
-import { TERITORI_FEED_ID } from "../const";
+import { FURYA_FEED_ID } from "../const";
 
 interface GetAvailableFreePostParams {
   networkId: string;
@@ -189,7 +189,7 @@ export const createPost = async ({
       pkg_path: network.socialFeedsPkgPath,
       func: "CreatePost",
       args: [
-        TERITORI_FEED_ID,
+        FURYA_FEED_ID,
         msg.parentPostIdentifier || "0",
         msg.category.toString(),
         msg.metadata,
@@ -221,7 +221,7 @@ export const createPost = async ({
       },
       defaultSocialFeedFee,
       "",
-      freePostCount ? undefined : [coin(fee, "utori")]
+      freePostCount ? undefined : [coin(fee, "ufury")]
     );
   }
 

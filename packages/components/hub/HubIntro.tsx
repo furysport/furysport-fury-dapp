@@ -125,7 +125,7 @@ const DisconnectedIntro: React.FC = () => {
     >
       <SVG width={200} height={200} source={logoSVG} />
       <BrandText style={{ color: "#00C6FB", fontSize: 16 }}>
-        Welcome to Teritori_
+        Welcome to Furya_
       </BrandText>
       <MainConnectWalletButton style={{ marginTop: 72 }} />
     </View>

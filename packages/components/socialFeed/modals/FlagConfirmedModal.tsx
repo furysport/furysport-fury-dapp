@@ -48,7 +48,7 @@ export const FlagConfirmedModal: React.FC<FlagConfirmedModalProps> = ({
         <SpacerColumn size={2.5} />
 
         <BrandText style={fontSemibold13}>
-          Thank you Teritorian, for contributing to make the Cosmos Safe.
+          Thank you Furyaan, for contributing to make the Cosmos Safe.
         </BrandText>
 
         <SpacerColumn size={2.5} />
