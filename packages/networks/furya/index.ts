@@ -32,8 +32,8 @@ export const furyaNetwork: CosmosNetworkInfo = {
   testnet: false,
   backendEndpoint: "https://dapp-backend.mainnet.furya.com",
   addressPrefix: "furya",
-  restEndpoint: "https://rest.mainnet.furya.com",
-  rpcEndpoint: "https://rpc.mainnet.furya.com",
+  restEndpoint: "https://api.furya.xyz",
+  rpcEndpoint: "https://rpc.furya.xyz",
   stakeCurrency: "ufury",
   gasPriceStep: {
     low: 0.0,

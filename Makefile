@@ -18,7 +18,7 @@ VAULT_PACKAGE=furya-nft-vault
 
 CONTRACTS_CLIENTS_DIR=packages/contracts-clients
 
-DOCKER_REGISTRY=docker.io/sudophunk
+DOCKER_REGISTRY=docker.io/fanfury
 INDEXER_DOCKER_IMAGE=$(DOCKER_REGISTRY)/furya-indexer:$(shell git rev-parse --short HEAD)
 BACKEND_DOCKER_IMAGE=$(DOCKER_REGISTRY)/furya-dapp-backend:$(shell git rev-parse --short HEAD)
 PRICES_SERVICE_DOCKER_IMAGE=$(DOCKER_REGISTRY)/prices-service:$(shell git rev-parse --short HEAD)
