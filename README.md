@@ -1,6 +1,6 @@
 
 <h1 align="center">
-  <img src="https://i.postimg.cc/C1zJ8fmM/Twitter-Original-Header-Dots-curvemode.png" alt="Furya" title="Furya" height="300px" />
+  <img src="https://twitter.com/BlackfuryHub/header_photo" alt="Furya" title="Furya" height="300px" />
 </h1>
 
 <h3 align="center"> Furya is a decentralized application, with a dedicated Cosmos SDK Blockchain, providing tools for decentralized organizations & Web3 adventurers.</h3> 
