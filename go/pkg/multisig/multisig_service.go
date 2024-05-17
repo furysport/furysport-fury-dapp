@@ -8,7 +8,7 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/furysport/furya-dapp/go/pkg/multisigpb"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/multisigpb"
 	"github.com/cosmos/cosmos-sdk/codec/legacy"
 	"github.com/cosmos/cosmos-sdk/crypto/keys/multisig"
 	"github.com/cosmos/cosmos-sdk/types/bech32"

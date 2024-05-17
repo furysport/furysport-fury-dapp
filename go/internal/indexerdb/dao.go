@@ -1,7 +1,7 @@
 package indexerdb
 
 import (
-	"github.com/furysport/furya-dapp/go/pkg/networks"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/networks"
 	"gorm.io/datatypes"
 )
 

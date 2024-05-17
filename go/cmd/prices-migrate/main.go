@@ -5,8 +5,8 @@ import (
 	"flag"
 	"os"
 
-	"github.com/furysport/furya-dapp/go/internal/pgutil"
-	"github.com/furysport/furya-dapp/go/internal/urlutil"
+	"github.com/furysport/furysport-fury-dapp/go/internal/pgutil"
+	"github.com/furysport/furysport-fury-dapp/go/internal/urlutil"
 	_ "github.com/jackc/pgx/v5/stdlib"
 	"github.com/peterbourgon/ff/v3"
 	"github.com/pkg/errors"

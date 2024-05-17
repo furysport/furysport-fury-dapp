@@ -6,7 +6,7 @@ import (
 	"regexp"
 
 	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
-	"github.com/furysport/furya-dapp/go/internal/indexerdb"
+	"github.com/furysport/furysport-fury-dapp/go/internal/indexerdb"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 )

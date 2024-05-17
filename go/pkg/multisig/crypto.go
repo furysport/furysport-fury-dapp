@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/furysport/furya-dapp/go/pkg/multisigpb"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/multisigpb"
 	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
 	"github.com/cosmos/cosmos-sdk/types/bech32"
 	"github.com/pkg/errors"

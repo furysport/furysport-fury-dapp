@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/furysport/furya-dapp/go/internal/indexerdb"
-	"github.com/furysport/furya-dapp/go/pkg/feedpb"
+	"github.com/furysport/furysport-fury-dapp/go/internal/indexerdb"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/feedpb"
 	"github.com/dgraph-io/ristretto"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"

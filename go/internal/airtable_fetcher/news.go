@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/url"
 
-	"github.com/furysport/furya-dapp/go/pkg/marketplacepb"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/marketplacepb"
 	"github.com/mehanizm/airtable"
 	"github.com/pkg/errors"
 )

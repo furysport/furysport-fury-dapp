@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/furysport/furya-dapp/go/pkg/marketplacepb"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/marketplacepb"
 	"go.uber.org/zap"
 )
 

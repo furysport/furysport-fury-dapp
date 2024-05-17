@@ -3,7 +3,7 @@ package multisig
 import (
 	"time"
 
-	"github.com/furysport/furya-dapp/go/pkg/multisigpb"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/multisigpb"
 	"gorm.io/datatypes"
 	"gorm.io/gorm"
 )

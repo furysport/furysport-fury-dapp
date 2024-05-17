@@ -3,9 +3,9 @@ package dao
 import (
 	"context"
 
-	"github.com/furysport/furya-dapp/go/internal/indexerdb"
-	"github.com/furysport/furya-dapp/go/pkg/daopb"
-	"github.com/furysport/furya-dapp/go/pkg/networks"
+	"github.com/furysport/furysport-fury-dapp/go/internal/indexerdb"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/daopb"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/networks"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 	"gorm.io/gorm"

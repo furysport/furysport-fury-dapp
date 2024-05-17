@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/furysport/furya-dapp/go/internal/indexerdb"
-	"github.com/furysport/furya-dapp/go/pkg/p2epb"
+	"github.com/furysport/furysport-fury-dapp/go/internal/indexerdb"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/p2epb"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 	"gorm.io/gorm"

@@ -10,8 +10,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/furysport/furya-dapp/go/internal/ipfsutil"
-	"github.com/furysport/furya-dapp/go/pkg/pricespb"
+	"github.com/furysport/furysport-fury-dapp/go/internal/ipfsutil"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/pricespb"
 	"github.com/allegro/bigcache/v3"
 	"github.com/pkg/errors"
 	abcitypes "github.com/tendermint/tendermint/abci/types"

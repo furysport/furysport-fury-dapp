@@ -9,10 +9,10 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/furysport/furya-dapp/go/internal/indexerdb"
-	"github.com/furysport/furya-dapp/go/pkg/contractutil"
-	"github.com/furysport/furya-dapp/go/pkg/networks"
-	"github.com/furysport/furya-dapp/go/pkg/p2e"
+	"github.com/furysport/furysport-fury-dapp/go/internal/indexerdb"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/contractutil"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/networks"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/p2e"
 	"github.com/go-co-op/gocron"
 	"github.com/peterbourgon/ff/v3"
 	"github.com/pkg/errors"

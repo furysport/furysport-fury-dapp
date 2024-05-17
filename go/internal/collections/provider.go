@@ -1,6 +1,6 @@
 package collections
 
-import "github.com/furysport/furya-dapp/go/pkg/marketplacepb"
+import "github.com/furysport/furysport-fury-dapp/go/pkg/marketplacepb"
 
 type CollectionsProvider interface {
 	Collections(limit, offset int) chan *marketplacepb.Collection

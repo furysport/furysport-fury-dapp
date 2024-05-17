@@ -3,7 +3,7 @@ package indexerdb
 import (
 	"time"
 
-	"github.com/furysport/furya-dapp/go/pkg/networks"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/networks"
 )
 
 type Collection struct {

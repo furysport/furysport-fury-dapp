@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/Khan/genqlient/graphql"
-	"github.com/furysport/furya-dapp/go/pkg/holagql"
-	"github.com/furysport/furya-dapp/go/pkg/marketplacepb"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/holagql"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/marketplacepb"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 )

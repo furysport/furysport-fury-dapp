@@ -55,7 +55,7 @@ lint: lint.buf lint.js
 .PHONY: lint.buf
 lint.buf:
 	buf lint api
-	buf breaking --against 'https://github.com/furysport/furya-dapp.git#branch=main' --path api
+	buf breaking --against 'https://github.com/furysport/furysport-fury-dapp.git#branch=main' --path api
 
 .PHONY: lint.js
 lint.js: node_modules

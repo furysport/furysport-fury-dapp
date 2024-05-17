@@ -1,4 +1,4 @@
-module github.com/furysport/furya-dapp
+module github.com/furysport/furysport-fury-dapp
 
 go 1.18
 

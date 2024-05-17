@@ -9,9 +9,9 @@ import (
 	"math/big"
 
 	"github.com/Khan/genqlient/graphql"
-	"github.com/furysport/furya-dapp/go/pkg/marketplacepb"
-	"github.com/furysport/furya-dapp/go/pkg/networks"
-	"github.com/furysport/furya-dapp/go/pkg/thegraph"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/marketplacepb"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/networks"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/thegraph"
 	"github.com/dgraph-io/ristretto"
 	"github.com/pkg/errors"
 )

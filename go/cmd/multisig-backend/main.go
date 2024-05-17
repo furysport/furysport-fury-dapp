@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/furysport/furya-dapp/go/pkg/multisig"
-	"github.com/furysport/furya-dapp/go/pkg/multisigpb"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/multisig"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/multisigpb"
 	"github.com/improbable-eng/grpc-web/go/grpcweb"
 	"github.com/peterbourgon/ff/v3"
 	"github.com/pkg/errors"

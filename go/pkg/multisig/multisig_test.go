@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/furysport/furya-dapp/go/pkg/multisigpb"
+	"github.com/furysport/furysport-fury-dapp/go/pkg/multisigpb"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/protobuf/proto"
 )
