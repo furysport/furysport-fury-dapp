@@ -19,7 +19,7 @@ services:
     volumes:
       - prices-data:/var/lib/postgresql/data/ # persist data even if container shuts down  
     ports:
-      - "5433:5432"
+      - "5433:5433"
 
 volumes:
   furya-data: # named volumes can be managed easier using docker-compose
