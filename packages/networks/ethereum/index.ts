@@ -14,7 +14,7 @@ export const ethereumNetwork: NetworkInfo = {
   accountExplorer: "https://etherscan.io/address/$address",
   contractExplorer: "https://etherscan.io/address/$address",
   testnet: false,
-  backendEndpoint: "https://dapp-backend.mainnet.furya.com",
+  backendEndpoint: "https://grpc.furya.xyz",
   chainId: 1,
   alchemyApiKey: "xZ3FVF0o6q_4beg_afmCEzf4GSJErhId",
   theGraphEndpoint:

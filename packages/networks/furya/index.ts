@@ -30,7 +30,7 @@ export const furyaNetwork: CosmosNetworkInfo = {
   contractExplorer: "https://www.mintscan.io/furya/account/$address",
   idPrefix: "furya",
   testnet: false,
-  backendEndpoint: "https://dapp-backend.mainnet.furya.com",
+  backendEndpoint: "https://grpc.furya.xyz",
   addressPrefix: "furya",
   restEndpoint: "https://api.furya.xyz",
   rpcEndpoint: "https://rpc.furya.xyz",

@@ -16,7 +16,7 @@ export const gnoTest3Network: GnoNetworkInfo = {
   accountExplorer: "https://etherscan.io/address/$address",
   contractExplorer: "https://etherscan.io/address/$address",
   testnet: true,
-  backendEndpoint: "https://dapp-backend.mainnet.furya.com",
+  backendEndpoint: "https://grpc.furya.xyz",
   vaultContractAddress: "",
   nameServiceContractAddress: "gno.land/r/demo/users",
   nameServiceDefaultImage:
