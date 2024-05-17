@@ -2,9 +2,9 @@ import { furyaCurrencies } from "./currencies";
 import { NetworkKind, CosmosNetworkInfo, NetworkFeature } from "../types";
 
 const nameServiceContractAddress =
-  "furya1wkwy0xh89ksdgj9hr347dyd2dw7zesmtrue6kfzyml4vdtz6e5ws7vvsy7";
+  "furya1kuwymnvq87gtmgcktakd9nhdunfmh03dngyhynzswmraag9gpklq8jkhck";
 const riotContractAddressGen1 =
-  "furya1gflccmghzfscmxl95z43v36y0rle8v9x8kvt9na03yzywtw86ams5epky8";
+  "furya1mskh66lkd7y2pn6mhjpwc4swy79t9gck42h0zfd7lx9rmkqyu2zsmq4y0e";
 
 export const furyaNetwork: CosmosNetworkInfo = {
   id: "furya",
@@ -52,16 +52,16 @@ export const furyaNetwork: CosmosNetworkInfo = {
     "ipfs://bafkreieqcwmjcb64r42ygs6a4dswz63djzgayjn3rhzjber3e42cknawlm",
   nameServiceTLD: ".fury",
   vaultContractAddress:
-    "furya14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9shtt33f",
+    "furya1x2ru7ta9pkz8hgqd4u5m774c0djx82fxpgjcfjfl3fmp2fj5y23svu0fuw",
   riotContractAddressGen0:
-    "furya1mf6ptkssddfmxvhdx0ech0k03ktp6kf9yk59renau2gvht3nq2gqwmv5rh",
+    "furya1k75l9qg8dl7aqk3aa24j2u6ey3frmzy597jaajryeszfzgvchs2s05yjhs",
   riotContractAddressGen1,
   riotSquadStakingContractAddressV1:
-    "furya1zwkmdfsc6h96jm4yqdykaw5y7ndwsvqvgh5ryxp9nxs3hccml0xq0c3yy8",
+    "furya12j48zqus4tc6g8df4luxw6wunk9gdn07kjr3fpe3564ktrujsexsqevqga",
   riotSquadStakingContractAddressV2:
-    "furya1kvjk9m7dk0es35y6ah0k28llllvle3n7xgvh0gh568ta0paf8awsarcev4",
+    "furya1yfym0f5ck8m0vvqnqel7zx82jt04lkt9h4m76m9dqdwcxf67crfsjgrs0k",
   distributorContractAddress:
-    "furya1mnem0rhjaxcsghe0xw692xysra63xwwdee2wth9s0rkfwh4dxpaqcxjlkq",
+    "furya1h5ndearvduw2jcq6x0taj0aurrwpr6v3skqd05ff3gx9rrpmepwqxs9v8x",
   riotersFooterContractAddress:
     "furya1m6g3l3j5t988zwmp965hrhsxvm8jrkf2ulw4gmwj8hx8pd84tvcql90u95",
   secondaryDuringMintList: [
@@ -75,7 +75,7 @@ export const furyaNetwork: CosmosNetworkInfo = {
   ],
   excludeFromLaunchpadList: [riotContractAddressGen1],
   socialFeedContractAddress:
-    "furya1lxf8agg0wd2m7n2ultl0yx337jw23puh0mlkkw5vhtnkkfettwfqzpvf5c",
+    "furya1h8z59cfgu4tq9j8rzpknshlvwztr8z796e7jy98zfymn56xpg6psysqfcn",
   daoFactoryContractAddress:
     "furya16rxh5hgukhdq8rvm2j3t6v483dcqguwp4l825vlwz5pmfpw7s4rsngpvdy",
   daoCoreCodeId: 27,
